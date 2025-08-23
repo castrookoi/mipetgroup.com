@@ -27,9 +27,9 @@ opacity: 0;
 <!-- Header -->
 <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
 <div class="container mx-auto flex justify-between items-center py-4 px-6">
-<h1 class="text-xl font-bold text-blue-800">MiPet Services</h1>
+<img src=/images/logo.png alt="" />
 <!-- Hamburger (mobile only) -->
-<button id="menuBtn" class="md:hidden text-2xl focus:outline-none cursor-pointer">
+<button id="menuBtn" class="md:hidden text-3xl focus:outline-none cursor-pointer">
 ☰
 </button>
 <!-- Desktop Nav -->
@@ -69,35 +69,43 @@ We Deliver <span id="typewriter"></span><span class="blinking-cursor">|</span>
 
 <!-- Stats Div (All) -->
 <div class="relative z-10 -mt-16 w-4/5 mx-auto">
-  <div class="bg-white shadow-xl rounded-2xl p-8 text-center text-gray-900
-              grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6
-              landscape:flex landscape:justify-center landscape:gap-10">
-    
-    <!-- Global Clients -->
-    <div class="min-w-[140px] flex flex-col items-center">
-      <h2 class="text-4xl font-bold counter" data-target="120">0</h2>
-      <p class="text-sm text-gray-600 mt-2">Global Clients</p>
-    </div>
+<div class="bg-white shadow-xl rounded-2xl p-8 text-center text-gray-900
+grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6
+landscape:flex landscape:justify-center landscape:gap-10">
 
-    <!-- Projects Executed -->
-    <div class="min-w-[140px] flex flex-col items-center">
-      <h2 class="text-4xl font-bold counter" data-target="350">0</h2>
-      <p class="text-sm text-gray-600 mt-2">Projects Executed</p>
-    </div>
+<!-- Global Clients -->
+<div class="min-w-[140px] flex flex-col items-center">
+<h2 class="text-4xl font-bold counter" data-target="120">0</h2>
+<p class="text-sm text-gray-600 mt-2">
+Global Clients
+</p>
+</div>
 
-    <!-- Community Projects -->
-    <div class="min-w-[140px] flex flex-col items-center">
-      <h2 class="text-4xl font-bold counter" data-target="75">0</h2>
-      <p class="text-sm text-gray-600 mt-2">Community Projects</p>
-    </div>
+<!-- Projects Executed -->
+<div class="min-w-[140px] flex flex-col items-center">
+<h2 class="text-4xl font-bold counter" data-target="350">0</h2>
+<p class="text-sm text-gray-600 mt-2">
+Projects Executed
+</p>
+</div>
 
-    <!-- Active Workforce -->
-    <div class="min-w-[140px] flex flex-col items-center">
-      <h2 class="text-4xl font-bold counter" data-target="500">0</h2>
-      <p class="text-sm text-gray-600 mt-2">Active Workforce</p>
-    </div>
+<!-- Community Projects -->
+<div class="min-w-[140px] flex flex-col items-center">
+<h2 class="text-4xl font-bold counter" data-target="75">0</h2>
+<p class="text-sm text-gray-600 mt-2">
+Community Projects
+</p>
+</div>
 
-  </div>
+<!-- Active Workforce -->
+<div class="min-w-[140px] flex flex-col items-center">
+<h2 class="text-4xl font-bold counter" data-target="500">0</h2>
+<p class="text-sm text-gray-600 mt-2">
+Active Workforce
+</p>
+</div>
+
+</div>
 </div>
 
 <!-- Services Section -->
@@ -106,15 +114,21 @@ We Deliver <span id="typewriter"></span><span class="blinking-cursor">|</span>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
 <h4 class="font-semibold text-xl mb-2">Service One</h4>
-<p>High-quality service tailored to your needs.</p>
+<p>
+High-quality service tailored to your needs.
+</p>
 </div>
 <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
 <h4 class="font-semibold text-xl mb-2">Service Two</h4>
-<p>We ensure reliable and efficient solutions.</p>
+<p>
+We ensure reliable and efficient solutions.
+</p>
 </div>
 <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
 <h4 class="font-semibold text-xl mb-2">Service Three</h4>
-<p>Our experts deliver excellent customer experience.</p>
+<p>
+Our experts deliver excellent customer experience.
+</p>
 </div>
 </div>
 </section>
@@ -141,7 +155,9 @@ Our mission is to make your experience stress-free and reliable.
 
 <!-- Footer -->
 <footer class="bg-blue-800 text-white text-center py-6">
-<p>&copy; 2025 MiPet Services. All rights reserved.</p>
+<p>
+&copy; 2025 MiPet Services. All rights reserved.
+</p>
 </footer>
 
 <script>
@@ -151,22 +167,22 @@ const mobileMenu = document.getElementById('mobileMenu');
 const overlay = document.getElementById('overlay');
 
 function openMenu() {
-  mobileMenu.classList.remove('translate-x-full');
-  overlay.classList.remove('opacity-0', 'pointer-events-none');
-  overlay.classList.add('opacity-100', 'pointer-events-auto');
+mobileMenu.classList.remove('translate-x-full');
+overlay.classList.remove('opacity-0', 'pointer-events-none');
+overlay.classList.add('opacity-100', 'pointer-events-auto');
 }
 
 function closeMenu() {
-  mobileMenu.classList.add('translate-x-full');
-  overlay.classList.remove('opacity-100', 'pointer-events-auto');
-  overlay.classList.add('opacity-0', 'pointer-events-none');
+mobileMenu.classList.add('translate-x-full');
+overlay.classList.remove('opacity-100', 'pointer-events-auto');
+overlay.classList.add('opacity-0', 'pointer-events-none');
 }
 
 menuBtn.addEventListener('click', openMenu);
 closeBtn.addEventListener('click', closeMenu);
 overlay.addEventListener('click', closeMenu);
 mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', closeMenu);
+link.addEventListener('click', closeMenu);
 });
 
 // Typewriter
@@ -179,46 +195,46 @@ let erasingSpeed = 90;
 let delayBetweenWords = 1000;
 
 function typeWord() {
-  if (charIndex < words[wordIndex].length) {
-    typewriterEl.textContent += words[wordIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(typeWord, typingSpeed);
-  } else {
-    setTimeout(eraseWord, delayBetweenWords);
-  }
+if (charIndex < words[wordIndex].length) {
+typewriterEl.textContent += words[wordIndex].charAt(charIndex);
+charIndex++;
+setTimeout(typeWord, typingSpeed);
+} else {
+setTimeout(eraseWord, delayBetweenWords);
+}
 }
 
 function eraseWord() {
-  if (charIndex > 0) {
-    typewriterEl.textContent = words[wordIndex].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(eraseWord, erasingSpeed);
-  } else {
-    wordIndex = (wordIndex + 1) % words.length;
-    setTimeout(typeWord, typingSpeed);
-  }
+if (charIndex > 0) {
+typewriterEl.textContent = words[wordIndex].substring(0, charIndex - 1);
+charIndex--;
+setTimeout(eraseWord, erasingSpeed);
+} else {
+wordIndex = (wordIndex + 1) % words.length;
+setTimeout(typeWord, typingSpeed);
+}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(typeWord, 500);
+setTimeout(typeWord, 500);
 
-  // Counter animation
-  const counters = document.querySelectorAll('.counter');
-  counters.forEach(counter => {
-    counter.innerText = "0";
-    const updateCounter = () => {
-      const target = +counter.getAttribute('data-target');
-      const current = +counter.innerText;
-      const increment = target / 200;
-      if (current < target) {
-        counter.innerText = `${Math.ceil(current + increment)}`;
-        setTimeout(updateCounter, 15);
-      } else {
-        counter.innerText = target;
-      }
-    };
-    updateCounter();
-  });
+// Counter animation
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter => {
+counter.innerText = "0";
+const updateCounter = () => {
+const target = +counter.getAttribute('data-target');
+const current = +counter.innerText;
+const increment = target / 200;
+if (current < target) {
+counter.innerText = `${Math.ceil(current + increment)}`;
+setTimeout(updateCounter, 15);
+} else {
+counter.innerText = target;
+}
+};
+updateCounter();
+});
 });
 </script>
 </body>
