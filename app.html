@@ -59,10 +59,9 @@
         }
         /* Dropdown styles */
         .dropdown-menu {
-            display: none;
             position: absolute;
             top: 100%;
-            left: 0;
+            left: 10px;
             background: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 0.5rem;
@@ -70,8 +69,8 @@
             min-width: 300px;
             z-index: 50;
         }
-        .group:hover .dropdown-menu {
-            display: block;
+        .dropdown-menu.hidden {
+            display: none;
         }
         .dropdown-menu a {
             display: block;
@@ -83,13 +82,70 @@
             background-color: #f3f4f6;
             color: #2563eb;
         }
+        /* Toggle indicator */
+        .toggle-indicator {
+            display: inline-block;
+            margin-left: 0.25rem;
+            transition: transform 0.2s ease;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+        }
+        .toggle-indicator.active {
+            transform: rotate(90deg);
+        }
+        /* Nav item styles */
+        .nav-item {
+            background: transparent;
+            transition: background-color 0.2s ease;
+        }
+        .nav-item:hover {
+            background-color: rgba(1, 38, 64, 0.1);
+        }
+        /* Hero section background */
+        .hero-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom right, rgba(193, 22, 14, 0.8), rgba(1, 38, 64, 0.8));
+            z-index: 2;
+        }
+        .hero-bg > * {
+            position: relative;
+            z-index: 3;
+        }
+        /* Background image containers (crossfade) */
+        .hero-bg-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+        }
+        .hero-bg-inner.active {
+            opacity: 1;
+            visibility: visible;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
 <!-- Header -->
 <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-    <div class="w-full px-[15px] flex justify-between items-center py-4" style="padding-left: 15px; padding-right: 15px;">
+    <div class="w-full px-[15px] flex justify-between items-center py-4 shadow-[0_2px_4px_#012640,0_4px_8px_#012640]" style="padding-left: 15px; padding-right: 15px; box-shadow: 0 2px 4px #012640, 0 4px 8px #012640;">
         <img src="./images/logo.png" alt="" class="ml-0" />
         <!-- Hamburger (mobile only) -->
         <button id="menuBtn" class="md:hidden text-3xl focus:outline-none cursor-pointer" aria-label="Open menu" aria-expanded="false">
@@ -97,11 +153,15 @@
         </button>
         <!-- Desktop Nav -->
         <nav class="hidden md:flex space-x-6 items-center ml-auto mr-0">
-            <a href="#home" class="hover:text-blue-600">Home</a>
-            <a href="#about" class="hover:text-blue-600">About us</a>
-            <div class="relative group">
-                <a href="#" class="hover:text-blue-600">Services</a>
-                <div class="dropdown-menu">
+            <a href="#home" class="nav-item hover:text-blue-600">Home</a>
+            <a href="#about" class="nav-item hover:text-blue-600">About us</a>
+            <div class="relative">
+                <a href="#" class="nav-item hover:text-blue-600" id="servicesToggle">Services 
+                    <svg class="toggle-indicator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+                <div class="dropdown-menu hidden">
                     <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Drilling Operations</a>
                     <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Engineering and Technical Services Division</a>
                     <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Gas Service Division</a>
@@ -113,8 +173,8 @@
                     <a href="#" class="hover:bg-gray-100 hover:text-blue-600">Well Intervention Services Division</a>
                 </div>
             </div>
-            <a href="#contact" class="hover:text-blue-600">Contact us</a>
-            <a href="https://example.com/profile" class="profile-btn">Our Profile</a>
+            <a href="#contact" class="nav-item hover:text-blue-600">Contact us</a>
+            <a href="https://example.com/profile" class="profile-btn">Company Profile</a>
         </nav>
     </div>
 </header>
@@ -129,32 +189,47 @@
         <button id="closeBtn" class="text-2xl focus:outline-none cursor-pointer" aria-label="Close menu">×</button>
     </div>
     <nav class="flex flex-col p-4 space-y-4">
-        <a href="#home" class="hover:text-blue-600">Home</a>
-        <a href="#about" class="hover:text-blue-600">About us</a>
-        <a href="#" class="hover:text-blue-600">Services</a>
-        <div class="flex flex-col space-y-2 pl-4">
-            <a href="#" class="hover:text-blue-600">Drilling Operations</a>
-            <a href="#" class="hover:text-blue-600">Engineering and Technical Services Division</a>
-            <a href="#" class="hover:text-blue-600">Gas Service Division</a>
-            <a href="#" class="hover:text-blue-600">Community Support Services</a>
-            <a href="#" class="hover:text-blue-600">Pipeline Services</a>
-            <a href="#" class="hover:text-blue-600">Process Services Division</a>
-            <a href="#" class="hover:text-blue-600">Procurement, Rentals and Supply Services</a>
-            <a href="#" class="hover:text-blue-600">Production and Operation Services</a>
-            <a href="#" class="hover:text-blue-600">Well Intervention Services Division</a>
+        <a href="#home" class="nav-item hover:text-blue-600">Home</a>
+        <a href="#about" class="nav-item hover:text-blue-600">About us</a>
+        <a href="#" class="nav-item hover:text-blue-600" id="mobileServicesToggle">Services 
+            <svg class="toggle-indicator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </a>
+        <div id="mobileServicesMenu" class="flex flex-col space-y-2 pl-4 hidden">
+            <a href="#" class="nav-item hover:text-blue-600">Drilling Operations</a>
+            <a href="#" class="nav-item hover:text-blue-600">Engineering and Technical Services Division</a>
+            <a href="#" class="nav-item hover:text-blue-600">Gas Service Division</a>
+            <a href="#" class="nav-item hover:text-blue-600">Community Support Services</a>
+            <a href="#" class="nav-item hover:text-blue-600">Pipeline Services</a>
+            <a href="#" class="nav-item hover:text-blue-600">Process Services Division</a>
+            <a href="#" class="nav-item hover:text-blue-600">Procurement, Rentals and Supply Services</a>
+            <a href="#" class="nav-item hover:text-blue-600">Production and Operation Services</a>
+            <a href="#" class="nav-item hover:text-blue-600">Well Intervention Services Division</a>
         </div>
-        <a href="#contact" class="hover:text-blue-600">Contact us</a>
-        <a href="https://example.com/profile" class="profile-btn">Our Profile</a>
+        <a href="#contact" class="nav-item hover:text-blue-600">Contact us</a>
+        <a href="https://example.com/profile" class="profile-btn">Company Profile</a>
     </nav>
 </div>
 
-<!-- Hero Section -->
-<section class="h-screen flex items-start justify-center bg-gradient-to-r from-blue-800 to-blue-500 text-white text-center px-6 pt-24">
-    <div class="w-full max-w-3xl">
-        <h4 class="text-[4.7rem] font-bold mb-6">We Don't Just Harness Energy Solutions;</h4>
-        <h3 class="text-[4.7rem] font-bold">
-            We Deliver <span id="typewriter"></span><span class="blinking-cursor">|</span>
-        </h3>
+<!-- Hero Section (Split into Two Equal Parts) -->
+<section class="h-screen flex flex-col">
+    <!-- First Hero Section (Text with Crossfade Background Images) -->
+    <div class="h-1/2 flex items-center justify-center hero-bg text-white text-center px-6">
+        <div class="hero-bg-inner" id="heroBgInner1" style="background-image: url('./images/bg_1.jpeg');"></div>
+        <div class="hero-bg-inner" id="heroBgInner2" style="background-image: url('./images/bg_2.jpeg');"></div>
+        <div class="w-full max-w-3xl">
+            <h4 class="text-[4.7rem] font-bold mb-6">We Don't Just Harness Energy Solutions;</h4>
+            <h3 class="text-[4.7rem] font-bold">
+                We Deliver <span id="typewriter"></span><span class="blinking-cursor">|</span>
+            </h3>
+        </div>
+    </div>
+    <!-- Second Hero Section (Placeholder) -->
+    <div class="h-1/2 flex items-center justify-center bg-white text-gray-800 text-center px-6">
+        <div class="w-full max-w-3xl">
+            <p class="text-lg">Second Hero Section (Content to be added)</p>
+        </div>
     </div>
 </section>
 
@@ -251,6 +326,10 @@
     const closeBtn = document.getElementById('closeBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const overlay = document.getElementById('overlay');
+    const servicesToggle = document.getElementById('servicesToggle');
+    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+    const servicesMenu = document.querySelector('.dropdown-menu');
+    const mobileServicesMenu = document.getElementById('mobileServicesMenu');
 
     function openMenu() {
         mobileMenu.style.display = 'block';
@@ -276,12 +355,28 @@
             mobileMenu.style.display = 'none';
             overlay.style.display = 'none';
         }, 300); // Match 0.3s transition
+        servicesMenu.classList.add('hidden');
+        mobileServicesMenu.classList.add('hidden');
+        servicesToggle.querySelector('.toggle-indicator').classList.remove('active');
+        mobileServicesToggle.querySelector('.toggle-indicator').classList.remove('active');
     }
+
+    servicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        servicesMenu.classList.toggle('hidden');
+        servicesToggle.querySelector('.toggle-indicator').classList.toggle('active');
+    });
+
+    mobileServicesToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileServicesMenu.classList.toggle('hidden');
+        mobileServicesToggle.querySelector('.toggle-indicator').classList.toggle('active');
+    });
 
     menuBtn.addEventListener('click', openMenu);
     closeBtn.addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu);
-    mobileMenu.querySelectorAll('a').forEach(link => {
+    mobileMenu.querySelectorAll('a:not(#mobileServicesToggle)').forEach(link => {
         link.addEventListener('click', closeMenu);
     });
 
@@ -315,8 +410,30 @@
         }
     }
 
+    // Background crossfade (alternating and repeating smoothly)
+    const heroBgInner1 = document.getElementById('heroBgInner1');
+    const heroBgInner2 = document.getElementById('heroBgInner2');
+    let isFirstActive = true;
+
+    function changeBackground() {
+        if (isFirstActive) {
+            heroBgInner1.classList.remove('active');
+            heroBgInner2.classList.add('active');
+        } else {
+            heroBgInner2.classList.remove('active');
+            heroBgInner1.classList.add('active');
+        }
+        isFirstActive = !isFirstActive;
+        setTimeout(changeBackground, 4000); // Repeat every 4 seconds
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+        // Start typewriter
         setTimeout(typeWord, 500);
+
+        // Start background alternation
+        heroBgInner1.classList.add('active');
+        setTimeout(changeBackground, 4000);
 
         // Counter animation
         const counters = document.querySelectorAll('.counter');
