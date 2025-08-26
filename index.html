@@ -33,10 +33,10 @@
             opacity: 1;
             display: block;
         }
-        /* Company Profile button styles */
-        .profile-btn {
+        /* Button styles (used for all buttons) */
+        .gradient-btn {
             display: inline-block;
-            padding: 0.25rem 0.5rem;
+            padding: 0.75rem 1.5rem;
             font-weight: bold;
             color: white;
             background: linear-gradient(to bottom, #c1160e, #012640);
@@ -44,7 +44,7 @@
             cursor: pointer;
             transition: transform 0.2s ease, opacity 0.2s ease;
         }
-        .profile-btn:hover {
+        .gradient-btn:hover {
             transform: scale(1.03);
             opacity: 0.95;
         }
@@ -242,6 +242,42 @@
         .stats-item:not(.global-clients) {
             border-color: #000000;
         }
+        /* New Growth Section */
+        .growth-section {
+            position: relative;
+            width: 100%;
+            margin-top: 2rem;
+            padding: 2rem 1rem;
+            text-align: center;
+            z-index: 8;
+        }
+        .growth-section img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        .growth-section h3 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: bold;
+            margin: 1.5rem 0 1rem;
+            color: #1f2937;
+        }
+        .growth-section p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: #4b5563; /* text-gray-600 */
+            font-size: 1rem; /* text-base */
+            line-height: 1.5;
+        }
+        @media (max-width: 767px) {
+            .growth-section h3 {
+                font-size: 1.5rem; /* text-2xl */
+            }
+            .growth-section p {
+                font-size: 0.875rem; /* text-sm */
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -281,7 +317,7 @@
                 </div>
             </div>
             <a href="#contact" class="nav-item hover:text-blue-600">Contact us</a>
-            <a href="https://example.com/profile" class="profile-btn">Company Profile</a>
+            <a href="https://example.com/profile" class="gradient-btn">Company Profile</a>
         </nav>
     </div>
 </header>
@@ -315,7 +351,7 @@
             <a href="#" class="nav-item hover:text-blue-600">Well Intervention Services Division</a>
         </div>
         <a href="#contact" class="nav-item hover:text-blue-600">Contact us</a>
-        <a href="https://example.com/profile" class="profile-btn">Company Profile</a>
+        <a href="https://example.com/profile" class="gradient-btn">Company Profile</a>
     </nav>
 </div>
 
@@ -331,9 +367,7 @@
             Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil &amp; Gas operations — across upstream, midstream, and downstream.
         </p>
         <div class="mt-6 hero-button">
-            <a href="#services" class="px-6 py-3 rounded-md text-base font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition">
-                Explore More
-            </a>
+            <a href="#services" class="gradient-btn">Explore More</a>
         </div>
     </div>
 </section>
@@ -364,8 +398,16 @@
     </div>
 </section>
 
+<!-- New Growth Section -->
+<section class="growth-section">
+    <img src="./images/growth_image.webp" alt="Oil and Gas Infrastructure" />
+    <h3>Driving Growth, Delivering Trust in the Oil & Gas and Infrastructure</h3>
+    <p>Mipet Services Limited delivers a comprehensive range of specialized solutions across the upstream, midstream, and downstream sectors of the oil, gas, and infrastructure industries, as well as the public sector. We provide reliable solutions in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations, guided by a strong commitment to excellence, innovation, and sustainability. Our tailored approach empowers clients to achieve operational efficiency, reliability, and long-term growth.</p>
+    <a href="#services" class="gradient-btn">Explore More</a>
+</section>
+
 <!-- Stats Div (Restored Original) -->
-<div class="relative z-10 w-4/5 mx-auto mt-16">
+<div class="relative z-10 w-4/5 mx-auto mt-20">
     <div class="bg-white shadow-xl rounded-2xl p-8 text-center text-gray-900
     grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6
     landscape:flex landscape:justify-center landscape:gap-10">
@@ -427,7 +469,7 @@
         <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg" />
         <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" />
         <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg"></textarea>
-        <button class="w-full bg-blue-800 text-white py-3 rounded-lg hover:bg-blue-700 transition">Send</button>
+        <button class="w-full gradient-btn">Send</button>
     </form>
 </section>
 
