@@ -8,15 +8,6 @@
         body {
             margin: 0;
         }
-        .blinking-cursor {
-            display: inline-block;
-            margin-left: 2px;
-            animation: blink 0.7s steps(1) infinite;
-        }
-        @keyframes blink {
-            0%, 50%, 100% { opacity: 1; }
-            25%, 75% { opacity: 0; }
-        }
         /* Overlay animation */
         #overlay {
             background-color: rgba(12, 23, 77, 0.5);
@@ -138,6 +129,32 @@
             opacity: 1;
             visibility: visible;
         }
+        /* Hero section animation */
+        .hero-text {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .hero-subtext {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s ease-out 0.3s forwards;
+        }
+        .hero-button {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1s ease-out 0.6s forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -145,11 +162,11 @@
 <!-- Header -->
 <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
     <div class="w-full px-[15px] flex justify-between items-center py-4 shadow-[0_2px_4px_#012640,0_4px_8px_#012640]" style="padding-left: 15px; padding-right: 15px; box-shadow: 0 2px 4px #012640, 0 4px 8px #012640;">
-     <img 
-  src="./images/logo.webp" 
-  alt="MiPet Services Logo" 
-  class="h-8 w-auto max-w-[150px] sm:h-6 sm:max-w-[75px] md:h-20 md:max-w-[200px] lg:h-20 lg:max-w-[300px] object-contain ml-0" 
-/>
+        <img
+            src="./images/logo.webp"
+            alt="MiPet Services Logo"
+            class="ml-0 object-contain h-6 max-w-[75px] sm:h-8 sm:max-w-[150px] md:h-10 md:max-w-[180px] lg:h-12 lg:max-w-[200px]"
+        />
         <!-- Hamburger (mobile only) -->
         <button id="menuBtn" class="md:hidden text-3xl focus:outline-none cursor-pointer" aria-label="Open menu" aria-expanded="false">
             ☰
@@ -215,23 +232,32 @@
     </nav>
 </div>
 
-<!-- Hero Section (Split into Two Equal Parts) -->
+<!-- Hero Section -->
 <section class="h-screen flex flex-col">
     <!-- First Hero Section (Text with Crossfade Background Images) -->
-    <div class="h-1/2 flex items-center justify-center hero-bg text-white text-center px-6">
+    <div class="min-h-[50vh] flex-grow flex items-center justify-center hero-bg text-white text-center px-6 py-24">
         <div class="hero-bg-inner" id="heroBgInner1" style="background-image: url('./images/bg_1.jpeg');"></div>
         <div class="hero-bg-inner" id="heroBgInner2" style="background-image: url('./images/bg_2.jpeg');"></div>
-        <div class="w-full max-w-3xl">
-            <h4 class="text-[4.7rem] font-bold mb-6">We Don't Just Harness Energy Solutions;</h4>
-            <h3 class="text-[4.7rem] font-bold">
-                We Deliver <span id="typewriter"></span><span class="blinking-cursor">|</span>
-            </h3>
+        <div class="w-full max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight hero-text">
+                Harnessing Integrated Energy &amp; Engineering Solutions to Power Oil &amp; Gas and Infrastructure.
+            </h1>
+            <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-lg text-gray-200 max-w-3xl mx-auto hero-subtext">
+                Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil &amp; Gas operations — across upstream, midstream, and downstream.
+            </p>
+            <div class="mt-6 hero-button">
+                <a href="#services" class="px-6 py-3 rounded-md text-base font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition">
+                    Explore More
+                </a>
+            </div>
         </div>
     </div>
     <!-- Second Hero Section (Placeholder) -->
-    <div class="h-1/2 flex items-center justify-center bg-white text-gray-800 text-center px-6">
+    <div class="flex-grow flex items-center justify-center bg-white text-gray-800 text-center px-6">
         <div class="w-full max-w-3xl">
-            <p class="text-lg">Second Hero Section (Content to be added)</p>
+            <p class="text-lg">
+                Second Hero Section (Content to be added)
+            </p>
         </div>
     </div>
 </section>
@@ -383,36 +409,6 @@
         link.addEventListener('click', closeMenu);
     });
 
-    // Typewriter
-    const typewriterEl = document.getElementById('typewriter');
-    const words = ['Value', 'Integrity', 'Progress'];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let typingSpeed = 130;
-    let erasingSpeed = 90;
-    let delayBetweenWords = 1000;
-
-    function typeWord() {
-        if (charIndex < words[wordIndex].length) {
-            typewriterEl.textContent += words[wordIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(typeWord, typingSpeed);
-        } else {
-            setTimeout(eraseWord, delayBetweenWords);
-        }
-    }
-
-    function eraseWord() {
-        if (charIndex > 0) {
-            typewriterEl.textContent = words[wordIndex].substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(eraseWord, erasingSpeed);
-        } else {
-            wordIndex = (wordIndex + 1) % words.length;
-            setTimeout(typeWord, typingSpeed);
-        }
-    }
-
     // Background crossfade (alternating and repeating smoothly)
     const heroBgInner1 = document.getElementById('heroBgInner1');
     const heroBgInner2 = document.getElementById('heroBgInner2');
@@ -431,9 +427,6 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        // Start typewriter
-        setTimeout(typeWord, 500);
-
         // Start background alternation
         heroBgInner1.classList.add('active');
         setTimeout(changeBackground, 4000);
