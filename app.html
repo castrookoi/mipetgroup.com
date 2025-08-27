@@ -36,17 +36,26 @@
         /* Button styles (used for all buttons) */
         .gradient-btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             font-weight: bold;
             color: white;
             background: linear-gradient(to bottom, #c1160e, #012640);
             border-radius: 2rem;
             cursor: pointer;
             transition: transform 0.2s ease, opacity 0.2s ease;
+            text-align: center;
         }
         .gradient-btn:hover {
             transform: scale(1.03);
             opacity: 0.95;
+        }
+        @media (max-width: 767px) {
+            .gradient-btn {
+                width: auto;
+                max-width: 200px;
+                display: inline-block;
+                text-align: center;
+            }
         }
         /* Dropdown styles */
         .dropdown-menu {
@@ -171,7 +180,7 @@
             justify-content: center;
             align-items: center;
             background-image: url('./images/next_hero.png');
-            background-size: cover;
+            background-size: 100% 100%;
             background-position: center;
             background-position-y: 0;
             transition: background-position-y 0.3s ease-out;
@@ -183,6 +192,21 @@
         @media (max-width: 767px) {
             .next-hero-section {
                 height: auto;
+                min-height: 250px;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .stats-container {
+                gap: 0.5rem;
+                padding-top: 1.5rem;
+            }
+            .stats-item h2 {
+                font-size: 1.25rem; /* text-xl */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            .stats-item p {
+                font-size: 0.875rem; /* text-sm */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
         }
         .next-hero-section::before {
@@ -207,20 +231,17 @@
             .stats-container {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
-        @media (max-width: 767px) {
-            .stats-container {
-                padding-top: 1.5rem;
-            }
             .stats-item h2 {
-                font-size: 1.25rem; /* text-xl */
+                font-size: 1.5rem; /* text-2xl */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
             .stats-item p {
                 font-size: 0.875rem; /* text-sm */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
         }
         .stats-item {
-            border-bottom: 2px solid;
+            border-bottom: 1px solid;
             border-top: none;
             border-left: none;
             border-right: none;
@@ -242,40 +263,72 @@
         .stats-item:not(.global-clients) {
             border-color: #000000;
         }
-        /* New Growth Section */
+        /* Growth Section */
         .growth-section {
             position: relative;
             width: 100%;
             margin-top: 2rem;
             padding: 2rem 1rem;
-            text-align: center;
             z-index: 8;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .growth-section .text-container {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .growth-section img {
             width: 100%;
+            max-height: 400px;
             height: auto;
             object-fit: cover;
             display: block;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .growth-section h3 {
             font-size: 1.875rem; /* text-3xl */
-            font-weight: bold;
-            margin: 1.5rem 0 1rem;
+            font-weight: 800; /* font-extrabold */
+            margin: 0 0 1rem;
             color: #1f2937;
         }
         .growth-section p {
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
+            max-width: 500px;
+            margin: 0 0 1.5rem;
             color: #4b5563; /* text-gray-600 */
             font-size: 1rem; /* text-base */
-            line-height: 1.5;
+            line-height: 1.75;
         }
         @media (max-width: 767px) {
+            .growth-section {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                text-align: center;
+            }
+            .growth-section .text-container {
+                text-align: center;
+                order: 2;
+                background: none;
+                box-shadow: none;
+                padding: 1rem;
+            }
+            .growth-section img {
+                order: 1;
+                max-height: 300px;
+            }
             .growth-section h3 {
                 font-size: 1.5rem; /* text-2xl */
             }
             .growth-section p {
                 font-size: 0.875rem; /* text-sm */
+                max-width: 100%;
+                line-height: 1.5;
             }
         }
     </style>
@@ -346,7 +399,7 @@
             <a href="#" class="nav-item hover:text-blue-600">Community Support Services</a>
             <a href="#" class="nav-item hover:text-blue-600">Pipeline Services</a>
             <a href="#" class="nav-item hover:text-blue-600">Process Services Division</a>
-            <a href="#" class="nav-item hover:text-blue-600">Procurement, Rentals and Supply Services</a>
+            <a href#" class="nav-item hover:text-blue-600">Procurement, Rentals and Supply Services</a>
             <a href="#" class="nav-item hover:text-blue-600">Production and Operation Services</a>
             <a href="#" class="nav-item hover:text-blue-600">Well Intervention Services Division</a>
         </div>
@@ -378,32 +431,34 @@
         <!-- Global Clients -->
         <div class="stats-item global-clients flex flex-col items-center">
             <p class="font-bold" style="color: #ff0000;">Global Clients</p>
-            <h2 class="text-3xl font-extrabold counter" data-target="120" style="color: #ff0000;">0+</h2>
+            <h2 class="font-extrabold counter" data-target="120" style="color: #ff0000;">0+</h2>
         </div>
         <!-- Projects Executed -->
         <div class="stats-item flex flex-col items-center">
             <p class="font-bold" style="color: #000000;">Projects Executed</p>
-            <h2 class="text-3xl font-extrabold counter" data-target="350" style="color: #000000;">0+</h2>
+            <h2 class="font-extrabold counter" data-target="350" style="color: #000000;">0+</h2>
         </div>
         <!-- Years of Experience -->
         <div class="stats-item flex flex-col items-center">
             <p class="font-bold" style="color: #000000;">Years of Experience</p>
-            <h2 class="text-3xl font-extrabold counter" data-target="23" style="color: #000000;">0+</h2>
+            <h2 class="font-extrabold counter" data-target="23" style="color: #000000;">0+</h2>
         </div>
         <!-- Active Workforce -->
         <div class="stats-item flex flex-col items-center">
             <p class="font-bold" style="color: #000000;">Active Workforce</p>
-            <h2 class="text-3xl font-extrabold counter" data-target="500" style="color: #000000;">0+</h2>
+            <h2 class="font-extrabold counter" data-target="500" style="color: #000000;">0+</h2>
         </div>
     </div>
 </section>
 
 <!-- New Growth Section -->
 <section class="growth-section">
+    <div class="text-container">
+        <h3>Driving Growth, Delivering Trust in the Oil & Gas and Infrastructure</h3>
+        <p>Mipet Services Limited delivers a comprehensive range of specialized solutions across the upstream, midstream, and downstream sectors of the oil, gas, and infrastructure industries, as well as the public sector. We provide reliable solutions in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations, guided by a strong commitment to excellence, innovation, and sustainability. Our tailored approach empowers clients to achieve operational efficiency, reliability, and long-term growth.</p>
+        <a href="#services" class="gradient-btn">Explore More</a>
+    </div>
     <img src="./images/growth_image.webp" alt="Oil and Gas Infrastructure" />
-    <h3>Driving Growth, Delivering Trust in the Oil & Gas and Infrastructure</h3>
-    <p>Mipet Services Limited delivers a comprehensive range of specialized solutions across the upstream, midstream, and downstream sectors of the oil, gas, and infrastructure industries, as well as the public sector. We provide reliable solutions in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations, guided by a strong commitment to excellence, innovation, and sustainability. Our tailored approach empowers clients to achieve operational efficiency, reliability, and long-term growth.</p>
-    <a href="#services" class="gradient-btn">Explore More</a>
 </section>
 
 <!-- Stats Div (Restored Original) -->
