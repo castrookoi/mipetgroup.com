@@ -36,17 +36,26 @@
         /* Button styles (used for all buttons) */
         .gradient-btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
+            padding: 0.5rem 1rem;
             font-weight: bold;
             color: white;
             background: linear-gradient(to bottom, #c1160e, #012640);
             border-radius: 2rem;
             cursor: pointer;
             transition: transform 0.2s ease, opacity 0.2s ease;
+            text-align: center;
         }
         .gradient-btn:hover {
             transform: scale(1.03);
             opacity: 0.95;
+        }
+        @media (max-width: 767px) {
+            .gradient-btn {
+                width: auto;
+                max-width: 200px;
+                display: inline-block;
+                text-align: center;
+            }
         }
         /* Dropdown styles */
         .dropdown-menu {
@@ -171,7 +180,7 @@
             justify-content: center;
             align-items: center;
             background-image: url('./images/next_hero.png');
-            background-size: cover;
+            background-size: 100% 100%;
             background-position: center;
             background-position-y: 0;
             transition: background-position-y 0.3s ease-out;
@@ -183,6 +192,21 @@
         @media (max-width: 767px) {
             .next-hero-section {
                 height: auto;
+                min-height: 250px;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .stats-container {
+                gap: 0.5rem;
+                padding-top: 1.5rem;
+            }
+            .stats-item h2 {
+                font-size: 1.25rem; /* text-xl */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            .stats-item p {
+                font-size: 0.875rem; /* text-sm */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
         }
         .next-hero-section::before {
@@ -207,20 +231,17 @@
             .stats-container {
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
-        @media (max-width: 767px) {
-            .stats-container {
-                padding-top: 1.5rem;
-            }
             .stats-item h2 {
-                font-size: 1.25rem; /* text-xl */
+                font-size: 1.5rem; /* text-2xl */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
             .stats-item p {
                 font-size: 0.875rem; /* text-sm */
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             }
         }
         .stats-item {
-            border-bottom: 2px solid;
+            border-bottom: 1px solid;
             border-top: none;
             border-left: none;
             border-right: none;
@@ -242,40 +263,144 @@
         .stats-item:not(.global-clients) {
             border-color: #000000;
         }
-        /* New Growth Section */
+        /* Growth Section */
         .growth-section {
             position: relative;
             width: 100%;
             margin-top: 2rem;
             padding: 2rem 1rem;
-            text-align: center;
             z-index: 8;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        .growth-section .text-container {
+            text-align: left;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            height: auto;
         }
         .growth-section img {
-            width: 100%;
+            max-width: 600px;
             height: auto;
+            max-height: 500px;
             object-fit: cover;
             display: block;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: -1rem; /* Move image up slightly on desktop */
         }
         .growth-section h3 {
             font-size: 1.875rem; /* text-3xl */
-            font-weight: bold;
-            margin: 1.5rem 0 1rem;
+            font-weight: 800; /* font-extrabold */
+            margin: 0 0 1rem;
             color: #1f2937;
         }
         .growth-section p {
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
+            max-width: 500px;
+            margin: 0 0 1.5rem;
             color: #4b5563; /* text-gray-600 */
             font-size: 1rem; /* text-base */
-            line-height: 1.5;
+            line-height: 1.75;
         }
         @media (max-width: 767px) {
+            .growth-section {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+                text-align: center;
+            }
+            .growth-section .text-container {
+                text-align: center;
+                order: 2;
+                background: none;
+                box-shadow: none;
+                padding: 1rem;
+                max-width: 100%;
+            }
+            .growth-section img {
+                order: 1;
+                max-width: 100%;
+                max-height: 300px;
+                margin-top: 0; /* No upward shift on mobile */
+            }
             .growth-section h3 {
                 font-size: 1.5rem; /* text-2xl */
             }
             .growth-section p {
                 font-size: 0.875rem; /* text-sm */
+                max-width: 100%;
+                line-height: 1.5;
+            }
+        }
+        /* Logo Slider Sections */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .logo-slider-container {
+            position: relative;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            mask-image: linear-gradient(to right, transparent 0, black 64px, black calc(100% - 64px), transparent 100%);
+        }
+        .logo-slider {
+            display: flex;
+        }
+        .logo-item {
+            flex: 0 0 150px;
+            scroll-snap-align: center;
+            padding: 0 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .logo-item {
+                flex: 0 0 120px;
+            }
+        }
+        .logo-item img {
+            height: 40px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(to bottom, #c1160e, #012640);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: opacity 0.2s ease;
+        }
+        .arrow-btn:hover {
+            opacity: 0.9;
+        }
+        .arrow-btn.left {
+            left: 10px;
+        }
+        .arrow-btn.right {
+            right: 10px;
+        }
+        @media (max-width: 767px) {
+            .arrow-btn {
+                width: 32px;
+                height: 32px;
             }
         }
     </style>
@@ -283,18 +408,10 @@
 <body class="bg-gray-50 text-gray-800">
 
 <!-- Header -->
-<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-    <div class="w-full px-[15px] flex justify-between items-center py-4 shadow-[0_2px_4px_#012640,0_4px_8px_#012640]" style="padding-left: 15px; padding-right: 15px; box-shadow: 0 2px 4px #012640, 0 4px 8px #012640;">
-        <img
-            src="./images/logo.webp"
-            alt="MiPet Services Logo"
-            class="ml-0 object-contain h-6 max-w-[75px] sm:h-8 sm:max-w-[150px] md:h-10 md:max-w-[180px] lg:h-12 lg:max-w-[200px]"
-        />
-        <!-- Hamburger (mobile only) -->
-        <button id="menuBtn" class="md:hidden text-3xl focus:outline-none cursor-pointer" aria-label="Open menu" aria-expanded="false">
-            ☰
-        </button>
-        <!-- Desktop Nav -->
+<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50" style="padding-left: 2rem; padding-right: 2rem;">
+    <div class="w-full px-4 flex justify-between items-center py-4 shadow-[0_2px_4px_#012640,0_4px_8px_#012640]">
+        <img src="./images/logo.webp" alt="MiPet Services Logo" class="ml-0 object-contain h-6 max-w-[75px] sm:h-8 sm:max-w-[150px] md:h-10 md:max-w-[180px] lg:h-12 lg:max-w-[200px]" />
+        <button id="menuBtn" class="md:hidden text-3xl focus:outline-none cursor-pointer" aria-label="Open menu" aria-expanded="false">☰</button>
         <nav class="hidden md:flex space-x-6 items-center ml-auto mr-0">
             <a href="#home" class="nav-item hover:text-blue-600">Home</a>
             <a href="#about" class="nav-item hover:text-blue-600">About us</a>
@@ -375,63 +492,81 @@
 <!-- Next Hero Image Section with Stats -->
 <section class="next-hero-section">
     <div class="stats-container">
-        <!-- Global Clients -->
         <div class="stats-item global-clients flex flex-col items-center">
             <p class="font-bold" style="color: #ff0000;">Global Clients</p>
-            <h2 class="text-3xl font-extrabold counter" data-target="120" style="color: #ff0000;">0+</h2>
+            <h2 class="font-extrabold counter" data-target="120" style="color: #ff0000;">0+</h2>
         </div>
-        <!-- Projects Executed -->
         <div class="stats-item flex flex-col items-center">
             <p class="font-bold" style="color: #000000;">Projects Executed</p>
-            <h2 class="text-3xl font-extrabold counter" data-target="350" style="color: #000000;">0+</h2>
+            <h2 class="font-extrabold counter" data-target="350" style="color: #000000;">0+</h2>
         </div>
-        <!-- Years of Experience -->
         <div class="stats-item flex flex-col items-center">
             <p class="font-bold" style="color: #000000;">Years of Experience</p>
-            <h2 class="text-3xl font-extrabold counter" data-target="23" style="color: #000000;">0+</h2>
+            <h2 class="font-extrabold counter" data-target="23" style="color: #000000;">0+</h2>
         </div>
-        <!-- Active Workforce -->
         <div class="stats-item flex flex-col items-center">
             <p class="font-bold" style="color: #000000;">Active Workforce</p>
-            <h2 class="text-3xl font-extrabold counter" data-target="500" style="color: #000000;">0+</h2>
+            <h2 class="font-extrabold counter" data-target="500" style="color: #000000;">0+</h2>
         </div>
     </div>
 </section>
 
-<!-- New Growth Section -->
+<!-- Growth Section -->
 <section class="growth-section">
-    <img src="./images/growth_image.webp" alt="Oil and Gas Infrastructure" />
-    <h3>Driving Growth, Delivering Trust in the Oil & Gas and Infrastructure</h3>
-    <p>Mipet Services Limited delivers a comprehensive range of specialized solutions across the upstream, midstream, and downstream sectors of the oil, gas, and infrastructure industries, as well as the public sector. We provide reliable solutions in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations, guided by a strong commitment to excellence, innovation, and sustainability. Our tailored approach empowers clients to achieve operational efficiency, reliability, and long-term growth.</p>
-    <a href="#services" class="gradient-btn">Explore More</a>
+    <div class="text-container">
+        <h3>Driving Growth, Delivering Trust in the Oil & Gas and Infrastructure</h3>
+        <p>Mipet Services Limited delivers a comprehensive range of specialized solutions across the upstream, midstream, and downstream sectors of the oil, gas, and infrastructure industries, as well as the public sector. We provide reliable solutions in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations, guided by a strong commitment to excellence, innovation, and sustainability. Our tailored approach empowers clients to achieve operational efficiency, reliability, and long-term growth.</p>
+        <a href="#services" class="gradient-btn">Explore More</a>
+    </div>
+    <img src="./images/growth_image.jpg" alt="Oil and Gas Infrastructure" />
 </section>
 
-<!-- Stats Div (Restored Original) -->
+<!-- Logo Slider Sections -->
 <div class="relative z-10 w-4/5 mx-auto mt-20">
-    <div class="bg-white shadow-xl rounded-2xl p-8 text-center text-gray-900
-    grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6
-    landscape:flex landscape:justify-center landscape:gap-10">
-        <!-- Global Clients -->
-        <div class="min-w-[140px] flex flex-col items-center">
-            <h2 class="text-4xl font-bold counter" data-target="120">0</h2>
-            <p class="text-sm text-gray-600 mt-2">Global Clients</p>
+    <!-- Our Trusted Clientele -->
+    <section class="mb-12">
+        <h2 class="text-3xl font-bold text-center mb-8">Our Trusted Clientele</h2>
+        <div class="relative logo-slider-container" id="clientSlider">
+            <button class="arrow-btn left" data-slider="clientSlider">&#10094;</button>
+            <ul class="logo-slider" style="width: calc(17 * 150px);">
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client1" alt="Client 1" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client2" alt="Client 2" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client3" alt="Client 3" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client4" alt="Client 4" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client5" alt="Client 5" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client6" alt="Client 6" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client7" alt="Client 7" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client8" alt="Client 8" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client9" alt="Client 9" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client10" alt="Client 10" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client11" alt="Client 11" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client12" alt="Client 12" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client13" alt="Client 13" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client14" alt="Client 14" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client15" alt="Client 15" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client16" alt="Client 16" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client17" alt="Client 17" /></li>
+            </ul>
+            <button class="arrow-btn right" data-slider="clientSlider">&#10095;</button>
         </div>
-        <!-- Projects Executed -->
-        <div class="min-w-[140px] flex flex-col items-center">
-            <h2 class="text-4xl font-bold counter" data-target="350">0</h2>
-            <p class="text-sm text-gray-600 mt-2">Projects Executed</p>
+    </section>
+    <!-- Our Global OEMs and Partners -->
+    <section>
+        <h2 class="text-3xl font-bold text-center mb-8">Our Global OEMs and Partners</h2>
+        <div class="relative logo-slider-container" id="oemSlider">
+            <button class="arrow-btn left" data-slider="oemSlider">&#10094;</button>
+            <ul class="logo-slider" style="width: calc(7 * 150px);">
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM1" alt="OEM 1" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM2" alt="OEM 2" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM3" alt="OEM 3" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM4" alt="OEM 4" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM5" alt="OEM 5" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM6" alt="OEM 6" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM7" alt="OEM 7" /></li>
+            </ul>
+            <button class="arrow-btn right" data-slider="oemSlider">&#10095;</button>
         </div>
-        <!-- Community Projects -->
-        <div class="min-w-[140px] flex flex-col items-center">
-            <h2 class="text-4xl font-bold counter" data-target="75">0</h2>
-            <p class="text-sm text-gray-600 mt-2">Community Projects</p>
-        </div>
-        <!-- Active Workforce -->
-        <div class="min-w-[140px] flex flex-col items-center">
-            <h2 class="text-4xl font-bold counter" data-target="500">0</h2>
-            <p class="text-sm text-gray-600 mt-2">Active Workforce</p>
-        </div>
-    </div>
+    </section>
 </div>
 
 <!-- Services Section -->
@@ -559,6 +694,17 @@
         const scrollPosition = window.scrollY;
         const translateY = Math.sin(scrollPosition / 100) * 20;
         document.querySelector('.next-hero-section').style.backgroundPositionY = `${translateY}px`;
+    });
+
+    // Logo Slider Controls
+    document.querySelectorAll('.arrow-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const sliderId = button.getAttribute('data-slider');
+            const slider = document.getElementById(sliderId);
+            const direction = button.classList.contains('left') ? -1 : 1;
+            const scrollAmount = 150; // Matches logo-item width
+            slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        });
     });
 
     document.addEventListener('DOMContentLoaded', () => {
