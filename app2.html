@@ -3,8 +3,51 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MiPet Services</title>
+    <meta name="description" content="MiPet Services delivers reliable oil, gas, and infrastructure solutions across upstream, midstream, and downstream sectors. Explore our expertise." />
+    <meta name="keywords" content="oil and gas services, infrastructure solutions, drilling operations, engineering services, pipeline services, MiPet Services" />
+    <meta name="author" content="MiPet Services" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="MiPet Services - Oil, Gas, and Infrastructure Solutions" />
+    <meta property="og:description" content="Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations across upstream, midstream, and downstream sectors." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.mipetservices.com/" />
+    <meta property="og:image" content="https://www.mipetservices.com/images/og-image.jpg" />
+    <meta property="og:site_name" content="MiPet Services" />
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MiPet Services - Oil, Gas, and Infrastructure Solutions" />
+    <meta name="twitter:description" content="Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations across upstream, midstream, and downstream sectors." />
+    <meta name="twitter:image" content="https://www.mipetservices.com/images/og-image.jpg" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.mipetservices.com/" />
+    <title>MiPet Services - Oil, Gas, and Infrastructure Solutions</title>
+    <!-- Tailwind CSS (Local) -->
     <link rel="stylesheet" href="tailwind.min.css">
+    <!-- Font Awesome CDN for services section icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MiPet Services",
+        "description": "MiPet Services delivers comprehensive oil, gas, and infrastructure solutions across upstream, midstream, and downstream sectors, including Electrical, Civil, Mechanical, and Supply services.",
+        "url": "https://www.mipetservices.com/",
+        "logo": "https://www.mipetservices.com/images/logo.webp",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-123-4567",
+            "contactType": "Customer Service",
+            "email": "info@mipetservices.com",
+            "areaServed": "Global"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/mipetservices",
+            "https://twitter.com/mipetservices"
+        ]
+    }
+    </script>
     <style>
         body {
             margin: 0;
@@ -33,7 +76,7 @@
             opacity: 1;
             display: block;
         }
-        /* Button styles (used for all buttons) */
+        /* Button styles (used for all buttons, including Services section) */
         .gradient-btn {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -347,7 +390,7 @@
         }
         .logo-slider-container {
             position: relative;
-            overflow: hidden; /* Changed from overflow-x: auto */
+            overflow: hidden;
         }
         .logo-slider {
             display: flex;
@@ -374,7 +417,7 @@
         }
         /* Animation for Clientele (right to left) */
         .client-slider {
-            animation: slideRightToLeft 30s linear infinite;
+            animation: slideRightToLeft 60s linear infinite; /* Slower: 60s */
         }
         .client-slider:hover {
             animation-play-state: paused;
@@ -389,7 +432,7 @@
         }
         /* Animation for OEMs (left to right) */
         .oem-slider {
-            animation: slideLeftToRight 15s linear infinite;
+            animation: slideLeftToRight 30s linear infinite; /* Slower: 30s */
         }
         .oem-slider:hover {
             animation-play-state: paused;
@@ -402,13 +445,36 @@
                 transform: translateX(0);
             }
         }
+        /* Services Section Animations */
+        @keyframes flyIn {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+        .fly-in {
+            animation: flyIn 0.6s ease-out forwards;
+        }
+        .fly-in:nth-child(1) { animation-delay: 0.1s; }
+        .fly-in:nth-child(2) { animation-delay: 0.2s; }
+        .fly-in:nth-child(3) { animation-delay: 0.3s; }
+        .fly-in:nth-child(4) { animation-delay: 0.4s; }
+        .card-emphasis {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 font-sans">
 
 <!-- Header -->
-<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50" style="padding-left: 2rem; padding-right: 2rem;">
-    <div class="w-full px-4 flex justify-between items-center py-4 shadow-[0_2px_4px_#012640,0_4px_8px_#012640]">
+<header class="bg-white fixed top-0 left-0 w-full z-50" style="box-shadow: 0 2px 4px #012640;">
+    <div class="w-full flex justify-between items-center py-4">
         <img src="./images/logo.webp" alt="MiPet Services Logo" class="ml-0 object-contain h-6 max-w-[75px] sm:h-8 sm:max-w-[150px] md:h-10 md:max-w-[180px] lg:h-12 lg:max-w-[200px]" />
         <button id="menuBtn" class="md:hidden text-3xl focus:outline-none cursor-pointer" aria-label="Open menu" aria-expanded="false">☰</button>
         <nav class="hidden md:flex space-x-6 items-center ml-auto mr-0">
@@ -517,7 +583,90 @@
         <p>Mipet Services Limited delivers a comprehensive range of specialized solutions across the upstream, midstream, and downstream sectors of the oil, gas, and infrastructure industries, as well as the public sector. We provide reliable solutions in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations, guided by a strong commitment to excellence, innovation, and sustainability. Our tailored approach empowers clients to achieve operational efficiency, reliability, and long-term growth.</p>
         <a href="#services" class="gradient-btn">Explore More</a>
     </div>
-    <img src="./images/growth_image.jpg" alt="Oil and Gas Infrastructure" />
+    <img src="./images/growth_image.webp" alt="Oil and Gas Infrastructure" />
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-16 px-4 text-center bg-gray-900 mt-20" style="z-index: 10;">
+    <h3 class="text-4xl font-bold text-white mb-12">Our Services</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <!-- Upstream Card -->
+        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
+            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
+                 style="background-image: url('https://images.unsplash.com/photo-1506377872008-6645d9d26e35?q=80&w=2070&auto=format&fit=crop')"
+                 role="img" aria-label="Upstream Operations Image">
+            </div>
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+                <div>
+                    <h4 class="text-2xl font-semibold mb-2 text-white">Upstream</h4>
+                    <p class="text-sm opacity-75 leading-relaxed text-white">
+                        Exploration and production of oil and gas resources with cutting-edge technology.
+                    </p>
+                </div>
+                <div class="flex justify-end items-center space-x-4">
+                    <i class="fas fa-search-plus text-xl text-white"></i>
+                    <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Midstream Card -->
+        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
+            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
+                 style="background-image: url('https://images.unsplash.com/photo-1506377247377-2a5b89b84e18?q=80&w=2070&auto=format&fit=crop')"
+                 role="img" aria-label="Midstream Operations Image">
+            </div>
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+                <div>
+                    <h4 class="text-2xl font-semibold mb-2 text-white">Midstream</h4>
+                    <p class="text-sm opacity-75 leading-relaxed text-white">
+                        Efficient transportation and storage solutions for oil and gas products.
+                    </p>
+                </div>
+                <div class="flex justify-end items-center space-x-4">
+                    <i class="fas fa-search-plus text-xl text-white"></i>
+                    <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Downstream Card -->
+        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
+            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
+                 style="background-image: url('https://images.unsplash.com/photo-1506377712301-9b7ebedf6921?q=80&w=2070&auto=format&fit=crop')"
+                 role="img" aria-label="Downstream Operations Image">
+            </div>
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+                <div>
+                    <h4 class="text-2xl font-semibold mb-2 text-white">Downstream</h4>
+                    <p class="text-sm opacity-75 leading-relaxed text-white">
+                        Refining and distribution of petroleum products to meet market demands.
+                    </p>
+                </div>
+                <div class="flex justify-end items-center space-x-4">
+                    <i class="fas fa-search-plus text-xl text-white"></i>
+                    <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Infrastructural Services Card -->
+        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
+            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
+                 style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2070&auto=format&fit=crop')"
+                 role="img" aria-label="Infrastructural Services Image">
+            </div>
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+                <div>
+                    <h4 class="text-2xl font-semibold mb-2 text-white">Infrastructural Services</h4>
+                    <p class="text-sm opacity-75 leading-relaxed text-white">
+                        Building and maintaining critical infrastructure for energy operations.
+                    </p>
+                </div>
+                <div class="flex justify-end items-center space-x-4">
+                    <i class="fas fa-search-plus text-xl text-white"></i>
+                    <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Logo Slider Sections -->
@@ -526,43 +675,45 @@
     <section class="mb-12">
         <h2 class="text-3xl font-bold text-center mb-8">Our Trusted Clientele</h2>
         <div class="logo-slider-container no-scrollbar">
-            <ul class="logo-slider client-slider" style="width: calc(17 * 150px * 2);">
-                <!-- Original 17 logos -->
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client1" alt="Client 1" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client2" alt="Client 2" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client3" alt="Client 3" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client4" alt="Client 4" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client5" alt="Client 5" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client6" alt="Client 6" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client7" alt="Client 7" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client8" alt="Client 8" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client9" alt="Client 9" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client10" alt="Client 10" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client11" alt="Client 11" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client12" alt="Client 12" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client13" alt="Client 13" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client14" alt="Client 14" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client15" alt="Client 15" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client16" alt="Client 16" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client17" alt="Client 17" /></li>
-                <!-- Duplicated 17 logos for seamless loop -->
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client1" alt="Client 1" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client2" alt="Client 2" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client3" alt="Client 3" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client4" alt="Client 4" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client5" alt="Client 5" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client6" alt="Client 6" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client7" alt="Client 7" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client8" alt="Client 8" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client9" alt="Client 9" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client10" alt="Client 10" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client11" alt="Client 11" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client12" alt="Client 12" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client13" alt="Client 13" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client14" alt="Client 14" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client15" alt="Client 15" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client16" alt="Client 16" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client17" alt="Client 17" /></li>
+            <ul class="logo-slider client-slider" style="width: calc(18 * 150px * 2);">
+                <!-- Original 18 logos -->
+                <li class="logo-item"><img src="./images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_4.jpg" alt="Client 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_5.jpg" alt="Client 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_6.jpg" alt="Client 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_7.jpg" alt="Client 7 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_8.png" alt="Client 8 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_9.png" alt="Client 9 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_10.png" alt="Client 10 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_11.png" alt="Client 11 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_12.png" alt="Client 12 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_13.png" alt="Client 13 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_14.png" alt="Client 14 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_15.png" alt="Client 15 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_16.png" alt="Client 16 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_17.png" alt="Client 17 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_18.png" alt="Client 18 Logo" /></li>
+                <!-- Duplicated 18 logos for seamless loop -->
+                <li class="logo-item"><img src="./images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_4.jpg" alt="Client 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_5.jpg" alt="Client 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_6.jpg" alt="Client 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_7.jpg" alt="Client 7 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_8.png" alt="Client 8 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_9.png" alt="Client 9 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_10.png" alt="Client 10 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_11.png" alt="Client 11 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_12.png" alt="Client 12 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_13.png" alt="Client 13 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_14.png" alt="Client 14 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_15.png" alt="Client 15 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_16.png" alt="Client 16 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_17.png" alt="Client 17 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_18.png" alt="Client 18 Logo" /></li>
             </ul>
         </div>
     </section>
@@ -572,61 +723,41 @@
         <div class="logo-slider-container no-scrollbar">
             <ul class="logo-slider oem-slider" style="width: calc(7 * 150px * 2);">
                 <!-- Original 7 logos -->
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM1" alt="OEM 1" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM2" alt="OEM 2" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM3" alt="OEM 3" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM4" alt="OEM 4" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM5" alt="OEM 5" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM6" alt="OEM 6" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM7" alt="OEM 7" /></li>
+                <li class="logo-item"><img src="./images/OEM1.jpg" alt="OEM 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM2.jpg" alt="OEM 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM3.jpg" alt="OEM 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM4.jpg" alt="OEM 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM5.jpg" alt="OEM 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM6.jpg" alt="OEM 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM7.jpg" alt="OEM 7 Logo" /></li>
                 <!-- Duplicated 7 logos for seamless loop -->
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM1" alt="OEM 1" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM2" alt="OEM 2" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM3" alt="OEM 3" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM4" alt="OEM 4" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM5" alt="OEM 5" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM6" alt="OEM 6" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM7" alt="OEM 7" /></li>
+                <li class="logo-item"><img src="./images/OEM1.jpg" alt="OEM 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM2.jpg" alt="OEM 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM3.jpg" alt="OEM 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM4.jpg" alt="OEM 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM5.jpg" alt="OEM 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM6.jpg" alt="OEM 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM7.jpg" alt="OEM 7 Logo" /></li>
             </ul>
         </div>
     </section>
 </div>
 
-<!-- Services Section -->
-<section id="services" class="py-16 container mx-auto px-6">
-    <h3 class="text-3xl font-bold text-center mb-12">Our Services</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h4 class="font-semibold text-xl mb-2">Service One</h4>
-            <p>High-quality service tailored to your needs.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h4 class="font-semibold text-xl mb-2">Service Two</h4>
-            <p>We ensure reliable and efficient solutions.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h4 class="font-semibold text-xl mb-2">Service Three</h4>
-            <p>Our experts deliver excellent customer experience.</p>
-        </div>
-    </div>
-</section>
-
 <!-- About Section -->
 <section id="about" class="py-16 bg-gray-100 text-center px-6">
     <h3 class="text-3xl font-bold mb-6">About Us</h3>
     <p class="max-w-2xl mx-auto">
-        At Mipet Services, we pride ourselves on professionalism and dedication to our clients.
-        Our mission is to make your experience stress-free and reliable.
+        At MiPet Services, we pride ourselves on professionalism and dedication to our clients. Our mission is to deliver stress-free, reliable solutions in oil, gas, and infrastructure sectors.
     </p>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="py-16 container mx-auto px-6">
     <h3 class="text-3xl font-bold text-center mb-12">Contact Us</h3>
-    <form class="max-width-lg mx-auto space-y-4">
-        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg" />
-        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" />
-        <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg"></textarea>
+    <form class="max-w-lg mx-auto space-y-4">
+        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg" aria-label="Your Name" />
+        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" aria-label="Your Email" />
+        <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg" aria-label="Your Message"></textarea>
         <button class="w-full gradient-btn">Send</button>
     </form>
 </section>
@@ -695,7 +826,7 @@
         link.addEventListener('click', closeMenu);
     });
 
-    // Background crossfade
+    // Background crossfade for hero section
     const heroBgInner1 = document.getElementById('heroBgInner1');
     const heroBgInner2 = document.getElementById('heroBgInner2');
     let isFirstActive = true;
@@ -717,6 +848,17 @@
         const scrollPosition = window.scrollY;
         const translateY = Math.sin(scrollPosition / 100) * 20;
         document.querySelector('.next-hero-section').style.backgroundPositionY = `${translateY}px`;
+    });
+
+    // Services section card emphasis effect
+    document.querySelectorAll('.fly-in').forEach(card => {
+        card.addEventListener('click', () => {
+            document.querySelectorAll('.fly-in').forEach(c => c.classList.remove('card-emphasis'));
+            card.classList.add('card-emphasis');
+            setTimeout(() => {
+                card.classList.remove('card-emphasis');
+            }, 1000);
+        });
     });
 
     document.addEventListener('DOMContentLoaded', () => {
