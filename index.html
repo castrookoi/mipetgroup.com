@@ -3,8 +3,48 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MiPet Services</title>
+    <meta name="description" content="MiPet Services delivers reliable oil, gas, and infrastructure solutions across upstream, midstream, and downstream sectors. Explore our expertise." />
+    <meta name="keywords" content="oil and gas services, infrastructure solutions, drilling operations, engineering services, pipeline services, MiPet Services" />
+    <meta name="author" content="MiPet Services" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="MiPet Services - Oil, Gas, and Infrastructure Solutions" />
+    <meta property="og:description" content="Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations across upstream, midstream, and downstream sectors." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.mipetservices.com/" />
+    <meta property="og:image" content="https://www.mipetservices.com/images/og-image.jpg" />
+    <meta property="og:site_name" content="MiPet Services" />
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MiPet Services - Oil, Gas, and Infrastructure Solutions" />
+    <meta name="twitter:description" content="Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations across upstream, midstream, and downstream sectors." />
+    <meta name="twitter:image" content="https://www.mipetservices.com/images/og-image.jpg" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.mipetservices.com/" />
+    <title>MiPet Services - Oil, Gas, and Infrastructure Solutions</title>
     <link rel="stylesheet" href="tailwind.min.css">
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MiPet Services",
+        "description": "MiPet Services delivers comprehensive oil, gas, and infrastructure solutions across upstream, midstream, and downstream sectors, including Electrical, Civil, Mechanical, and Supply services.",
+        "url": "https://www.mipetservices.com/",
+        "logo": "https://www.mipetservices.com/images/logo.webp",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-123-4567",
+            "contactType": "Customer Service",
+            "email": "info@mipetservices.com",
+            "areaServed": "Global"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/company/mipetservices",
+            "https://twitter.com/mipetservices"
+        ]
+    }
+    </script>
     <style>
         body {
             margin: 0;
@@ -273,7 +313,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            align-items: center;
+            align-items: start; /* Align tops of text and image */
         }
         .growth-section .text-container {
             text-align: left;
@@ -281,7 +321,7 @@
             border-radius: 0.5rem;
             padding: 1.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            max-width: 600px; /* Expanded width to match image */
             height: auto;
         }
         .growth-section img {
@@ -302,7 +342,7 @@
             color: #1f2937;
         }
         .growth-section p {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 0 1.5rem;
             color: #4b5563; /* text-gray-600 */
             font-size: 1rem; /* text-base */
@@ -347,18 +387,18 @@
         }
         .logo-slider-container {
             position: relative;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            mask-image: linear-gradient(to right, transparent 0, black 64px, black calc(100% - 64px), transparent 100%);
+            overflow: hidden;
         }
         .logo-slider {
             display: flex;
+            white-space: nowrap;
         }
         .logo-item {
             flex: 0 0 150px;
-            scroll-snap-align: center;
             padding: 0 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         @media (min-width: 768px) {
             .logo-item {
@@ -372,35 +412,34 @@
             object-fit: contain;
             margin: 0 auto;
         }
-        .arrow-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(to bottom, #c1160e, #012640);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            transition: opacity 0.2s ease;
+        /* Animation for Clientele (right to left) */
+        .client-slider {
+            animation: slideRightToLeft 60s linear infinite; /* Slower: 60s */
         }
-        .arrow-btn:hover {
-            opacity: 0.9;
+        .client-slider:hover {
+            animation-play-state: paused;
         }
-        .arrow-btn.left {
-            left: 10px;
+        @keyframes slideRightToLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Move half the width for seamless loop */
+            }
         }
-        .arrow-btn.right {
-            right: 10px;
+        /* Animation for OEMs (left to right) */
+        .oem-slider {
+            animation: slideLeftToRight 30s linear infinite; /* Slower: 30s */
         }
-        @media (max-width: 767px) {
-            .arrow-btn {
-                width: 32px;
-                height: 32px;
+        .oem-slider:hover {
+            animation-play-state: paused;
+        }
+        @keyframes slideLeftToRight {
+            0% {
+                transform: translateX(-50%); /* Start at negative half for seamless loop */
+            }
+            100% {
+                transform: translateX(0);
             }
         }
     </style>
@@ -518,7 +557,7 @@
         <p>Mipet Services Limited delivers a comprehensive range of specialized solutions across the upstream, midstream, and downstream sectors of the oil, gas, and infrastructure industries, as well as the public sector. We provide reliable solutions in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations, guided by a strong commitment to excellence, innovation, and sustainability. Our tailored approach empowers clients to achieve operational efficiency, reliability, and long-term growth.</p>
         <a href="#services" class="gradient-btn">Explore More</a>
     </div>
-    <img src="./images/growth_image.jpg" alt="Oil and Gas Infrastructure" />
+    <img src="./images/growth_image.webp" alt="Oil and Gas Infrastructure" />
 </section>
 
 <!-- Logo Slider Sections -->
@@ -526,45 +565,71 @@
     <!-- Our Trusted Clientele -->
     <section class="mb-12">
         <h2 class="text-3xl font-bold text-center mb-8">Our Trusted Clientele</h2>
-        <div class="relative logo-slider-container" id="clientSlider">
-            <button class="arrow-btn left" data-slider="clientSlider">&#10094;</button>
-            <ul class="logo-slider" style="width: calc(17 * 150px);">
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client1" alt="Client 1" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client2" alt="Client 2" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client3" alt="Client 3" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client4" alt="Client 4" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client5" alt="Client 5" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client6" alt="Client 6" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client7" alt="Client 7" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client8" alt="Client 8" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client9" alt="Client 9" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client10" alt="Client 10" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client11" alt="Client 11" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client12" alt="Client 12" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client13" alt="Client 13" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client14" alt="Client 14" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client15" alt="Client 15" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client16" alt="Client 16" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client17" alt="Client 17" /></li>
+        <div class="logo-slider-container no-scrollbar">
+            <ul class="logo-slider client-slider" style="width: calc(18 * 150px * 2);">
+                <!-- Original 18 logos -->
+                <li class="logo-item"><img src="./images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_4.jpg" alt="Client 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_5.jpg" alt="Client 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_6.jpg" alt="Client 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_7.jpg" alt="Client 7 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_8.png" alt="Client 8 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_9.png" alt="Client 9 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_10.png" alt="Client 10 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_11.png" alt="Client 11 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_12.png" alt="Client 12 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_13.png" alt="Client 13 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_14.png" alt="Client 14 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_15.png" alt="Client 15 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_16.png" alt="Client 16 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_17.png" alt="Client 17 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_18.png" alt="Client 18 Logo" /></li>
+                <!-- Duplicated 18 logos for seamless loop -->
+                <li class="logo-item"><img src="./images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_4.jpg" alt="Client 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_5.jpg" alt="Client 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_6.jpg" alt="Client 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_7.jpg" alt="Client 7 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_8.png" alt="Client 8 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_9.png" alt="Client 9 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_10.png" alt="Client 10 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_11.png" alt="Client 11 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_12.png" alt="Client 12 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_13.png" alt="Client 13 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_14.png" alt="Client 14 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_15.png" alt="Client 15 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_16.png" alt="Client 16 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_17.png" alt="Client 17 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_18.png" alt="Client 18 Logo" /></li>
             </ul>
-            <button class="arrow-btn right" data-slider="clientSlider">&#10095;</button>
         </div>
     </section>
     <!-- Our Global OEMs and Partners -->
     <section>
         <h2 class="text-3xl font-bold text-center mb-8">Our Global OEMs and Partners</h2>
-        <div class="relative logo-slider-container" id="oemSlider">
-            <button class="arrow-btn left" data-slider="oemSlider">&#10094;</button>
-            <ul class="logo-slider" style="width: calc(7 * 150px);">
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM1" alt="OEM 1" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM2" alt="OEM 2" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM3" alt="OEM 3" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM4" alt="OEM 4" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM5" alt="OEM 5" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM6" alt="OEM 6" /></li>
-                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM7" alt="OEM 7" /></li>
+        <div class="logo-slider-container no-scrollbar">
+            <ul class="logo-slider oem-slider" style="width: calc(7 * 150px * 2);">
+                <!-- Original 7 logos -->
+                <li class="logo-item"><img src="./images/OEM1.jpg" alt="OEM 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM2.jpg" alt="OEM 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM3.jpg" alt="OEM 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM4.jpg" alt="OEM 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM5.jpg" alt="OEM 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM6.jpg" alt="OEM 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM7.jpg" alt="OEM 7 Logo" /></li>
+                <!-- Duplicated 7 logos for seamless loop -->
+                <li class="logo-item"><img src="./images/OEM1.jpg" alt="OEM 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM2.jpg" alt="OEM 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM3.jpg" alt="OEM 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM4.jpg" alt="OEM 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM5.jpg" alt="OEM 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM6.jpg" alt="OEM 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM7.jpg" alt="OEM 7 Logo" /></li>
             </ul>
-            <button class="arrow-btn right" data-slider="oemSlider">&#10095;</button>
         </div>
     </section>
 </div>
@@ -574,16 +639,16 @@
     <h3 class="text-3xl font-bold text-center mb-12">Our Services</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h4 class="font-semibold text-xl mb-2">Service One</h4>
-            <p>High-quality service tailored to your needs.</p>
+            <h4 class="font-semibold text-xl mb-2">Drilling Operations</h4>
+            <p>High-quality drilling services tailored to upstream oil and gas needs.</p>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h4 class="font-semibold text-xl mb-2">Service Two</h4>
-            <p>We ensure reliable and efficient solutions.</p>
+            <h4 class="font-semibold text-xl mb-2">Engineering Services</h4>
+            <p>Reliable engineering and technical solutions for complex projects.</p>
         </div>
         <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
-            <h4 class="font-semibold text-xl mb-2">Service Three</h4>
-            <p>Our experts deliver excellent customer experience.</p>
+            <h4 class="font-semibold text-xl mb-2">Pipeline Services</h4>
+            <p>Efficient pipeline solutions for midstream operations.</p>
         </div>
     </div>
 </section>
@@ -592,8 +657,7 @@
 <section id="about" class="py-16 bg-gray-100 text-center px-6">
     <h3 class="text-3xl font-bold mb-6">About Us</h3>
     <p class="max-w-2xl mx-auto">
-        At Mipet Services, we pride ourselves on professionalism and dedication to our clients.
-        Our mission is to make your experience stress-free and reliable.
+        At MiPet Services, we pride ourselves on professionalism and dedication to our clients. Our mission is to deliver stress-free, reliable solutions in oil, gas, and infrastructure sectors.
     </p>
 </section>
 
@@ -601,9 +665,9 @@
 <section id="contact" class="py-16 container mx-auto px-6">
     <h3 class="text-3xl font-bold text-center mb-12">Contact Us</h3>
     <form class="max-w-lg mx-auto space-y-4">
-        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg" />
-        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" />
-        <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg"></textarea>
+        <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg" aria-label="Your Name" />
+        <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" aria-label="Your Email" />
+        <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg" aria-label="Your Message"></textarea>
         <button class="w-full gradient-btn">Send</button>
     </form>
 </section>
@@ -694,17 +758,6 @@
         const scrollPosition = window.scrollY;
         const translateY = Math.sin(scrollPosition / 100) * 20;
         document.querySelector('.next-hero-section').style.backgroundPositionY = `${translateY}px`;
-    });
-
-    // Logo Slider Controls
-    document.querySelectorAll('.arrow-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const sliderId = button.getAttribute('data-slider');
-            const slider = document.getElementById(sliderId);
-            const direction = button.classList.contains('left') ? -1 : 1;
-            const scrollAmount = 150; // Matches logo-item width
-            slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-        });
     });
 
     document.addEventListener('DOMContentLoaded', () => {

@@ -273,7 +273,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
-            align-items: center;
+            align-items: start; /* Align tops of text and image */
         }
         .growth-section .text-container {
             text-align: left;
@@ -281,7 +281,7 @@
             border-radius: 0.5rem;
             padding: 1.5rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
+            max-width: 600px; /* Expanded width to match image */
             height: auto;
         }
         .growth-section img {
@@ -302,7 +302,7 @@
             color: #1f2937;
         }
         .growth-section p {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 0 1.5rem;
             color: #4b5563; /* text-gray-600 */
             font-size: 1rem; /* text-base */
@@ -347,18 +347,18 @@
         }
         .logo-slider-container {
             position: relative;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            mask-image: linear-gradient(to right, transparent 0, black 64px, black calc(100% - 64px), transparent 100%);
+            overflow: hidden; /* Changed from overflow-x: auto */
         }
         .logo-slider {
             display: flex;
+            white-space: nowrap;
         }
         .logo-item {
             flex: 0 0 150px;
-            scroll-snap-align: center;
             padding: 0 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         @media (min-width: 768px) {
             .logo-item {
@@ -372,35 +372,34 @@
             object-fit: contain;
             margin: 0 auto;
         }
-        .arrow-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(to bottom, #c1160e, #012640);
-            color: white;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            transition: opacity 0.2s ease;
+        /* Animation for Clientele (right to left) */
+        .client-slider {
+            animation: slideRightToLeft 30s linear infinite;
         }
-        .arrow-btn:hover {
-            opacity: 0.9;
+        .client-slider:hover {
+            animation-play-state: paused;
         }
-        .arrow-btn.left {
-            left: 10px;
+        @keyframes slideRightToLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Move half the width for seamless loop */
+            }
         }
-        .arrow-btn.right {
-            right: 10px;
+        /* Animation for OEMs (left to right) */
+        .oem-slider {
+            animation: slideLeftToRight 15s linear infinite;
         }
-        @media (max-width: 767px) {
-            .arrow-btn {
-                width: 32px;
-                height: 32px;
+        .oem-slider:hover {
+            animation-play-state: paused;
+        }
+        @keyframes slideLeftToRight {
+            0% {
+                transform: translateX(-50%); /* Start at negative half for seamless loop */
+            }
+            100% {
+                transform: translateX(0);
             }
         }
     </style>
@@ -526,9 +525,27 @@
     <!-- Our Trusted Clientele -->
     <section class="mb-12">
         <h2 class="text-3xl font-bold text-center mb-8">Our Trusted Clientele</h2>
-        <div class="relative logo-slider-container" id="clientSlider">
-            <button class="arrow-btn left" data-slider="clientSlider">&#10094;</button>
-            <ul class="logo-slider" style="width: calc(17 * 150px);">
+        <div class="logo-slider-container no-scrollbar">
+            <ul class="logo-slider client-slider" style="width: calc(17 * 150px * 2);">
+                <!-- Original 17 logos -->
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client1" alt="Client 1" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client2" alt="Client 2" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client3" alt="Client 3" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client4" alt="Client 4" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client5" alt="Client 5" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client6" alt="Client 6" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client7" alt="Client 7" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client8" alt="Client 8" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client9" alt="Client 9" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client10" alt="Client 10" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client11" alt="Client 11" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client12" alt="Client 12" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client13" alt="Client 13" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client14" alt="Client 14" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client15" alt="Client 15" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client16" alt="Client 16" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client17" alt="Client 17" /></li>
+                <!-- Duplicated 17 logos for seamless loop -->
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client1" alt="Client 1" /></li>
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client2" alt="Client 2" /></li>
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client3" alt="Client 3" /></li>
@@ -547,15 +564,22 @@
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client16" alt="Client 16" /></li>
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=Client17" alt="Client 17" /></li>
             </ul>
-            <button class="arrow-btn right" data-slider="clientSlider">&#10095;</button>
         </div>
     </section>
     <!-- Our Global OEMs and Partners -->
     <section>
         <h2 class="text-3xl font-bold text-center mb-8">Our Global OEMs and Partners</h2>
-        <div class="relative logo-slider-container" id="oemSlider">
-            <button class="arrow-btn left" data-slider="oemSlider">&#10094;</button>
-            <ul class="logo-slider" style="width: calc(7 * 150px);">
+        <div class="logo-slider-container no-scrollbar">
+            <ul class="logo-slider oem-slider" style="width: calc(7 * 150px * 2);">
+                <!-- Original 7 logos -->
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM1" alt="OEM 1" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM2" alt="OEM 2" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM3" alt="OEM 3" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM4" alt="OEM 4" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM5" alt="OEM 5" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM6" alt="OEM 6" /></li>
+                <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM7" alt="OEM 7" /></li>
+                <!-- Duplicated 7 logos for seamless loop -->
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM1" alt="OEM 1" /></li>
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM2" alt="OEM 2" /></li>
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM3" alt="OEM 3" /></li>
@@ -564,7 +588,6 @@
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM6" alt="OEM 6" /></li>
                 <li class="logo-item"><img src="https://via.placeholder.com/120x40?text=OEM7" alt="OEM 7" /></li>
             </ul>
-            <button class="arrow-btn right" data-slider="oemSlider">&#10095;</button>
         </div>
     </section>
 </div>
@@ -600,7 +623,7 @@
 <!-- Contact Section -->
 <section id="contact" class="py-16 container mx-auto px-6">
     <h3 class="text-3xl font-bold text-center mb-12">Contact Us</h3>
-    <form class="max-w-lg mx-auto space-y-4">
+    <form class="max-width-lg mx-auto space-y-4">
         <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg" />
         <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" />
         <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg"></textarea>
@@ -694,17 +717,6 @@
         const scrollPosition = window.scrollY;
         const translateY = Math.sin(scrollPosition / 100) * 20;
         document.querySelector('.next-hero-section').style.backgroundPositionY = `${translateY}px`;
-    });
-
-    // Logo Slider Controls
-    document.querySelectorAll('.arrow-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const sliderId = button.getAttribute('data-slider');
-            const slider = document.getElementById(sliderId);
-            const direction = button.classList.contains('left') ? -1 : 1;
-            const scrollAmount = 150; // Matches logo-item width
-            slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-        });
     });
 
     document.addEventListener('DOMContentLoaded', () => {
