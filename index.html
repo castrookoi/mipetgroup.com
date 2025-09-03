@@ -22,9 +22,9 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.mipetservices.com/" />
     <title>MiPet Services - Oil, Gas, and Infrastructure Solutions</title>
-    <!-- Tailwind CSS (CDN for reliability) -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Font Awesome CDN for services section icons -->
+    <!-- Tailwind CSS (Local) -->
+    <link rel="stylesheet" href="tailwind.min.css">
+    <!-- Font Awesome CDN for services section icons and header -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -52,36 +52,68 @@
         body {
             margin: 0;
         }
-        /* Overlay */
-        #overlay {
-            background-color: rgba(12, 23, 77, 0.5);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 40;
-        }
-        #overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        /* Mobile menu */
-        #mobileMenu {
-            display: none;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            opacity: 0;
+        /* Header styles from previous code */
+        header {
+            position: sticky;
+            top: 0;
             z-index: 50;
-            background: white;
-            width: 100%;
-            max-height: 100vh;
-            overflow-y: auto;
+            transition: all 0.3s ease;
         }
-        #mobileMenu.active {
+        .scrolled .first-nav {
+            display: none;
+        }
+        .scrolled {
+            background-color: white;
+        }
+        .dropdown:hover .dropdown-menu {
             display: block;
-            transform: translateY(0);
+        }
+        #mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            position: relative;
+            z-index: 50;
+        }
+        #mobile-menu.open {
+            max-height: 1000px; /* Adjust as needed for content height */
+        }
+        .mobile-submenu {
+            display: none;
+        }
+        .mobile-dropdown.active .mobile-submenu {
+            display: block;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 40;
+            transition: opacity 0.3s ease;
+        }
+        #overlay.open {
+            display: block;
             opacity: 1;
         }
-        /* Button styles */
+        #search-bar {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 100%;
+            background-color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 60;
+        }
+        #search-bar.open {
+            display: block;
+        }
+        /* Original styles from provided HTML */
         .gradient-btn {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -99,17 +131,21 @@
         }
         @media (max-width: 767px) {
             .gradient-btn {
+                width: auto;
                 max-width: 200px;
+                display: inline-block;
+                text-align: center;
             }
         }
-        /* Dropdown styles */
         .dropdown-menu {
-            position: static;
+            position: absolute;
+            top: 100%;
+            left: 10px;
             background: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 0.5rem;
             padding: 0.5rem 0;
-            width: 100%;
+            min-width: 300px;
             z-index: 50;
         }
         .dropdown-menu.hidden {
@@ -125,7 +161,6 @@
             background-color: #f3f4f6;
             color: #2563eb;
         }
-        /* Toggle indicator */
         .toggle-indicator {
             display: inline-block;
             margin-left: 0.25rem;
@@ -137,138 +172,22 @@
         .toggle-indicator.active {
             transform: rotate(90deg);
         }
-        /* Nav item styles */
         .nav-item {
-            padding: 0.75rem 1rem;
+            background: transparent;
             transition: background-color 0.2s ease;
         }
         .nav-item:hover {
             background-color: rgba(1, 38, 64, 0.1);
         }
-        /* Header adjustments */
-        header {
-            background: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 50;
-        }
-        header > div {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 16px;
-            max-width: 1280px;
-            margin: 0 auto;
-            height: 80px;
-        }
-        /* Menu button */
-        #menuBtn {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.875rem;
-            color: #1f2937;
-            cursor: pointer;
-        }
-        /* Logo centering and size */
-        header img {
-            height: 1.75rem;
-            max-width: 160px;
-            flex-grow: 1;
-            text-align: center;
-        }
-        @media (min-width: 640px) {
-            header img {
-                height: 2rem;
-            }
-        }
-        @media (min-width: 768px) {
-            header img {
-                height: 2.5rem;
-            }
-        }
-        /* Search button container */
-        .search-btn-container {
-            background: #012640;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            width: 48px;
-            height: 48px;
-        }
-        /* Search button */
-        #searchBtn {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            border-radius: 0;
-            cursor: pointer;
-        }
-        #searchBtn i {
-            color: white;
-            font-size: 1.25rem;
-        }
-        /* Search bar */
-        #searchBar {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            transform: translateY(-10px);
-            display: none;
-        }
-        #searchBar.active {
-            opacity: 1;
-            transform: translateY(0);
-            display: block;
-        }
-        /* Hero section */
         .hero-bg {
             position: relative;
             overflow: hidden;
-            min-height: calc(100vh - 80px); /* Reduced extra space */
+            min-height: 100vh;
             display: flex;
-            padding-top: 80px; /* Reduced from 120px */
-            padding-bottom: 0;
-            background: white;
-        }
-        @media (min-width: 768px) {
-            .hero-bg {
-                display: flex;
-                flex-direction: row;
-                align-items: stretch;
-            }
-            .hero-main {
-                flex: 1;
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: transparent;
-            }
-            .hero-side {
-                width: 48px;
-                background: white;
-                z-index: 3;
-            }
-        }
-        @media (max-width: 767px) {
-            .hero-bg {
-                display: block;
-                padding-top: 80px; /* Reduced from 120px */
-            }
-            .hero-main {
-                width: 100%;
-            }
-            .hero-side {
-                display: none;
-            }
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+            padding-bottom: 60px;
         }
         .hero-bg::before {
             content: '';
@@ -280,50 +199,10 @@
             background: linear-gradient(to bottom right, rgba(193, 22, 14, 0.8), rgba(1, 38, 64, 0.8));
             z-index: 2;
         }
-        .hero-main > * {
+        .hero-bg > * {
             position: relative;
             z-index: 3;
         }
-        /* Hero content */
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100%;
-            padding: 2rem 1rem;
-        }
-        @media (min-width: 768px) {
-            .hero-content {
-                padding: 2rem 3rem;
-            }
-        }
-        .hero-content h1 {
-            font-size: 2.5rem; /* Increased from 2xl */
-            line-height: 1.2;
-        }
-        .hero-content p {
-            font-size: 1.25rem; /* Increased from sm/base */
-            line-height: 1.5;
-            margin-top: 1.5rem;
-        }
-        .hero-content .gradient-btn {
-            padding: 0.75rem 1.5rem; /* Slightly larger button */
-            font-size: 1.125rem;
-            margin-top: 2rem;
-        }
-        @media (max-width: 767px) {
-            .hero-content h1 {
-                font-size: 1.875rem; /* Adjusted for mobile */
-            }
-            .hero-content p {
-                font-size: 1rem;
-            }
-            .hero-content .gradient-btn {
-                font-size: 1rem;
-                padding: 0.5rem 1rem;
-            }
-        }
-        /* Background image containers (crossfade) */
         .hero-bg-inner {
             position: absolute;
             top: 0;
@@ -341,7 +220,6 @@
             opacity: 1;
             visibility: visible;
         }
-        /* Hero section animation */
         .hero-text {
             opacity: 0;
             animation: fadeIn 1s ease-out forwards;
@@ -367,11 +245,6 @@
                 transform: translateY(0);
             }
         }
-        /* Hide desktop nav */
-        nav.desktop-nav {
-            display: none !important;
-        }
-        /* Next Hero Image Section */
         .next-hero-section {
             position: relative;
             width: 100%;
@@ -379,15 +252,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-image: url('./Images/next_hero.png');
+            background-image: url('./images/next_hero.png');
             background-size: 100% 100%;
             background-position: center;
             background-position-y: 0;
             transition: background-position-y 0.3s ease-out;
             z-index: 5;
             padding: 1rem;
-            margin-top: 0;
-            padding-bottom: 0;
+            margin-top: 3rem;
+            padding-bottom: 2rem;
         }
         @media (max-width: 767px) {
             .next-hero-section {
@@ -463,7 +336,6 @@
         .stats-item:not(.global-clients) {
             border-color: #000000;
         }
-        /* Growth Section */
         .growth-section {
             position: relative;
             width: 100%;
@@ -537,7 +409,6 @@
                 line-height: 1.5;
             }
         }
-        /* Logo Slider Sections */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -579,8 +450,12 @@
             animation-play-state: paused;
         }
         @keyframes slideRightToLeft {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
         .oem-slider {
             animation: slideLeftToRight 30s linear infinite;
@@ -589,10 +464,13 @@
             animation-play-state: paused;
         }
         @keyframes slideLeftToRight {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
         }
-        /* Services Section Animations */
         @keyframes flyIn {
             0% {
                 transform: translateY(100vh) scale(0.5);
@@ -619,84 +497,171 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-<!-- Header -->
-<header class="fixed top-0 left-0 w-full z-50 shadow">
-    <div class="w-full py-4 px-4 max-w-7xl mx-auto flex items-center justify-between">
-        <!-- Menu Burger (Left) -->
-        <button id="menuBtn" class="text-3xl focus:outline-none cursor-pointer text-gray-800 w-10 h-10 flex items-center justify-center" aria-label="Toggle menu" aria-expanded="false">
-            <span id="hamburgerIcon">☰</span>
-            <span id="closeIcon" class="hidden">×</span>
-        </button>
-        <!-- Centered Logo -->
-        <img src="./Images/logo.webp" alt="MiPet Services Logo" class="h-7 sm:h-8 md:h-10 max-w-[160px] object-contain" />
-        <!-- Search Icon (Right, in its own div) -->
-        <div class="search-btn-container">
-            <button id="searchBtn" class="text-2xl focus:outline-none cursor-pointer" aria-label="Toggle search" aria-expanded="false">
-                <i class="fas fa-search"></i>
+<!-- Header (from previous code with hamburger/X toggle) -->
+<header class="w-full font-sans bg-white">
+    <!-- Div 1: First Navigation (hidden on mobile) -->
+    <div class="first-nav bg-gray-100 border-b border-gray-200 w-full hidden md:block">
+        <nav class="py-2 px-4">
+            <ul class="flex justify-end space-x-6">
+                <li>
+                    <a href="#" class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
+                        <i class="fas fa-leaf mr-1"></i>Sustainability
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
+                        <i class="fas fa-briefcase mr-1"></i>Career
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
+                        <i class="fas fa-newspaper mr-1"></i>Media Hub
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Div 2: Logo, Navigation, and Search Icon -->
+    <div class="second-nav flex items-center justify-between w-full px-4 py-2">
+        <!-- Hamburger Menu Icon (visible on mobile) -->
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-700 text-2xl">
+                <i class="fas fa-bars"></i>
             </button>
         </div>
+
+        <!-- Logo (centered on mobile) -->
+        <div class="flex-grow md:flex-grow-0 md:pt-1 text-center md:text-left">
+            <a href="#">
+                <img src="./images/logo.webp" alt="MiPet Services Logo" class="ml-0 object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline" />
+            </a>
+        </div>
+
+        <!-- Flex grow to push nav and search to the right on desktop -->
+        <div class="hidden md:block flex-grow"></div>
+
+        <!-- Desktop Navigation (hidden on mobile, closer to search) -->
+        <nav class="py-2 hidden md:flex items-center">
+            <ul class="flex space-x-4">
+                <li><a href="#home" class="text-gray-700 text-base hover:text-teal-800">Home</a></li>
+                <!-- About Us Dropdown -->
+                <li class="relative dropdown">
+                    <a href="#about" class="text-gray-700 text-base hover:text-teal-800 flex items-center">
+                        About Us <i class="fas fa-chevron-down ml-1"></i>
+                    </a>
+                    <ul class="dropdown-menu hidden absolute bg-white shadow-md mt-2 py-2 w-48">
+                        <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Who We Are</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">What We Do</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Why Choose Us</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Our Values</a></li>
+                    </ul>
+                </li>
+                <!-- Our Services Dropdown -->
+                <li class="relative dropdown">
+                    <a href="#services" class="text-gray-700 text-base hover:text-teal-800 flex items-center">
+                        Our Services <i class="fas fa-chevron-down ml-1"></i>
+                    </a>
+                    <ul class="dropdown-menu hidden absolute bg-white shadow-md mt-2 py-2 w-48">
+                        <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Upstream Services</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Midstream Services</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Downstream Services</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Infrastructure</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Public Sector</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact" class="text-gray-700 text-base hover:text-teal-800">Contact Us</a></li>
+                <li><a href="#" class="text-gray-700 text-base hover:text-teal-800">Careers</a></li>
+            </ul>
+        </nav>
+
+        <!-- Search Icon (Square, no radius) -->
+        <button id="search-toggle" class="bg-blue-900 flex items-center justify-center h-10 w-10 ml-2">
+            <i class="fas fa-search text-white text-lg"></i>
+        </button>
     </div>
-    <!-- Search Bar (Hidden by Default) -->
-    <div id="searchBar" class="w-full bg-gray-100 px-4 py-3 hidden">
-        <form class="flex items-center max-w-7xl mx-auto">
-            <input type="text" placeholder="Search..." class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" aria-label="Search input" />
-            <button type="submit" class="ml-2 text-white bg-blue-600 p-2 rounded-lg" aria-label="Submit search">
-                <i class="fas fa-search"></i>
-            </button>
-        </form>
+
+    <!-- Search Bar (hidden by default) -->
+    <div id="search-bar" class="md:w-auto md:right-0">
+        <input type="text" placeholder="Search..." class="w-full p-2 border border-gray-300 rounded">
+    </div>
+
+    <!-- Mobile Menu (hidden by default, slides down) -->
+    <div id="mobile-menu" class="md:hidden bg-white shadow-md">
+        <!-- First Nav Items (shaded gray) -->
+        <div class="bg-gray-100 py-2 px-4">
+            <ul class="flex flex-col space-y-2">
+                <li>
+                    <a href="#" class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
+                        <i class="fas fa-leaf mr-1"></i>Sustainability
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
+                        <i class="fas fa-briefcase mr-1"></i>Career
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
+                        <i class="fas fa-newspaper mr-1"></i>Media Hub
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Separator Line -->
+        <hr class="border-gray-200">
+        <!-- Second Nav Items -->
+        <ul class="flex flex-col space-y-2 px-4 py-2">
+            <li><a href="#home" class="text-gray-700 text-base hover:text-teal-800">Home</a></li>
+            <!-- About Us Mobile Dropdown -->
+            <li class="mobile-dropdown">
+                <a href="#about" class="text-gray-700 text-base hover:text-teal-800 flex items-center justify-between" onclick="toggleSubmenu(this)">
+                    About Us <i class="fas fa-chevron-down ml-1"></i>
+                </a>
+                <ul class="mobile-submenu pl-4 space-y-2">
+                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Who We Are</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">What We Do</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Why Choose Us</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Our Values</a></li>
+                </ul>
+            </li>
+            <!-- Our Services Mobile Dropdown -->
+            <li class="mobile-dropdown">
+                <a href="#services" class="text-gray-700 text-base hover:text-teal-800 flex items-center justify-between" onclick="toggleSubmenu(this)">
+                    Our Services <i class="fas fa-chevron-down ml-1"></i>
+                </a>
+                <ul class="mobile-submenu pl-4 space-y-2">
+                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Upstream Services</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Midstream Services</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Downstream Services</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Infrastructure</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Public Sector</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact" class="text-gray-700 text-base hover:text-teal-800">Contact Us</a></li>
+            <li><a href="#" class="text-gray-700 text-base hover:text-teal-800">Careers</a></li>
+        </ul>
     </div>
 </header>
 
-<!-- Overlay -->
-<div id="overlay" class="fixed inset-0"></div>
-
-<!-- Mobile Menu Panel -->
-<div id="mobileMenu" class="fixed top-0 left-0 w-full bg-white shadow-lg">
-    <div class="flex justify-end items-center p-4 border-b">
-        <button id="closeBtn" class="text-2xl focus:outline-none cursor-pointer" aria-label="Close menu">×</button>
-    </div>
-    <nav class="flex flex-col p-4 space-y-4">
-        <a href="#home" class="nav-item hover:text-blue-600 text-lg">Home</a>
-        <a href="#about" class="nav-item hover:text-blue-600 text-lg">About us</a>
-        <a href="#" class="nav-item hover:text-blue-600 text-lg flex items-center" id="mobileServicesToggle">Services 
-            <svg class="toggle-indicator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-        </a>
-        <div id="mobileServicesMenu" class="flex flex-col space-y-2 pl-6 hidden">
-            <a href="#" class="nav-item hover:text-blue-600 text-base">Drilling Operations</a>
-            <a href="#" class="nav-item hover:text-blue-600 text-base">Engineering and Technical Services Division</a>
-            <a href="#" class="nav-item hover:text-blue-600 text-base">Gas Service Division</a>
-            <a href="#" class="nav-item hover:text-blue-600 text-base">Community Support Services</a>
-            <a href="#" class="nav-item hover:text-blue-600 text-base">Pipeline Services</a>
-            <a href="#" class="nav-item hover:text-blue-600 text-base">Process Services Division</a>
-            <a href="#" class="nav-item hover:text-blue-600 text-base">Procurement, Rentals and Supply Services</a>
-            <a href="#" class="nav-item hover:text-blue-600 text-base">Production and Operation Services</a>
-            <a href="#" class="nav-item hover:text-blue-600 text-base">Well Intervention Services Division</a>
-        </div>
-        <a href="#contact" class="nav-item hover:text-blue-600 text-lg">Contact us</a>
-        <a href="https://example.com/profile" class="gradient-btn text-lg">Company Profile</a>
-    </nav>
-</div>
+<!-- Overlay for mobile menu (from previous code) -->
+<div id="overlay"></div>
 
 <!-- Hero Section -->
-<section class="hero-bg">
-    <div class="hero-main">
-        <div class="hero-bg-inner" id="heroBgInner1" style="background-image: url('./Images/bg_1.jpeg');"></div>
-        <div class="hero-bg-inner" id="heroBgInner2" style="background-image: url('./Images/bg_2.jpeg');"></div>
-        <div class="w-full max-w-5xl mx-auto hero-content text-center text-white">
-            <h1 class="font-extrabold leading-tight tracking-tight hero-text">
-                Harnessing Integrated Energy &amp; Engineering Solutions to Power Oil &amp; Gas and Infrastructure.
-            </h1>
-            <p class="text-gray-200 max-w-3xl mx-auto hero-subtext">
-                Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations — across upstream, midstream, and downstream.
-            </p>
-            <div class="hero-button">
-                <a href="#services" class="gradient-btn">Explore More</a>
-            </div>
+<section class="hero-bg text-white text-center px-6 py-24">
+    <div class="hero-bg-inner" id="heroBgInner1" style="background-image: url('./images/bg_1.jpeg');"></div>
+    <div class="hero-bg-inner" id="heroBgInner2" style="background-image: url('./images/bg_2.jpeg');"></div>
+    <div class="w-full max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight hero-text">
+            Harnessing Integrated Energy &amp; Engineering Solutions to Power Oil &amp; Gas and Infrastructure.
+        </h1>
+        <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-lg text-gray-200 max-w-3xl mx-auto hero-subtext">
+            Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil &amp; Gas operations — across upstream, midstream, and downstream.
+        </p>
+        <div class="mt-6 hero-button">
+            <a href="#services" class="gradient-btn">Explore More</a>
         </div>
     </div>
-    <div class="hero-side"></div>
 </section>
 
 <!-- Next Hero Image Section with Stats -->
@@ -728,7 +693,7 @@
         <p>Mipet Services Limited delivers a comprehensive range of specialized solutions across the upstream, midstream, and downstream sectors of the oil, gas, and infrastructure industries, as well as the public sector. We provide reliable solutions in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations, guided by a strong commitment to excellence, innovation, and sustainability. Our tailored approach empowers clients to achieve operational efficiency, reliability, and long-term growth.</p>
         <a href="#services" class="gradient-btn">Explore More</a>
     </div>
-    <img src="./Images/growth_image.webp" alt="Oil and Gas Infrastructure" />
+    <img src="./images/growth_image.webp" alt="Oil and Gas Infrastructure" />
 </section>
 
 <!-- Services Section -->
@@ -822,43 +787,43 @@
         <div class="logo-slider-container no-scrollbar">
             <ul class="logo-slider client-slider" style="width: calc(18 * 150px * 2);">
                 <!-- Original 18 logos -->
-                <li class="logo-item"><img src="./Images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_4.jpg" alt="Client 4 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_5.jpg" alt="Client 5 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_6.jpg" alt="Client 6 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_7.jpg" alt="Client 7 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_8.png" alt="Client 8 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_9.png" alt="Client 9 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_10.png" alt="Client 10 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_11.png" alt="Client 11 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_12.png" alt="Client 12 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_13.png" alt="Client 13 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_14.png" alt="Client 14 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_15.png" alt="Client 15 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_16.png" alt="Client 16 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_17.png" alt="Client 17 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_18.png" alt="Client 18 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_4.jpg" alt="Client 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_5.jpg" alt="Client 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_6.jpg" alt="Client 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_7.jpg" alt="Client 7 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_8.png" alt="Client 8 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_9.png" alt="Client 9 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_10.png" alt="Client 10 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_11.png" alt="Client 11 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_12.png" alt="Client 12 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_13.png" alt="Client 13 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_14.png" alt="Client 14 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_15.png" alt="Client 15 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_16.png" alt="Client 16 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_17.png" alt="Client 17 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_18.png" alt="Client 18 Logo" /></li>
                 <!-- Duplicated 18 logos for seamless loop -->
-                <li class="logo-item"><img src="./Images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_4.jpg" alt="Client 4 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_5.jpg" alt="Client 5 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_6.jpg" alt="Client 6 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_7.jpg" alt="Client 7 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_8.png" alt="Client 8 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_9.png" alt="Client 9 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_10.png" alt="Client 10 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_11.png" alt="Client 11 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_12.png" alt="Client 12 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_13.png" alt="Client 13 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_14.png" alt="Client 14 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_15.png" alt="Client 15 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_16.png" alt="Client 16 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_17.png" alt="Client 17 Logo" /></li>
-                <li class="logo-item"><img src="./Images/CLIENT_18.png" alt="Client 18 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_4.jpg" alt="Client 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_5.jpg" alt="Client 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_6.jpg" alt="Client 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_7.jpg" alt="Client 7 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_8.png" alt="Client 8 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_9.png" alt="Client 9 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_10.png" alt="Client 10 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_11.png" alt="Client 11 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_12.png" alt="Client 12 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_13.png" alt="Client 13 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_14.png" alt="Client 14 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_15.png" alt="Client 15 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_16.png" alt="Client 16 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_17.png" alt="Client 17 Logo" /></li>
+                <li class="logo-item"><img src="./images/CLIENT_18.png" alt="Client 18 Logo" /></li>
             </ul>
         </div>
     </section>
@@ -868,21 +833,21 @@
         <div class="logo-slider-container no-scrollbar">
             <ul class="logo-slider oem-slider" style="width: calc(7 * 150px * 2);">
                 <!-- Original 7 logos -->
-                <li class="logo-item"><img src="./Images/OEM1.jpg" alt="OEM 1 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM2.jpg" alt="OEM 2 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM3.jpg" alt="OEM 3 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM4.jpg" alt="OEM 4 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM5.jpg" alt="OEM 5 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM6.jpg" alt="OEM 6 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM7.jpg" alt="OEM 7 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM1.jpg" alt="OEM 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM2.jpg" alt="OEM 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM3.jpg" alt="OEM 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM4.jpg" alt="OEM 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM5.jpg" alt="OEM 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM6.jpg" alt="OEM 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM7.jpg" alt="OEM 7 Logo" /></li>
                 <!-- Duplicated 7 logos for seamless loop -->
-                <li class="logo-item"><img src="./Images/OEM1.jpg" alt="OEM 1 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM2.jpg" alt="OEM 2 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM3.jpg" alt="OEM 3 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM4.jpg" alt="OEM 4 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM5.jpg" alt="OEM 5 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM6.jpg" alt="OEM 6 Logo" /></li>
-                <li class="logo-item"><img src="./Images/OEM7.jpg" alt="OEM 7 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM1.jpg" alt="OEM 1 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM2.jpg" alt="OEM 2 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM3.jpg" alt="OEM 3 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM4.jpg" alt="OEM 4 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM5.jpg" alt="OEM 5 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM6.jpg" alt="OEM 6 Logo" /></li>
+                <li class="logo-item"><img src="./images/OEM7.jpg" alt="OEM 7 Logo" /></li>
             </ul>
         </div>
     </section>
@@ -913,75 +878,69 @@
 </footer>
 
 <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
-    const mobileServicesToggle = document.getElementById('mobileServicesToggle');
-    const mobileServicesMenu = document.getElementById('mobileServicesMenu');
-    const searchBtn = document.getElementById('searchBtn');
-    const searchBar = document.getElementById('searchBar');
-    const hamburgerIcon = document.getElementById('hamburgerIcon');
-    const closeIcon = document.getElementById('closeIcon');
-
-    function openMenu() {
-        mobileMenu.style.display = 'block';
-        overlay.style.display = 'block';
-        setTimeout(() => {
-            mobileMenu.classList.add('active');
-            overlay.classList.add('active');
-            menuBtn.setAttribute('aria-expanded', 'true');
-            hamburgerIcon.classList.add('hidden');
-            closeIcon.classList.remove('hidden');
-            searchBar.classList.add('hidden');
-            searchBar.classList.remove('active');
-            searchBtn.setAttribute('aria-expanded', 'false');
-        }, 10);
-    }
-
-    function closeMenu() {
-        mobileMenu.classList.remove('active');
-        overlay.classList.remove('active');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        hamburgerIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        setTimeout(() => {
-            mobileMenu.style.display = 'none';
-            overlay.style.display = 'none';
-        }, 300);
-        mobileServicesMenu.classList.add('hidden');
-        if (mobileServicesToggle) {
-            mobileServicesToggle.querySelector('.toggle-indicator').classList.remove('active');
+    // Header functionality (from previous code)
+    // Scroll behavior
+    window.addEventListener('scroll', function () {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
         }
-    }
-
-    function toggleSearchBar() {
-        searchBar.classList.toggle('hidden');
-        searchBar.classList.toggle('active');
-        const isExpanded = searchBar.classList.contains('active');
-        searchBtn.setAttribute('aria-expanded', isExpanded);
-        if (isExpanded) {
-            searchBar.querySelector('input').focus();
-            closeMenu();
-        }
-    }
-
-    if (mobileServicesToggle) {
-        mobileServicesToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            mobileServicesMenu.classList.toggle('hidden');
-            mobileServicesToggle.querySelector('.toggle-indicator').classList.toggle('active');
-        });
-    }
-
-    menuBtn.addEventListener('click', openMenu);
-    closeBtn.addEventListener('click', closeMenu);
-    overlay.addEventListener('click', closeMenu);
-    searchBtn.addEventListener('click', toggleSearchBar);
-    mobileMenu.querySelectorAll('a:not(#mobileServicesToggle)').forEach(link => {
-        link.addEventListener('click', closeMenu);
     });
 
+    // Toggle mobile menu, overlay, and hamburger/X icon
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('overlay');
+    const menuIcon = menuToggle.querySelector('i');
+
+    function toggleMenu() {
+        const isOpen = mobileMenu.classList.contains('open');
+        if (isOpen) {
+            mobileMenu.classList.remove('open');
+            overlay.classList.remove('open');
+            document.body.style.overflow = '';
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        } else {
+            mobileMenu.classList.add('open');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // Toggle submenus in mobile
+    function toggleSubmenu(element) {
+        const parent = element.parentElement;
+        parent.classList.toggle('active');
+        const icon = element.querySelector('i');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+    }
+
+    // Toggle search bar
+    const searchToggle = document.getElementById('search-toggle');
+    const searchBar = document.getElementById('search-bar');
+
+    searchToggle.addEventListener('click', function(event) {
+        event.stopPropagation();
+        searchBar.classList.toggle('open');
+    });
+
+    // Close search bar on outside click
+    document.addEventListener('click', function(event) {
+        if (!searchBar.contains(event.target) && !searchToggle.contains(event.target)) {
+            searchBar.classList.remove('open');
+        }
+    });
+
+    // Original JavaScript from provided HTML
     // Background crossfade for hero section
     const heroBgInner1 = document.getElementById('heroBgInner1');
     const heroBgInner2 = document.getElementById('heroBgInner2');
@@ -1018,9 +977,11 @@
     });
 
     document.addEventListener('DOMContentLoaded', () => {
+        // Start background alternation
         heroBgInner1.classList.add('active');
         setTimeout(changeBackground, 4000);
 
+        // Counter animation
         const counters = document.querySelectorAll('.counter');
         counters.forEach(counter => {
             const initialText = counter.closest('.next-hero-section') ? "0+" : "0";
