@@ -116,7 +116,7 @@
         }
         #mobile-menu.open {
             max-height: 1000px;
-            z-index: 100; /* Ensure above hero section */
+            z-index: 100;
         }
         .mobile-submenu {
             display: none;
@@ -153,11 +153,61 @@
         #search-bar.open {
             display: block;
         }
-        /* Increase font size for second nav links (desktop) */
         .second-nav nav ul li a {
-            font-size: 1.125rem; /* text-lg (18px) */
+            font-size: 1.125rem;
         }
-        /* Original styles from provided HTML */
+        /* Red border on hero main text */
+        .hero-text {
+            border-top: 2px solid #c1160e;
+            border-left: 2px solid #c1160e;
+            padding-top: 0.5rem;
+            padding-left: 0.5rem;
+        }
+        /* Transparent circle for icons */
+        .icon-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 2px solid white;
+            border-radius: 50%;
+            background: transparent;
+            color: white;
+            font-size: 1.25rem; /* Reduced from 1.5rem to prevent stretching */
+            aspect-ratio: 1/1; /* Ensure perfect circle */
+            flex-shrink: 0; /* Prevent flexbox compression */
+            line-height: 1; /* Center icon vertically */
+            text-align: center; /* Center icon horizontally */
+        }
+        /* Hero info items */
+        .hero-info-item {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        /* Text container for headings and descriptions */
+        .hero-info-text {
+            text-align: left; /* Explicit left alignment for heading and description */
+        }
+        /* Descriptive text for hero info items */
+        .hero-info-item p {
+            font-size: 0.75rem; /* text-xs */
+            color: #d1d5db; /* text-gray-300 */
+            opacity: 0.8;
+            margin-top: 0.25rem; /* mt-1 */
+        }
+        /* Desktop-only hero margin and shadow */
+        @media (min-width: 768px) {
+            .hero-content {
+                margin-right: 2rem;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 1.5rem;
+                background: rgba(255, 255, 255, 0.05);
+            }
+        }
+        /* Original styles */
         .gradient-btn {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -519,7 +569,6 @@
 
 <!-- Header -->
 <header class="w-full font-sans bg-white">
-    <!-- Div 1: First Navigation (hidden on mobile) -->
     <div class="first-nav bg-gray-100 border-b border-gray-200 w-full hidden md:block">
         <nav class="py-2 px-4">
             <ul class="flex justify-end space-x-6">
@@ -541,31 +590,21 @@
             </ul>
         </nav>
     </div>
-
-    <!-- Div 2: Logo, Navigation, and Search Icon -->
     <div class="second-nav flex items-center justify-between w-full px-4 py-2">
-        <!-- Hamburger Menu Icon (visible on mobile) -->
         <div class="md:hidden">
             <button id="menu-toggle" class="text-gray-700 text-2xl">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-
-        <!-- Logo (centered on mobile) -->
         <div class="flex-grow md:flex-grow-0 md:pt-1 text-center md:text-left">
             <a href="#">
                 <img src="./images/logo.webp" alt="MiPet Services Logo" class="ml-0 object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline" />
             </a>
         </div>
-
-        <!-- Flex grow to push nav and search to the right on desktop -->
         <div class="hidden md:block flex-grow"></div>
-
-        <!-- Desktop Navigation (hidden on mobile, closer to search) -->
         <nav class="py-2 hidden md:flex items-center">
             <ul class="flex space-x-4">
                 <li><a href="#home" class="text-gray-700 text-base hover:text-teal-800">Home</a></li>
-                <!-- About Us Dropdown -->
                 <li class="relative dropdown">
                     <a href="#about" class="text-gray-700 text-base hover:text-teal-800 flex items-center">
                         About Us <i class="fas fa-chevron-down ml-1"></i>
@@ -577,7 +616,6 @@
                         <li><a href="#" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Our Values</a></li>
                     </ul>
                 </li>
-                <!-- Our Services Dropdown -->
                 <li class="relative dropdown">
                     <a href="#services" class="text-gray-700 text-base hover:text-teal-800 flex items-center">
                         Our Services <i class="fas fa-chevron-down ml-1"></i>
@@ -594,21 +632,14 @@
                 <li><a href="#" class="text-gray-700 text-base hover:text-teal-800">Careers</a></li>
             </ul>
         </nav>
-
-        <!-- Search Icon (Square, no radius) -->
         <button id="search-toggle" class="bg-blue-900 flex items-center justify-center h-10 w-10 ml-2">
             <i class="fas fa-search text-white text-lg"></i>
         </button>
     </div>
-
-    <!-- Search Bar (hidden by default) -->
     <div id="search-bar" class="md:w-auto md:right-0">
         <input type="text" placeholder="Search..." class="w-full p-2 border border-gray-300 rounded">
     </div>
-
-    <!-- Mobile Menu (hidden by default, slides down) -->
     <div id="mobile-menu" class="md:hidden bg-white shadow-md">
-        <!-- First Nav Items (shaded gray) -->
         <div class="bg-gray-100 py-2 px-4">
             <ul class="flex flex-col space-y-2">
                 <li>
@@ -628,12 +659,9 @@
                 </li>
             </ul>
         </div>
-        <!-- Separator Line -->
         <hr class="border-gray-200">
-        <!-- Second Nav Items -->
         <ul class="flex flex-col space-y-2 px-4 py-2">
             <li><a href="#home" class="text-gray-700 text-base hover:text-teal-800">Home</a></li>
-            <!-- About Us Mobile Dropdown -->
             <li class="mobile-dropdown">
                 <a href="#about" class="text-gray-700 text-base hover:text-teal-800 flex items-center justify-between" onclick="toggleSubmenu(this)">
                     About Us <i class="fas fa-chevron-down ml-1"></i>
@@ -645,17 +673,16 @@
                     <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Our Values</a></li>
                 </ul>
             </li>
-            <!-- Our Services Mobile Dropdown -->
             <li class="mobile-dropdown">
                 <a href="#services" class="text-gray-700 text-base hover:text-teal-800 flex items-center justify-between" onclick="toggleSubmenu(this)">
                     Our Services <i class="fas fa-chevron-down ml-1"></i>
                 </a>
                 <ul class="mobile-submenu pl-4 space-y-2">
-                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Upstream Services</a></li>
-                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Midstream Services</a></li>
-                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Downstream Services</a></li>
-                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Infrastructure</a></li>
-                    <li><a href="#" class="block text-gray-700 text-sm hover:text-teal-800">Public Sector</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Upstream Services</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Midstream Services</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Downstream Services</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Infrastructure</a></li>
+                    <li><a href="#" class="block text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Public Sector</a></li>
                 </ul>
             </li>
             <li><a href="#contact" class="text-gray-700 text-base hover:text-teal-800">Contact Us</a></li>
@@ -671,13 +698,36 @@
 <section class="hero-bg text-white text-center px-6 py-24">
     <div class="hero-bg-inner" id="heroBgInner1" style="background-image: url('./images/bg_1.jpeg');"></div>
     <div class="hero-bg-inner" id="heroBgInner2" style="background-image: url('./images/bg_2.jpeg');"></div>
-    <div class="w-full max-w-5xl mx-auto px-6 md:px-12 lg:px-20">
+    <div class="w-full max-w-5xl mx-auto px-6 md:px-12 lg:px-20 hero-content">
         <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight hero-text">
             Harnessing Integrated Energy &amp; Engineering Solutions to Power Oil &amp; Gas and Infrastructure.
         </h1>
         <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-lg text-gray-200 max-w-3xl mx-auto hero-subtext">
             Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil &amp; Gas operations — across upstream, midstream, and downstream.
         </p>
+        <div class="mt-6 hero-info flex flex-col items-start justify-start gap-4 max-w-md">
+            <div class="hero-info-item flex items-center">
+                <span class="icon-circle"><i class="fas fa-handshake"></i></span>
+                <div class="ml-2 flex flex-col hero-info-text">
+                    <span class="text-sm font-medium">Who We Are</span>
+                    <p class="text-xs text-gray-300 opacity-80 mt-1">A dedicated team driving innovation in energy.</p>
+                </div>
+            </div>
+            <div class="hero-info-item flex items-center">
+                <span class="icon-circle"><i class="fas fa-tools"></i></span>
+                <div class="ml-2 flex flex-col hero-info-text">
+                    <span class="text-sm font-medium">What We Do</span>
+                    <p class="text-xs text-gray-300 opacity-80 mt-1">Delivering comprehensive oil, gas, and infrastructure solutions.</p>
+                </div>
+            </div>
+            <div class="hero-info-item flex items-center">
+                <span class="icon-circle"><i class="fas fa-check-circle"></i></span>
+                <div class="ml-2 flex flex-col hero-info-text">
+                    <span class="text-sm font-medium">Why Choose Us</span>
+                    <p class="text-xs text-gray-300 opacity-80 mt-1">Trusted expertise for reliable and sustainable results.</p>
+                </div>
+            </div>
+        </div>
         <div class="mt-6 hero-button">
             <a href="#services" class="gradient-btn">Explore More</a>
         </div>
@@ -720,7 +770,6 @@
 <section id="services" class="py-16 px-4 text-center bg-gray-900 mt-20" style="z-index: 10;">
     <h3 class="text-4xl font-bold text-white mb-12">Our Services</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-        <!-- Upstream Card -->
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
             <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
                  style="background-image: url('https://images.unsplash.com/photo-1506377872008-6645d9d26e35?q=80&w=2070&auto=format&fit=crop')"
@@ -739,7 +788,6 @@
                 </div>
             </div>
         </div>
-        <!-- Midstream Card -->
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
             <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
                  style="background-image: url('https://images.unsplash.com/photo-1506377247377-2a5b89b84e18?q=80&w=2070&auto=format&fit=crop')"
@@ -758,7 +806,6 @@
                 </div>
             </div>
         </div>
-        <!-- Downstream Card -->
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
             <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
                  style="background-image: url('https://images.unsplash.com/photo-1506377712301-9b7ebedf6921?q=80&w=2070&auto=format&fit=crop')"
@@ -777,7 +824,6 @@
                 </div>
             </div>
         </div>
-        <!-- Infrastructural Services Card -->
         <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
             <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
                  style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2070&auto=format&fit=crop')"
@@ -801,12 +847,10 @@
 
 <!-- Logo Slider Sections -->
 <div class="relative z-10 w-4/5 mx-auto mt-20">
-    <!-- Our Trusted Clientele -->
     <section class="mb-12">
         <h2 class="text-3xl font-bold text-center mb-8">Our Trusted Clientele</h2>
         <div class="logo-slider-container no-scrollbar">
             <ul class="logo-slider client-slider" style="width: calc(18 * 150px * 2);">
-                <!-- Original 18 logos -->
                 <li class="logo-item"><img src="./images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
                 <li class="logo-item"><img src="./images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
                 <li class="logo-item"><img src="./images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
@@ -825,7 +869,6 @@
                 <li class="logo-item"><img src="./images/CLIENT_16.png" alt="Client 16 Logo" /></li>
                 <li class="logo-item"><img src="./images/CLIENT_17.png" alt="Client 17 Logo" /></li>
                 <li class="logo-item"><img src="./images/CLIENT_18.png" alt="Client 18 Logo" /></li>
-                <!-- Duplicated 18 logos for seamless loop -->
                 <li class="logo-item"><img src="./images/CLIENT_1.jpg" alt="Client 1 Logo" /></li>
                 <li class="logo-item"><img src="./images/CLIENT_2.jpg" alt="Client 2 Logo" /></li>
                 <li class="logo-item"><img src="./images/CLIENT_3.jpg" alt="Client 3 Logo" /></li>
@@ -847,12 +890,10 @@
             </ul>
         </div>
     </section>
-    <!-- Our Global OEMs and Partners -->
     <section>
         <h2 class="text-3xl font-bold text-center mb-8">Our Global OEMs and Partners</h2>
         <div class="logo-slider-container no-scrollbar">
             <ul class="logo-slider oem-slider" style="width: calc(7 * 150px * 2);">
-                <!-- Original 7 logos -->
                 <li class="logo-item"><img src="./images/OEM1.jpg" alt="OEM 1 Logo" /></li>
                 <li class="logo-item"><img src="./images/OEM2.jpg" alt="OEM 2 Logo" /></li>
                 <li class="logo-item"><img src="./images/OEM3.jpg" alt="OEM 3 Logo" /></li>
@@ -860,7 +901,6 @@
                 <li class="logo-item"><img src="./images/OEM5.jpg" alt="OEM 5 Logo" /></li>
                 <li class="logo-item"><img src="./images/OEM6.jpg" alt="OEM 6 Logo" /></li>
                 <li class="logo-item"><img src="./images/OEM7.jpg" alt="OEM 7 Logo" /></li>
-                <!-- Duplicated 7 logos for seamless loop -->
                 <li class="logo-item"><img src="./images/OEM1.jpg" alt="OEM 1 Logo" /></li>
                 <li class="logo-item"><img src="./images/OEM2.jpg" alt="OEM 2 Logo" /></li>
                 <li class="logo-item"><img src="./images/OEM3.jpg" alt="OEM 3 Logo" /></li>
@@ -898,7 +938,6 @@
 </footer>
 
 <script>
-    // Header functionality
     window.addEventListener('scroll', function () {
         const header = document.querySelector('header');
         if (window.scrollY > 0) {
@@ -958,7 +997,6 @@
         }
     });
 
-    // Original JavaScript
     const heroBgInner1 = document.getElementById('heroBgInner1');
     const heroBgInner2 = document.getElementById('heroBgInner2');
     let isFirstActive = true;
