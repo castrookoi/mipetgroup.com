@@ -168,17 +168,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 3rem; /* Increased from 2.5rem */
+            height: 3rem; /* Increased from 2.5rem */
             border: 2px solid white;
             border-radius: 50%;
             background: transparent;
             color: white;
-            font-size: 1.25rem; /* Reduced from 1.5rem to prevent stretching */
+            font-size: 1.5rem; /* Increased from 1.25rem */
             aspect-ratio: 1/1; /* Ensure perfect circle */
             flex-shrink: 0; /* Prevent flexbox compression */
             line-height: 1; /* Center icon vertically */
             text-align: center; /* Center icon horizontally */
+        }
+        /* Hero content container */
+        .hero-content {
+            margin-left: 1rem; /* Push content left */
+            padding: 1.5rem;
+        }
+        /* Hero info container */
+        .hero-info {
+            margin-left: 0; /* Align flush left */
         }
         /* Hero info items */
         .hero-info-item {
@@ -189,11 +198,11 @@
         }
         /* Text container for headings and descriptions */
         .hero-info-text {
-            text-align: left; /* Explicit left alignment for heading and description */
+            text-align: left; /* Explicit left alignment */
         }
         /* Descriptive text for hero info items */
         .hero-info-item p {
-            font-size: 0.75rem; /* text-xs */
+            font-size: 0.875rem; /* text-sm, increased from text-xs */
             color: #d1d5db; /* text-gray-300 */
             opacity: 0.8;
             margin-top: 0.25rem; /* mt-1 */
@@ -201,7 +210,7 @@
         /* Desktop-only hero margin and shadow */
         @media (min-width: 768px) {
             .hero-content {
-                margin-right: 2rem;
+                margin-left: 1.5rem; /* Adjusted for desktop */
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 padding: 1.5rem;
                 background: rgba(255, 255, 255, 0.05);
@@ -698,33 +707,33 @@
 <section class="hero-bg text-white text-center px-6 py-24">
     <div class="hero-bg-inner" id="heroBgInner1" style="background-image: url('./images/bg_1.jpeg');"></div>
     <div class="hero-bg-inner" id="heroBgInner2" style="background-image: url('./images/bg_2.jpeg');"></div>
-    <div class="w-full max-w-5xl mx-auto px-6 md:px-12 lg:px-20 hero-content">
+    <div class="w-full max-w-5xl ml-4 px-6 md:px-12 lg:px-20 hero-content">
         <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight hero-text">
             Harnessing Integrated Energy &amp; Engineering Solutions to Power Oil &amp; Gas and Infrastructure.
         </h1>
         <p class="mt-4 text-sm sm:text-base md:text-lg lg:text-lg text-gray-200 max-w-3xl mx-auto hero-subtext">
             Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil &amp; Gas operations — across upstream, midstream, and downstream.
         </p>
-        <div class="mt-6 hero-info flex flex-col items-start justify-start gap-4 max-w-md">
+        <div class="mt-6 hero-info flex flex-col items-start justify-start gap-5 max-w-md ml-0">
             <div class="hero-info-item flex items-center">
                 <span class="icon-circle"><i class="fas fa-handshake"></i></span>
                 <div class="ml-2 flex flex-col hero-info-text">
-                    <span class="text-sm font-medium">Who We Are</span>
-                    <p class="text-xs text-gray-300 opacity-80 mt-1">A dedicated team driving innovation in energy.</p>
+                    <span class="text-base font-medium">Who We Are</span>
+                    <p class="text-sm text-gray-300 opacity-80 mt-1">A dedicated team driving innovation in energy.</p>
                 </div>
             </div>
             <div class="hero-info-item flex items-center">
                 <span class="icon-circle"><i class="fas fa-tools"></i></span>
                 <div class="ml-2 flex flex-col hero-info-text">
-                    <span class="text-sm font-medium">What We Do</span>
-                    <p class="text-xs text-gray-300 opacity-80 mt-1">Delivering comprehensive oil, gas, and infrastructure solutions.</p>
+                    <span class="text-base font-medium">What We Do</span>
+                    <p class="text-sm text-gray-300 opacity-80 mt-1">Delivering comprehensive oil, gas, and infrastructure solutions.</p>
                 </div>
             </div>
             <div class="hero-info-item flex items-center">
                 <span class="icon-circle"><i class="fas fa-check-circle"></i></span>
                 <div class="ml-2 flex flex-col hero-info-text">
-                    <span class="text-sm font-medium">Why Choose Us</span>
-                    <p class="text-xs text-gray-300 opacity-80 mt-1">Trusted expertise for reliable and sustainable results.</p>
+                    <span class="text-base font-medium">Why Choose Us</span>
+                    <p class="text-sm text-gray-300 opacity-80 mt-1">Trusted expertise for reliable and sustainable results.</p>
                 </div>
             </div>
         </div>
