@@ -567,6 +567,8 @@
         .fly-in:nth-child(2) { animation-delay: 0.2s; }
         .fly-in:nth-child(3) { animation-delay: 0.3s; }
         .fly-in:nth-child(4) { animation-delay: 0.4s; }
+        .fly-in:nth-child(5) { animation-delay: 0.5s; }
+        .fly-in:nth-child(6) { animation-delay: 0.6s; }
         .card-emphasis {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
@@ -776,15 +778,15 @@
 </section>
 
 <!-- Services Section -->
+<!-- Services Section -->
 <section id="services" class="py-16 px-4 text-center bg-gray-900 mt-20" style="z-index: 10;">
     <h3 class="text-4xl font-bold text-white mb-12">Our Services</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
-            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
-                 style="background-image: url('https://images.unsplash.com/photo-1506377872008-6645d9d26e35?q=80&w=2070&auto=format&fit=crop')"
-                 role="img" aria-label="Upstream Operations Image">
+        <div class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col">
+            <div class="h-[40%] overflow-hidden">
+                <img src="./images/growth_image.webp" alt="Upstream Operations" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
             </div>
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+            <div class="h-[60%] bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
                 <div>
                     <h4 class="text-2xl font-semibold mb-2 text-white">Upstream</h4>
                     <p class="text-sm opacity-75 leading-relaxed text-white">
@@ -797,12 +799,11 @@
                 </div>
             </div>
         </div>
-        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
-            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
-                 style="background-image: url('https://images.unsplash.com/photo-1506377247377-2a5b89b84e18?q=80&w=2070&auto=format&fit=crop')"
-                 role="img" aria-label="Midstream Operations Image">
+        <div class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col">
+            <div class="h-[40%] overflow-hidden">
+                <img src="./images/growth_image.webp" alt="Midstream Operations" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
             </div>
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+            <div class="h-[60%] bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
                 <div>
                     <h4 class="text-2xl font-semibold mb-2 text-white">Midstream</h4>
                     <p class="text-sm opacity-75 leading-relaxed text-white">
@@ -815,12 +816,11 @@
                 </div>
             </div>
         </div>
-        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
-            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
-                 style="background-image: url('https://images.unsplash.com/photo-1506377712301-9b7ebedf6921?q=80&w=2070&auto=format&fit=crop')"
-                 role="img" aria-label="Downstream Operations Image">
+        <div class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col">
+            <div class="h-[40%] overflow-hidden">
+                <img src="./images/growth_image.webp" alt="Downstream Operations" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
             </div>
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+            <div class="h-[60%] bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
                 <div>
                     <h4 class="text-2xl font-semibold mb-2 text-white">Downstream</h4>
                     <p class="text-sm opacity-75 leading-relaxed text-white">
@@ -833,16 +833,49 @@
                 </div>
             </div>
         </div>
-        <div class="relative h-96 rounded-3xl overflow-hidden shadow-lg group fly-in">
-            <div class="absolute inset-0 bg-cover bg-center transform group-hover:scale-95 transition-transform duration-300"
-                 style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2070&auto=format&fit=crop')"
-                 role="img" aria-label="Infrastructural Services Image">
+        <div class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col">
+            <div class="h-[40%] overflow-hidden">
+                <img src="./images/growth_image.webp" alt="Infrastructural Services" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
             </div>
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+            <div class="h-[60%] bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
                 <div>
                     <h4 class="text-2xl font-semibold mb-2 text-white">Infrastructural Services</h4>
                     <p class="text-sm opacity-75 leading-relaxed text-white">
                         Building and maintaining critical infrastructure for energy operations.
+                    </p>
+                </div>
+                <div class="flex justify-end items-center space-x-4">
+                    <i class="fas fa-search-plus text-xl text-white"></i>
+                    <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                </div>
+            </div>
+        </div>
+        <div class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col">
+            <div class="h-[40%] overflow-hidden">
+                <img src="./images/growth_image.webp" alt="Public Sector Services" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+            </div>
+            <div class="h-[60%] bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+                <div>
+                    <h4 class="text-2xl font-semibold mb-2 text-white">Public Sector</h4>
+                    <p class="text-sm opacity-75 leading-relaxed text-white">
+                        Providing specialized solutions for public sector energy projects.
+                    </p>
+                </div>
+                <div class="flex justify-end items-center space-x-4">
+                    <i class="fas fa-search-plus text-xl text-white"></i>
+                    <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                </div>
+            </div>
+        </div>
+        <div class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col">
+            <div class="h-[40%] overflow-hidden">
+                <img src="./images/growth_image.webp" alt="Engineering Services" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+            </div>
+            <div class="h-[60%] bg-black bg-opacity-50 flex flex-col justify-between p-6 text-white">
+                <div>
+                    <h4 class="text-2xl font-semibold mb-2 text-white">Engineering Services</h4>
+                    <p class="text-sm opacity-75 leading-relaxed text-white">
+                        Comprehensive engineering support for oil, gas, and infrastructure projects.
                     </p>
                 </div>
                 <div class="flex justify-end items-center space-x-4">
