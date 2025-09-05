@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="tailwind.min.css">
     <!-- Font Awesome (Local) -->
     <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -54,7 +56,7 @@
         /* Updated font styles */
         body {
             font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             line-height: 1.5;
             font-weight: 400;
             margin: 0;
@@ -62,30 +64,30 @@
 
         /* Navigation font sizes */
         .first-nav ul li a {
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             font-weight: 400;
         }
         .second-nav nav ul li a {
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             font-weight: 500;
         }
         .dropdown-menu a {
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             font-weight: 400;
         }
         #mobile-menu ul li a {
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             font-weight: 500;
         }
         #mobile-menu .mobile-submenu a {
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             font-weight: 400;
         }
 
         /* Hero section fonts */
         .hero-text {
             font-family: 'Roboto', sans-serif;
-            font-size: 2.5rem; /* Default */
+            font-size: 2.5rem;
             font-weight: 700;
             line-height: 1.2;
             border-top: 2px solid #c1160e;
@@ -109,23 +111,23 @@
             }
         }
         .hero-subtext {
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             line-height: 1.75;
             font-weight: 400;
         }
         .hero-info-item .hero-info-text span {
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             font-weight: 500;
         }
         .hero-info-item p {
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             line-height: 1.5;
             font-weight: 400;
         }
 
         /* Next Hero Section (Stats) */
         .stats-item p {
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             font-weight: 500;
         }
         .stats-item h2 {
@@ -144,12 +146,12 @@
         /* Growth Section */
         .growth-section h3 {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.875rem; /* 30px */
+            font-size: 1.875rem;
             font-weight: 700;
             line-height: 1.3;
         }
         .growth-section p {
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             font-weight: 400;
             line-height: 1.75;
         }
@@ -163,18 +165,40 @@
         }
 
         /* Services Section */
+        #services {
+            background-image: url('./images/Service_Area.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        #services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(243, 244, 246, 0.8);
+            z-index: 1;
+        }
+        #services > * {
+            position: relative;
+            z-index: 2;
+        }
         #services h3 {
             font-family: 'Roboto', sans-serif;
-            font-size: 2.25rem; /* 36px */
+            font-size: 2.25rem;
             font-weight: 700;
         }
         #services .relative h4 {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.25rem; /* 20px */
+            font-size: 1.25rem;
             font-weight: 600;
         }
         #services .relative p {
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             font-weight: 400;
             line-height: 1.5;
         }
@@ -182,89 +206,160 @@
         /* Logo Slider Sections */
         .logo-slider-container h2 {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.875rem; /* 30px */
+            font-size: 1.875rem;
             font-weight: 700;
         }
 
         /* About Section */
-     /* About Section */
-#about {
-    background-color: #c1160e; /* Site's branded red */
-    background-image: url('./images/about_bg.jpg'); /* Placeholder image */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-}
-#about::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), rgba(193, 22, 14, 0.9); /* Adds dark overlay + red tint */
-    z-index: 1;
-}
-#about > * {
-    position: relative;
-    z-index: 2;
-}
-#about h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.875rem; /* 30px */
-    font-weight: 700;
-    color: #ffffff; /* White text */
-}
-#about p {
-    font-size: 1rem; /* 16px */
-    font-weight: 400;
-    line-height: 1.75;
-    color: #ffffff; /* White text */
-}
-.about-btn {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem; /* 16px */
-    font-weight: 500;
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    color: #ffffff; /* White text */
-    background: transparent; /* Transparent background */
-    border: 2px solid #ffffff; /* White border */
-    border-radius: 2rem;
-    cursor: pointer;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    text-align: center;
-    margin: 0.5rem;
-}
-.about-btn:hover {
-    transform: scale(1.03);
-    opacity: 0.85;
-}
+        #about {
+            background-color: #c1160e;
+            background-image: url('./images/about_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), rgba(193, 22, 14, 0.9);
+            z-index: 1;
+        }
+        #about > * {
+            position: relative;
+            z-index: 2;
+        }
+        #about h3 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        #about p {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.75;
+            color: #ffffff;
+        }
+        .about-btn {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            color: #ffffff;
+            background: transparent;
+            border: 2px solid #ffffff;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            text-align: center;
+            margin: 0.5rem;
+        }
+        .about-btn:hover {
+            transform: scale(1.03);
+            opacity: 0.85;
+        }
+
         /* Contact Section */
+        #contact {
+            background-image: url('./images/contact_b-g.jpg'); /* Replace with your image */
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(243, 244, 246, 0.8);
+            z-index: 1;
+        }
+        #contact > * {
+            position: relative;
+            z-index: 2;
+        }
         #contact h3 {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.875rem; /* 30px */
+            font-size: 1.875rem;
             font-weight: 700;
         }
         #contact input,
+        #contact select,
         #contact textarea {
             font-family: 'Roboto', sans-serif;
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             font-weight: 400;
+        }
+        .contact-heading {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        @media (max-width: 767px) {
+            .contact-heading {
+                font-size: 1.5rem;
+            }
         }
 
         /* Footer */
-        footer p {
+        footer {
+            position: relative;
+            min-height: 350px;
+            background-color: #c1160e;
+            background-image: url('./images/about_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), rgba(193, 22, 14, 0.9);
+            z-index: 0;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        footer .content {
+            position: relative;
+            z-index: 2;
+        }
+        footer p, footer a, footer span {
             font-family: 'Roboto', sans-serif;
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             font-weight: 400;
+            color: #ffffff;
+        }
+        footer a:hover {
+            color: #e5e7eb;
+            text-decoration: underline;
         }
 
-        /* Gradient Button (for other sections) */
+        /* Gradient Button */
         .gradient-btn {
             font-family: 'Roboto', sans-serif;
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             font-weight: 500;
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -288,7 +383,7 @@
             }
         }
 
-        /* Preserve all other existing styles */
+        /* Other Styles */
         header {
             position: sticky;
             top: 0;
@@ -686,27 +781,22 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        /* Hero content container */
         .hero-content {
             margin-left: 1rem;
             padding: 1.5rem;
         }
-        /* Hero info container */
         .hero-info {
             margin-left: 0;
         }
-        /* Hero info items */
         .hero-info-item {
             color: white;
             display: flex;
             align-items: center;
             justify-content: flex-start;
         }
-        /* Text container for headings and descriptions */
         .hero-info-text {
             text-align: left;
         }
-        /* Transparent circle for icons */
         .icon-circle {
             display: flex;
             align-items: center;
@@ -934,7 +1024,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 px-4 text-center bg-gray-100 mt-20 relative" style="z-index: 10; background-image: url('./images/Service_Area.jpg'); background-attachment: fixed; background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <section id="services" class="py-16 px-4 text-center bg-gray-100 mt-20 relative">
         <div class="absolute inset-0 bg-gray-100 opacity-80"></div>
         <div class="relative z-10">
             <h3 class="text-4xl font-bold text-gray-800 mb-12">Our Services</h3>
@@ -1125,18 +1215,91 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-16 container mx-auto px-6">
-        <h3 class="text-3xl font-bold text-center mb-12">Contact Us</h3>
-        <form class="max-w-lg mx-auto space-y-4">
-            <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg" aria-label="Your Name" />
-            <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" aria-label="Your Email" />
-            <textarea placeholder="Your Message" class="w-full p-3 border rounded-lg" aria-label="Your Message"></textarea>
-            <button class="w-full gradient-btn">Send</button>
-        </form>
+        <div class="flex flex-col md:flex-row md:items-start gap-8 max-w-6xl mx-auto">
+            <!-- Left: Heading -->
+            <div class="md:w-1/2 text-center md:text-left">
+                <h3 class="contact-heading mb-4">Got any enquiries? Talk to an expert</h3>
+            </div>
+            <!-- Right: Form -->
+            <div class="md:w-1/2">
+                <form id="contact-form" class="space-y-4 max-w-lg mx-auto">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded-lg" aria-label="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" aria-label="Your Email" required />
+                    <input type="tel" name="phone" placeholder="Your Phone Number" class="w-full p-3 border rounded-lg" aria-label="Your Phone Number" required />
+                    <select name="enquiry" class="w-full p-3 border rounded-lg" aria-label="Area of Enquiry" required>
+                        <option value="" disabled selected>Select Area of Enquiry</option>
+                        <option value="Upstream">Upstream</option>
+                        <option value="Midstream">Midstream</option>
+                        <option value="Downstream">Downstream</option>
+                        <option value="Infrastructural Services">Infrastructural Services</option>
+                        <option value="Public Sector">Public Sector</option>
+                    </select>
+                    <textarea name="message" placeholder="Your Message" class="w-full p-3 border rounded-lg" aria-label="Your Message" required></textarea>
+                    <button type="submit" class="w-full gradient-btn">Send</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-blue-800 text-white text-center py-6">
-        <p>&copy; 2025 MiPet Services. All rights reserved.</p>
+    <footer class="relative min-h-[350px] flex items-center justify-center bg-[#c1160e] bg-[url('./images/about_bg.jpg')] bg-cover bg-center bg-no-repeat">
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),rgba(193,22,14,0.9)] z-0"></div>
+        <!-- Particles.js Container -->
+        <div id="particles-js" class="absolute inset-0 z-[1]"></div>
+        <!-- Footer Content -->
+        <div class="content container mx-auto px-6 py-8 z-[2] relative">
+            <div class="flex flex-col md:flex-row md:justify-between gap-8">
+                <!-- Left Section: Logo and Social Icons -->
+                <div class="flex flex-col items-center md:items-start">
+                    <img src="./images/logo.webp" alt="MiPet Services Logo" class="h-12 object-contain mb-6" />
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/mipetservices" target="_blank" aria-label="LinkedIn" class="text-white hover:text-gray-200 transition-colors">
+                            <i class="fab fa-linkedin-in text-2xl"></i>
+                        </a>
+                        <a href="https://twitter.com/mipetservices" target="_blank" aria-label="Twitter" class="text-white hover:text-gray-200 transition-colors">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/mipetservices" target="_blank" aria-label="Facebook" class="text-white hover:text-gray-200 transition-colors">
+                            <i class="fab fa-facebook-f text-2xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/mipetservices" target="_blank" aria-label="Instagram" class="text-white hover:text-gray-200 transition-colors">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Right Section: Navigation Links and Contact Info -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <nav class="mb-6">
+                        <ul class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0">
+                            <li><a href="#home" class="text-white hover:text-gray-200 transition-colors text-sm">Home</a></li>
+                            <li><a href="#about" class="text-white hover:text-gray-200 transition-colors text-sm">About Us</a></li>
+                            <li><a href="#services" class="text-white hover:text-gray-200 transition-colors text-sm">Services</a></li>
+                            <li><a href="#contact" class="text-white hover:text-gray-200 transition-colors text-sm">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                    <div class="flex flex-col space-y-2">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-envelope text-base text-white"></i>
+                            <a href="mailto:info@mipetservices.com" class="text-white hover:text-gray-200 hover:underline text-sm">info@mipetservices.com</a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-phone text-base text-white"></i>
+                            <a href="tel:+15551234567" class="text-white hover:text-gray-200 hover:underline text-sm">+1-555-123-4567</a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-base text-white"></i>
+                            <span class="text-white text-sm">123 Energy Lane, Port Harcourt, Rivers State, Nigeria</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-map-marker-alt text-base text-white"></i>
+                            <span class="text-white text-sm">456 Coastal Road, Lagos, Nigeria</span>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-sm text-white">&copy; 2025 MiPet Services. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -1251,6 +1414,83 @@
                     }
                 };
                 updateCounter();
+            });
+
+            /* Particles.js setup for footer */
+            if (typeof particlesJS === 'function') {
+                particlesJS("particles-js", {
+                    particles: {
+                        number: { value: 18, density: { enable: true, value_area: 800 } },
+                        color: { value: "#ffffff" },
+                        shape: { type: "circle" },
+                        opacity: { value: 0.5, random: false },
+                        size: { value: 3, random: true },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#ffffff",
+                            opacity: 0.4,
+                            width: 1
+                        },
+                        move: {
+                            enable: true,
+                            speed: 0.6,
+                            direction: "none",
+                            random: false,
+                            straight: false,
+                            out_mode: "out",
+                            attract: { enable: false }
+                        }
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: {
+                            onhover: { enable: true, mode: "grab" },
+                            onclick: { enable: true, mode: "push" },
+                            resize: true
+                        },
+                        modes: {
+                            grab: { distance: 200, line_linked: { opacity: 0.6 } },
+                            push: { particles_nb: 4 }
+                        }
+                    },
+                    retina_detect: true
+                });
+
+                /* Particle animation loop */
+                let direction = "up";
+                setInterval(() => {
+                    if (window.pJSDom && window.pJSDom[0]) {
+                        let pJS = window.pJSDom[0].pJS;
+                        let current = pJS.particles.array.length;
+
+                        if (direction === "up") {
+                            if (current < 25) {
+                                pJS.fn.modes.pushParticles(1);
+                            } else {
+                                direction = "down";
+                            }
+                        } else {
+                            if (current > 18) {
+                                pJS.particles.array.pop();
+                            } else {
+                                direction = "up";
+                            }
+                        }
+                    }
+                }, 800);
+            } else {
+                console.error("Particles.js library not loaded. Please check the script inclusion.");
+            }
+
+            /* Form Submission Handling */
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Placeholder for form submission logic
+                console.log('Form submitted:', new FormData(contactForm));
+                alert('Thank you for your enquiry! We will get back to you soon.');
+                contactForm.reset();
             });
         });
     </script>
