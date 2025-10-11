@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="MiPet Services delivers reliable oil, gas, and infrastructure solutions across upstream, midstream, and downstream sectors. Explore our expertise."
+    />
+    <meta
+      name="keywords"
+      content="oil and gas services, infrastructure solutions, drilling operations, engineering services, pipeline services, MiPet Services"
+    />
+    <meta name="author" content="MiPet Services" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="MiPet Services - Oil, Gas, and Infrastructure Solutions"
+    />
+    <meta
+      property="og:description"
+      content="Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations across upstream, midstream, and downstream sectors."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.mipetservices.com/" />
+    <meta
+      property="og:image"
+      content="https://www.mipetservices.com/images/og-image.jpg"
+    />
+    <meta property="og:site_name" content="MiPet Services" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="MiPet Services - Oil, Gas, and Infrastructure Solutions"
+    />
+    <meta
+      name="twitter:description"
+      content="Providing reliable services in Electrical, Civil, Mechanical, Supply, and Oil & Gas operations across upstream, midstream, and downstream sectors."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.mipetservices.com/images/og-image.jpg"
+    />
+    <link rel="canonical" href="https://www.mipetservices.com/" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="tailwind.min.css" />
+    <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+    <style>
+      body {
+        font-family: "Helvetica", "Roboto", sans-serif;
+        font-size: 1rem;
+        line-height: 1.5;
+        font-weight: 400;
+        margin: 0;
+      }
+      p {
+        font-size: 18px;
+      }
+      .first-nav ul li a {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+      .second-nav nav ul li a {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      .dropdown-menu a {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+      #mobile-menu ul li a {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+      #mobile-menu .mobile-submenu a {
+        font-size: 0.875rem;
+        font-weight: 400;
+      }
+
+      /* UPDATED HERO SECTION STYLES */
+      .hero-bg {
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 80px;
+        padding-bottom: 60px;
+        padding-left: 0;
+        background-image: url("./images/bg_1.jpeg");
+        background-size: cover;
+        background-position: center;
+      }
+      .hero-bg::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom right,
+          rgba(193, 22, 14, 0.8),
+          rgba(1, 38, 64, 0.8)
+        );
+        z-index: 2;
+      }
+      .hero-bg > * {
+        position: relative;
+        z-index: 3;
+      }
+      .hero-content {
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      /* Custom widths for the three-column layout */
+      .hero-col-1 {
+        width: 10%;
+        margin-left: 0;
+      }
+
+      .hero-col-2 {
+        width: 60%;
+      }
+
+      .hero-col-3 {
+        width: 30%;
+      }
+
+      /* Make h1 font size fluid to fit on small screens */
+      .hero-text {
+        font-family: "Helvetica", "Roboto", sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+        padding-top: 0;
+        padding-left: 0;
+        font-size: clamp(
+          2rem,
+          8vw,
+          6rem
+        ); /* The font will scale between 2rem and 6rem based on viewport width */
+        word-wrap: break-word;
+        white-space: nowrap;
+      }
+
+      /* New CSS to add margin-right to the horizontal accent */
+      .hero-col-2 .flex.items-center.space-x-2.mb-4 img.object-contain {
+          margin-right: 1rem;
+      }
+      
+      @media (max-width: 767px) {
+        .hero-bg {
+          padding-left: 0;
+          padding-right: 0;
+          justify-content: flex-start;
+        }
+        .hero-content {
+          padding: 0.5rem;
+          margin-left: 0;
+        }
+        .hero-col-1 {
+          width: 20px;
+          margin-left: 0;
+          padding-left: 0;
+        }
+        .hero-col-1 img {
+          height: 14em !important;
+          width: auto !important;
+        }
+        .hero-col-2 {
+          width: calc(100% - 20px);
+          padding-right: 0.5rem;
+        }
+        .hero-col-3 {
+          display: none;
+        }
+        .hero-text {
+          font-size: clamp(1.5rem, 8vw, 3rem);
+          white-space: normal;
+        }
+        .hero-col-2 h3.hero-text {
+          font-size: 1.1rem !important;
+          max-width: 88vw !important;
+          padding-left: 0 !important;
+        }
+        .hero-col-2 .flex.items-center.space-x-2.mb-4 h3.hero-text {
+          font-size: 1.2rem !important;
+          max-width: 88vw !important;
+        }
+        .hero-col-2 .flex.items-center.space-x-2.mb-4 img {
+          height: 0.7em !important;
+          width: auto !important;
+        }
+        .hero-col-2 ul.list-disc {
+          padding-left: 1rem !important;
+          margin-bottom: 0.5rem !important;
+        }
+        .hero-col-2 .hero-subtext {
+          font-size: 0.9rem !important;
+          line-height: 1.4 !important;
+          max-width: 90vw !important;
+        }
+        .hero-col-2 .hero-button {
+          margin-top: 0.5rem !important;
+        }
+      }
+
+      .hero-subtext {
+        font-size: 18px;
+        line-height: 1.75;
+        font-weight: 400;
+        max-width: 800px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 1s ease-out 0.3s forwards;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      .hero-button {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: slideUp 1s ease-out 0.9s forwards;
+      }
+      /* END UPDATED HERO SECTION STYLES */
+
+      .growth-section h3 {
+        font-family: "Helvetica", "Roboto", sans-serif;
+        font-size: 1.875rem;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+      .growth-section p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.75;
+      }
+      @media (max-width: 767px) {
+        .growth-section h3 {
+          font-size: 1.5rem;
+        }
+        .growth-section p {
+          font-size: 18px;
+        }
+      }
+      /* Policies Section */
+      .policies-section {
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-top: -0.5rem;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        box-sizing: border-box;
+        min-height: 400px;
+      }
+      .policies-section h4 {
+        font-family: "Helvetica", "Roboto", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+      }
+      .policies-section p {
+        text-align: left;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        font-size: 18px;
+        font-weight: 400;
+        color: #1f2937;
+      }
+      /* Certifications Grid */
+      .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        max-width: 72rem;
+        margin: 2rem auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+        margin-top: 2rem;
+        text-align: center;
+      }
+      @media (min-width: 1024px) {
+        .certifications-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (max-width: 767px) {
+        .certifications-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+          margin: 1rem auto;
+        }
+      }
+      @media (max-width: 640px) {
+        .certifications-grid {
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+        }
+      }
+      /* Card styles */
+      .certifications-grid > div {
+        width: 100%;
+        height: 24rem;
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        background: white;
+      }
+      .certifications-grid > div > div:first-child {
+        height: 40%;
+        overflow: hidden;
+      }
+      .certifications-grid > div > div:last-child {
+        height: 60%;
+        background: white;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+      }
+      /* Text styles */
+      .certifications-grid h5 {
+        font-family: "Helvetica", "Roboto", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+      .certifications-grid p {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #1f2937;
+        opacity: 0.75;
+        line-height: 1.75;
+        margin: 0.25rem 0;
+      }
+      /* Red accent lines */
+      .certifications-grid span {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .certifications-grid span:first-child {
+        width: 1.25rem;
+        height: 0.375rem;
+        background: #c1160e;
+      }
+      .certifications-grid span:last-child {
+        width: 0.375rem;
+        height: 1.25rem;
+        background: #c1160e;
+      }
+      /* Image styles */
+      .certifications-grid img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        transition: transform 0.3s ease;
+      }
+      .certifications-grid .group:hover img {
+        transform: scale(0.95);
+      }
+      /* Mobile adjustments */
+      @media (max-width: 640px) {
+        .certifications-grid > div {
+          height: 24rem;
+          max-width: 90vw;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .certifications-grid > div > div:first-child {
+          height: 40%;
+        }
+        .certifications-grid > div > div:last-child {
+          height: 60%;
+          padding: 1rem;
+        }
+        .certifications-grid h5 {
+          font-size: 1rem;
+        }
+        .certifications-grid p {
+          font-size: 0.75rem;
+          line-height: 1.5;
+          margin: 0.25rem 0;
+        }
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 6xl;
+        margin: 2rem auto;
+      }
+      @media (max-width: 767px) {
+        .services-grid {
+          grid-template-columns: 1fr;
+          margin: 1rem auto;
+        }
+      }
+      #services .relative h4 {
+        font-family: "Helvetica", "Roboto", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+      #services .relative p {
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+      .service-card {
+        height: 64px;
+      }
+      .gradient-btn {
+        font-family: "Helvetica", "Roboto", sans-serif;
+        font-size: 1rem;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        color: white;
+        background: linear-gradient(to bottom, #c1160e, #012640);
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        text-align: center;
+        white-space: nowrap;
+      }
+      .gradient-btn:hover {
+        transform: scale(1.03);
+        opacity: 0.95;
+      }
+      @media (max-width: 767px) {
+        .gradient-btn {
+          width: auto;
+          max-width: 200px;
+          display: inline-flex;
+          text-align: center;
+          white-space: nowrap;
+        }
+      }
+
+      /* Adjusted Header CSS */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        transition: all 0.3s ease;
+      }
+      .scrolled .first-nav {
+        display: none;
+      }
+      .scrolled {
+        background-color: white;
+      }
+
+      .first-nav {
+        transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease;
+      }
+
+      .scrolled .first-nav {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+      }
+
+      .second-nav {
+        transition: padding 0.3s ease;
+      }
+
+      .scrolled .second-nav {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+      }
+      .dropdown {
+        position: relative;
+      }
+      .dropdown-menu {
+        top: calc(100% + 4px);
+        left: 0;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+        position: absolute;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 0.5rem;
+        padding: 0.5rem 0;
+        min-width: 300px;
+        z-index: 50;
+      }
+      .dropdown::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: transparent;
+      }
+      .dropdown-menu.hidden {
+        display: none;
+      }
+      .dropdown-menu a {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: #1f2937;
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      .dropdown-menu a:hover {
+        background-color: #f3f4f6;
+        color: #2563eb;
+      }
+      .sub-dropdown {
+        position: relative;
+      }
+      .sub-dropdown-menu {
+        display: none;
+        padding: 0.5rem 0;
+      }
+      .sub-dropdown.active .sub-dropdown-menu {
+        display: block;
+      }
+      .sub-toggle-icon {
+        transition: transform 0.2s ease;
+      }
+      .sub-dropdown.active .sub-toggle-icon {
+        transform: rotate(45deg);
+      }
+      #mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        position: relative;
+        z-index: 50;
+      }
+      #mobile-menu.open {
+        max-height: 1000px;
+        z-index: 100;
+      }
+      .mobile-submenu {
+        display: none;
+      }
+      .mobile-dropdown.active .mobile-submenu {
+        display: block;
+      }
+      .mobile-sub-dropdown {
+        position: relative;
+      }
+      .mobile-sub-submenu {
+        display: none;
+      }
+      .mobile-sub-dropdown.active .mobile-sub-submenu {
+        display: block;
+      }
+      .mobile-sub-toggle-icon {
+        transition: transform 0.2s ease;
+      }
+      .mobile-sub-dropdown.active .mobile-sub-toggle-icon {
+        transform: rotate(45deg);
+      }
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 40;
+        transition: opacity 0.3s ease;
+      }
+      #overlay.open {
+        display: block;
+        opacity: 1;
+      }
+      #search-bar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: white;
+        padding: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 60;
+      }
+      #search-bar.open {
+        display: block !important;
+      }
+      #search-toggle i {
+        display: inline-block !important;
+        font-size: 1.125rem !important;
+        color: white !important;
+      }
+      .toggle-indicator {
+        display: inline-block;
+        margin-left: 0.25rem;
+        transition: transform 0.2s ease;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+      }
+      .toggle-indicator.active {
+        transform: rotate(90deg);
+      }
+      .nav-item {
+        background: transparent;
+        transition: background-color 0.2s ease;
+      }
+      .nav-item:hover {
+        background-color: rgba(1, 38, 64, 0.1);
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .growth-section {
+        position: relative;
+        width: 100%;
+        margin-top: 2rem;
+        padding: 2rem 1rem;
+        z-index: 8;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .text-container-growth {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        height: auto;
+        justify-self: end;
+      }
+      .image-and-cta-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        max-width: 600px;
+        justify-self: start;
+      }
+      .image-and-cta-container img {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+        display: block;
+        border-radius: 0.5rem;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+      .image-and-cta-container .get-in-touch-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+      }
+      @media (max-width: 767px) {
+        .growth-section {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+          gap: 1.5rem;
+        }
+        .text-container-growth {
+          order: 1;
+          background: none;
+          box-shadow: none;
+          padding: 1rem;
+          max-width: 100%;
+          justify-self: center;
+        }
+        .image-and-cta-container {
+          order: 2;
+          align-items: center;
+          justify-self: center;
+        }
+        .image-and-cta-container img {
+          max-width: 100%;
+          max-height: 300px;
+          margin-bottom: 1.5rem;
+        }
+        .image-and-cta-container .get-in-touch-content {
+            align-items: center;
+            text-align: center;
+        }
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .logo-slider-container {
+        position: relative;
+        overflow: hidden;
+      }
+      .logo-slider {
+        display: flex;
+        white-space: nowrap;
+      }
+      .logo-item {
+        flex: 0 0 150px;
+        padding: 0 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @media (min-width: 768px) {
+        .logo-item {
+          flex: 0 0 120px;
+        }
+      }
+      .logo-item img {
+        height: 40px;
+        width: auto;
+        max-width: 120px;
+        object-fit: contain;
+        margin: 0 auto;
+      }
+      .oem-slider {
+        animation: slideLeftToRight 30s linear infinite;
+      }
+      .oem-slider:hover {
+        animation-play-state: paused;
+      }
+      @keyframes slideLeftToRight {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+      @keyframes flyIn {
+        0% {
+          transform: translateY(100vh) scale(0.5);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+      .fly-in {
+        animation: flyIn 0.6s ease-out forwards;
+      }
+      .fly-in:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .fly-in:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .fly-in:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .fly-in:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      .fly-in:nth-child(5) {
+        animation-delay: 0.5s;
+      }
+      .fly-in:nth-child(6) {
+        animation-delay: 0.6s;
+      }
+      .card-emphasis {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .ol-popup {
+        background: white;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      .milestone-item img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+      @media (max-width: 767px) {
+        .milestone-item img {
+          height: 128px;
+        }
+      }
+      .timeline-container {
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+      }
+      .timeline-container .flex {
+        width: 100%;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      /* Newsletter Form Fix for Mobile */
+      @media (max-width: 767px) {
+        .newsletter-form form {
+          max-width: 100%;
+        }
+        .newsletter-form input[type="email"] {
+          flex: 1;
+          max-width: 70%;
+        }
+        .newsletter-form button {
+          flex-shrink: 0;
+          max-width: 30%;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="w-full font-sans bg-white">
+      <div
+        class="first-nav bg-gray-100 border-b border-gray-200 w-full hidden md:block"
+      >
+        <nav class="py-2 px-4">
+          <ul class="flex justify-end space-x-6">
+            <li>
+              <a
+                href="#"
+                class="text-gray-700 text-xs hover:text-teal-800 flex items-center"
+              >
+                <i class="fas fa-leaf mr-1"></i>Values and Milestones
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-700 text-xs hover:text-teal-800 flex items-center"
+              >
+                <i class="fas fa-briefcase mr-1"></i>Career
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-700 text-xs hover:text-teal-800 flex items-center"
+              >
+                <i class="fas fa-newspaper mr-1"></i>Media Hub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="second-nav flex items-center justify-between w-full px-4 py-2"
+      >
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-700 text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="flex-grow md:flex-grow-0 md:pt-1 text-center md:text-left">
+          <a href="#">
+            <img
+              src="./images/logo.webp"
+              alt="MiPet Services Logo"
+              class="ml-0 object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline"
+            />
+          </a>
+        </div>
+        <div class="hidden md:block flex-grow"></div>
+        <nav class="py-2 hidden md:flex items-center">
+          <ul class="flex space-x-4">
+            <li>
+              <a
+                href="#home"
+                class="text-gray-700 text-base hover:text-teal-800"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="text-gray-700 text-base hover:text-teal-800"
+                >About Us</a
+              >
+            </li>
+            <li class="relative dropdown">
+              <a
+                href="#services"
+                class="text-gray-700 text-base hover:text-teal-800 flex items-center"
+              >
+                Our Services <i class="fas fa-chevron-down ml-1"></i>
+              </a>
+              <ul
+                class="dropdown-menu hidden absolute bg-white shadow-md mt-2 py-2 w-64"
+              >
+                <li class="relative sub-dropdown">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between"
+                    onclick="toggleSubDropdown(event, this)"
+                  >
+                    Upstream Services
+                    <i class="fas fa-plus sub-toggle-icon"></i>
+                  </a>
+                  <ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Drilling Operations</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Production Operation & Maintenance Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Well Intervention Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Pumping Services</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="relative sub-dropdown">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between"
+                    onclick="toggleSubDropdown(event, this)"
+                  >
+                    Midstream Services
+                    <i class="fas fa-plus sub-toggle-icon"></i>
+                  </a>
+                  <ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Gas Services & Virtual Pipeline Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Procurement, Rentals & Supply Services</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="relative sub-dropdown">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between"
+                    onclick="toggleSubDropdown(event, this)"
+                  >
+                    Downstream Services
+                    <i class="fas fa-plus sub-toggle-icon"></i>
+                  </a>
+                  <ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Engineering Process Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Technical Services</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="relative sub-dropdown">
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between"
+                    onclick="toggleSubDropdown(event, this)"
+                  >
+                    Infrastructural Services
+                    <i class="fas fa-plus sub-toggle-icon"></i>
+                  </a>
+                  <ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Community Support Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >CSR Project Delivery</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Public Sector Support</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                    >Public Sector</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="text-gray-700 text-base hover:text-teal-800"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-gray-700 text-base hover:text-teal-800"
+                >Careers</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button
+          id="search-toggle"
+          class="bg-blue-900 flex items-center justify-center h-10 w-10 ml-2 self-center"
+        >
+          <i class="fas fa-search text-white text-lg"></i>
+        </button>
+      </div>
+      <div id="search-bar" class="md:w-auto md:right-0">
+        <input
+          type="text"
+          placeholder="Search..."
+          class="w-full p-2 border border-gray-300 rounded"
+        />
+      </div>
+      <div id="mobile-menu" class="md:hidden bg-white shadow-md">
+        <div class="bg-gray-100 py-2 px-4">
+          <ul class="flex flex-col space-y-2">
+            <li>
+              <a
+                href="#"
+                class="text-gray-700 text-sm hover:text-teal-800 flex items-center"
+              >
+                <i class="fas fa-leaf mr-1"></i>Values and Milestones
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-700 text-sm hover:text-teal-800 flex items-center"
+              >
+                <i class="fas fa-briefcase mr-1"></i>Career
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-700 text-sm hover:text-teal-800 flex items-center"
+              >
+                <i class="fas fa-newspaper mr-1"></i>Media Hub
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr class="border-gray-200" />
+        <ul class="flex flex-col space-y-2 px-4 py-2">
+          <li>
+            <a href="#home" class="text-gray-700 text-base hover:text-teal-800"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="text-gray-700 text-base hover:text-teal-800"
+              >About Us</a
+            >
+          </li>
+          <li class="mobile-dropdown">
+            <a
+              href="#services"
+              class="text-gray-700 text-base hover:text-teal-800 flex items-center justify-between"
+              onclick="toggleSubmenu(this)"
+            >
+              Our Services <i class="fas fa-chevron-down ml-1"></i>
+            </a>
+            <ul class="mobile-submenu pl-4 space-y-2">
+              <li class="mobile-sub-dropdown">
+                <a
+                  href="#"
+                  class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between"
+                  onclick="toggleMobileSubDropdown(this)"
+                >
+                  Upstream Services
+                  <i class="fas fa-plus mobile-sub-toggle-icon"></i>
+                </a>
+                <ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Drilling Operations</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Production Operation & Maintenance Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Well Intervention Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Pumping Services</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="mobile-sub-dropdown">
+                <a
+                  href="#"
+                  class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between"
+                  onclick="toggleMobileSubDropdown(this)"
+                >
+                  Midstream Services
+                  <i class="fas fa-plus mobile-sub-toggle-icon"></i>
+                </a>
+                <ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Gas Services & Virtual Pipeline Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Procurement, Rentals & Supply Services</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="mobile-sub-dropdown">
+                <a
+                  href="#"
+                  class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between"
+                  onclick="toggleMobileSubDropdown(this)"
+                >
+                  Downstream Services
+                  <i class="fas fa-plus mobile-sub-toggle-icon"></i>
+                </a>
+                <ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Engineering Process Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Technical Services</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="mobile-sub-dropdown">
+                <a
+                  href="#"
+                  class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between"
+                  onclick="toggleMobileSubDropdown(this)"
+                >
+                  Infrastructural Services
+                  <i class="fas fa-plus mobile-sub-toggle-icon"></i>
+                </a>
+                <ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Community Support Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >CSR Project Delivery</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Public Sector Support</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block text-gray-700 text-sm hover:text-teal-800"
+                  >Public Sector</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="text-gray-700 text-base hover:text-teal-800"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-gray-700 text-base hover:text-teal-800"
+              >Careers</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div id="overlay"></div>
+    
+    <section class="hero-bg text-white py-16" role="main">
+      <div
+        class="hero-content flex flex-row w-full max-w-7xl items-start mx-auto"
+      >
+        <div
+          class="hero-col hero-col-1 flex-shrink-0 flex items-center"
+        >
+          <img
+            src="./images/Left_Accent.png"
+            alt="Accent Icon"
+            class="object-contain mb-4 md:mb-0 ml-0"
+            style="height: 22em; width: auto"
+          />
+        </div>
+
+        <div class="hero-col hero-col-2 flex-shrink-0">
+            <div class="flex items-center space-x-2 mb-4">
+                <h3
+                    class="font-extrabold hero-text break-words whitespace-normal"
+                    style="max-width: 42vw; font-size: 2.5rem;"
+                >
+                    UPSTREAM SERVICES
+                </h3>
+                <img
+                    src="./images/Horizon_Accent.png"
+                    alt="Accent Icon"
+                    class="object-contain"
+                    style="height: 1em; width: auto"
+                />
+            </div>
+            <ul class="list-disc pl-6 mb-4">
+                <li>
+                    <a href="#drilling-operations" class="hover:text-red-600 focus:text-red-600 transition-colors">
+                        <h3
+                            class="font-extrabold hero-text break-words whitespace-normal group"
+                            style="max-width: 42vw; font-size: 2.0rem;"
+                        >
+                            <span class="inline-block group-hover:text-red-600 group-focus:text-red-600 transition-colors">Drilling Operations</span>
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#production-operation" class="hover:text-red-600 focus:text-red-600 transition-colors">
+                        <h3
+                            class="font-extrabold hero-text break-words whitespace-normal group"
+                            style="max-width: 42vw; font-size: 2.0rem;"
+                        >
+                            <span class="inline-block group-hover:text-red-600 group-focus:text-red-600 transition-colors">Production Operation & Maintenance Services</span>
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#well-intervention" class="hover:text-red-600 focus:text-red-600 transition-colors">
+                        <h3
+                            class="font-extrabold hero-text break-words whitespace-normal group"
+                            style="max-width: 42vw; font-size: 2.0rem;"
+                        >
+                            <span class="inline-block group-hover:text-red-600 group-focus:text-red-600 transition-colors">Well Intervention Services</span>
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#pumping-services" class="hover:text-red-600 focus:text-red-600 transition-colors">
+                        <h3
+                            class="font-extrabold hero-text break-words whitespace-normal group"
+                            style="max-width: 42vw; font-size: 2.0rem;"
+                        >
+                            <span class="inline-block group-hover:text-red-600 group-focus:text-red-600 transition-colors">Pumping Services</span>
+                        </h3>
+                    </a>
+                </li>
+            </ul>
+            <p class="hero-subtext">
+                Combining global expertise with local insight to deliver trusted Oil
+                & Gas and infrastructure solutions that uphold the highest standards
+                of quality and performance, guided by our commitment to excellence,
+                integrity, and sustainability.
+            </p>
+            <div class="mt-6 hero-button">
+                <a href="#about" class="gradient-btn">
+                    <i class="fas fa-book"></i> Explore More
+                </a>
+            </div>
+            </div>
+            <style>
+                @media (max-width: 767px) {
+                    .hero-col-2 h3.hero-text {
+                        font-size: 1.1rem !important;
+                        max-width: 88vw !important;
+                        padding-left: 0 !important;
+                    }
+                    .hero-col-2 ul.list-disc {
+                        padding-left: 1rem !important;
+                        margin-bottom: 0.5rem !important;
+                    }
+                    .hero-col-2 .hero-subtext {
+                        font-size: 0.9rem !important;
+                        line-height: 1.4 !important;
+                        max-width: 88vw !important;
+                    }
+                    .hero-col-2 .hero-button {
+                        margin-top: 0.5rem !important;
+                    }
+                    .hero-col-2 .flex.items-center.space-x-2.mb-4 h3.hero-text {
+                        font-size: 1.2rem !important;
+                        max-width: 88vw !important;
+                    }
+                    .hero-col-2 img.object-contain {
+                        height: 0.7em !important;
+                        max-width: 40vw !important;
+                    }
+                }
+                .list-disc a:hover h3 span,
+                .list-disc a:focus h3 span {
+                    color: #c1160e !important;
+                    transition: color 0.2s, border-bottom 0.2s;
+                    text-decoration: none !important;
+                }
+            </style>
+
+        <div
+          class="hero-col hero-col-3 flex-shrink-0 hidden md:block"
+        ></div>
+      </div>
+    </section>
+
+    <section class="growth-section">
+      <div class="text-container-growth">
+        <h3>
+          MSL Upstream Services and Operations
+        </h3>
+        <p>
+          At MSL, we go beyond energy exploration- we deliver end-to-end upstream solutions that keep wells productive and operations running smoothly. From precision Drilling Operations to reliable Production and Maintenance Services, through to specialized well intervention and pumping solutions, we combine expertise, technology, and safety to maximize perfomance at every stage of the energy cycle. <br> With MSL, you get more than a service provider - you get a trusted partner commited to efficiency, reliability, and results.
+        </p>
+        <h4 class="mt-6 mb-2 text-xl font-bold text-gray-800 flex items-center">
+          <i class="fas fa-cogs text-red-600 mr-2"></i> Our MSL Core Upstream Services
+        </h4>
+        <ul class="space-y-3 pl-2">
+          <li class="flex items-center">
+            <i class="fas fa-oil-well text-red-600 mr-3"></i>
+            <span class="font-semibold text-gray-800">Drilling Operations</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-tools text-red-600 mr-3"></i>
+            <span class="font-semibold text-gray-800">Production Operation & Maintenance Services</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-wrench text-red-600 mr-3"></i>
+            <span class="font-semibold text-gray-800">Well Intervention Services</span>
+          </li>
+          <li class="flex items-center">
+            <i class="fas fa-water text-red-600 mr-3"></i>
+            <span class="font-semibold text-gray-800">Pumping Services</span>
+          </li>
+        </ul>
+      </div>
+    
+      <div class="image-and-cta-container">
+        <img src="./images/growth_image.webp" alt="Oil and Gas Infrastructure" class="growth-img" /> 
+        <div class="get-in-touch-content">
+          <p class="mb-6 text-gray-700 text-base md:text-lg max-w-md">
+            Our team of experts is ready to assist with your oil &amp; gas or infrastructure project enquiries. Reach out today for trusted solutions.
+          </p>
+          <a
+            href="#contact"
+            class="gradient-btn inline-flex items-center justify-center"
+            title="Get in Touch"
+          >
+            <i class="fas fa-envelope mr-2"></i> Get in Touch
+          </a>
+        </div>
+      </div>
+    </section>
+  
+    <section>
+      <div class="flex justify-center w-full mt-12 mb-12">
+        <h3
+          class="text-4xl font-bold text-gray-800 text-center break-words whitespace-normal w-full max-w-xs sm:max-w-md md:max-w-lg"
+        >
+          Statutory Certifications
+        </h3>
+      </div>
+      <div
+        class="certifications-grid grid grid-cols-4 gap-6 max-w-6xl mx-auto px-4"
+      >
+        <div
+          class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col"
+        >
+          <div class="h-[40%] overflow-hidden">
+            <img
+              src="./images/Ukcert.jpg"
+              alt="ISO 9001:2015"
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+          >
+            <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+            <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+            <div>
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+                ISO 9001:2015
+              </h5>
+              <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                ISO CERTIFICATE OF REGISTRATION
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col"
+        >
+          <div class="h-[40%] overflow-hidden">
+            <img
+              src="./images/ndpra.jpg"
+              alt="ISO 14001:2015"
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+          >
+            <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+            <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+            <div>
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+                NPMPDRA PERMITS<br />/CERTIFICATIONS: 2025
+              </h5>
+              <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                Procurement and Supply Services
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col"
+        >
+          <div class="h-[40%] overflow-hidden">
+            <img
+              src="./images/nurpc.JPG"
+              alt="ISO 45001:2018"
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+          >
+            <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+            <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+            <div>
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+                NUPRC PERMITS<br />/CERTIFICATION
+              </h5>
+              <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                Heavy Duty Equipment Supply Installation and Maintenance
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col"
+        >
+          <div class="h-[40%] overflow-hidden">
+            <img
+              src="./images/nogic.jpg"
+              alt="ISO 45001:2018"
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+            />
+          </div>
+          <div
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+          >
+            <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+            <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+            <div>
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+                NCDMB/NOGIC <br />JQS CERTIFICATION
+              </h5>
+              <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                Heavy Duty Equipment Supply Installation and Maintenance
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-8 px-4 text-center bg-gray-100 relative">
+      <div class="absolute inset-0 bg-gray-100 opacity-80"></div>
+      <div class="relative z-10">
+        <h3 class="text-4xl font-bold text-gray-800 mb-8">Our Services</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <div
+            class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col"
+          >
+            <div class="h-[40%] overflow-hidden">
+              <img
+                src="./images/upstream_bg.jpg"
+                alt="Upstream Operations"
+                class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+              />
+            </div>
+            <div
+ compat: "true"             class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+            >
+              <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+              <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+              <div>
+                <h4 class="text-2xl font-semibold mb-2 text-gray-800">
+                  Upstream
+                </h4>
+                <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                  Exploration and production of oil and gas resources with
+                  cutting-edge technology.
+                </p>
+              </div>
+              <div class="flex justify-end items-center space-x-4">
+                <i class="fas fa-search-plus text-xl text-gray-800"></i>
+                <a href="#" class="gradient-btn text-white text-sm font-medium"
+                  >See More</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col"
+          >
+            <div class="h-[40%] overflow-hidden">
+              <img
+                src="./images/midstream_bg.jpg"
+                alt="Midstream Operations"
+                class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+              />
+            </div>
+            <div
+              class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+            >
+              <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+              <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+              <div>
+                <h4 class="text-2xl font-semibold mb-2 text-gray-800">
+                  Midstream
+                </h4>
+                <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                  Efficient transportation and storage solutions for oil and gas
+                  products.
+                </p>
+              </div>
+              <div class="flex justify-end items-center space-x-4">
+                <i class="fas fa-search-plus text-xl text-gray-800"></i>
+                <a href="#" class="gradient-btn text-white text-sm font-medium"
+                  >See More</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col"
+          >
+            <div class="h-[40%] overflow-hidden">
+              <img
+                src="./images/downstream_bg.webp"
+                alt="Downstream Operations"
+                class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+              />
+            </div>
+            <div
+              class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+            >
+              <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+              <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+              <div>
+                <h4 class="text-2xl font-semibold mb-2 text-gray-800">
+                  Downstream
+                </h4>
+                <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                  Refining and distribution of petroleum products to meet market
+                  demands.
+                </p>
+              </div>
+              <div class="flex justify-end items-center space-x-4">
+                <i class="fas fa-search-plus text-xl text-gray-800"></i>
+                <a href="#" class="gradient-btn text-white text-sm font-medium"
+                  >See More</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col"
+          >
+            <div class="h-[40%] overflow-hidden">
+              <img
+                src="./images/Infrastructural_bg.jpg"
+                alt="Infrastructural Services"
+                class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+              />
+            </div>
+            <div
+              class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+            >
+              <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+              <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+              <div>
+                <h4 class="text-2xl font-semibold mb-2 text-gray-800">
+                  Infrastructural Services
+                </h4>
+                <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                  Building and maintaining critical infrastructure for energy
+                  operations.
+                </p>
+              </div>
+              <div class="flex justify-end items-center space-x-4">
+                <i class="fas fa-search-plus text-xl text-gray-800"></i>
+                <a href="#" class="gradient-btn text-white text-sm font-medium"
+                  >See More</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative h-96 overflow-hidden shadow-lg group fly-in flex flex-col"
+          >
+            <div class="h-[40%] overflow-hidden">
+              <img
+                src="./images/Public_bg.jpeg"
+                alt="Public Sector Services"
+                class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+              />
+            </div>
+            <div
+              class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+            >
+              <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+              <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+              <div>
+                <h4 class="text-2xl font-semibold mb-2 text-gray-800">
+                  Public Sector
+                </h4>
+                <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                  Providing specialized solutions for public sector energy
+                  projects.
+                </p>
+              </div>
+              <div class="flex justify-end items-center space-x-4">
+                <i class="fas fa-search-plus text-xl text-gray-800"></i>
+                <a href="#" class="gradient-btn text-white text-sm font-medium"
+                  >See More</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="w-full bg-white py-16 px-4 flex flex-col md:flex-row justify-center items-center gap-8"
+    >
+      <div class="flex-1 flex justify-center items-center">
+        <img
+          src="./images/contact_bg.jpg"
+          alt="Contact an Expert"
+          class="max-w-xs md:max-w-md w-full rounded-lg shadow-lg object-cover"
+        />
+      </div>
+      <div
+        class="flex-1 flex flex-col justify-center items-start md:ml-8 mt-8 md:mt-0"
+      >
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          Have any enquiries?<br />Talk to an Expert
+        </h2>
+        <p class="mb-6 text-gray-700 text-base md:text-lg max-w-md">
+          Our team of experts is ready to assist with your oil & gas or
+          infrastructure project enquiries. Reach out today for trusted
+          solutions.
+        </p>
+        <a
+          href="#contact"
+          class="inline-flex items-center justify-center px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-200"
+          title="Talk to an Expert"
+        >
+          Contact Us
+        </a>
+      </div>
+    </section>
+
+    <footer class="py-12 px-4 bg-blue-900 text-white relative">
+      <div id="particles-js" class="absolute inset-0"></div>
+      <div class="content container mx-auto relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold mb-4">About MiPet</h4>
+            <p class="text-gray-200">
+              Mipet Services Limited is a trusted provider of oil, gas, and
+              infrastructure solutions, delivering excellence since 2002.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#home" class="text-gray-200 hover:text-white">Home</a>
+              </li>
+              <li>
+                <a href="#about" class="text-gray-200 hover:text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="text-gray-200 hover:text-white"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="text-gray-200 hover:text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Services</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-200 hover:text-white"
+                  >Upstream Services</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-200 hover:text-white"
+                  >Midstream Services</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-200 hover:text-white"
+                  >Downstream Services</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-200 hover:text-white"
+                  >Infrastructural Services</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
+            <div class="social-icons flex space-x-4">
+              <a href="#" class="text-white hover:text-gray-300">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-white hover:text-gray-300">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="text-white hover:text-gray-300">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="text-white hover:text-gray-300">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <div class="newsletter-form mt-4">
+              <form class="flex">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="flex-grow p-2 rounded-l-md border-none"
+                />
+                <button
+                  type="submit"
+                  class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 text-center">
+          <p class="text-gray-200">
+            &copy; 2023 Mipet Services Limited. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Mobile Menu Toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const overlay = document.getElementById("overlay");
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        overlay.classList.toggle("open");
+        menuToggle.innerHTML = mobileMenu.classList.contains("open")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+      overlay.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        overlay.classList.remove("open");
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+
+      // Search Bar Toggle
+      const searchToggle = document.getElementById("search-toggle");
+      const searchBar = document.getElementById("search-bar");
+      searchToggle.addEventListener("click", () => {
+        searchBar.classList.toggle("open");
+        searchToggle.innerHTML = searchBar.classList.contains("open")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-search"></i>';
+      });
+
+      // Submenu Toggle for Mobile
+      function toggleSubmenu(element) {
+        const submenu = element.nextElementSibling;
+        const parentLi = element.parentElement;
+        parentLi.classList.toggle("active");
+        submenu.classList.toggle("hidden");
+      }
+      function toggleMobileSubDropdown(element) {
+        const subDropdown = element.nextElementSibling;
+        const parentLi = element.parentElement;
+        parentLi.classList.toggle("active");
+        subDropdown.classList.toggle("hidden");
+      }
+
+      // Submenu Toggle for Desktop
+      function toggleSubDropdown(event, element) {
+        event.preventDefault();
+        const subDropdown = element.nextElementSibling;
+        const parentLi = element.parentElement;
+        parentLi.classList.toggle("active");
+        subDropdown.classList.toggle("hidden");
+      }
+
+      // Header Scroll Effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 0) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Particles.js Configuration
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 80,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+               1280px
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
