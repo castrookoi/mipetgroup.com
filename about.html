@@ -1292,10 +1292,10 @@
                     </li>
                     <li>
                         <a
-                            href="career.html"
+                            href="project.html"
                             class="text-gray-700 text-xs hover:text-teal-800 flex items-center"
                         >
-                            <i class="fas fa-briefcase mr-1"></i>Career
+                            <i class="fas fa-briefcase mr-1"></i>Completed Projects
                         </a>
                     </li>
                     <li>
@@ -1517,10 +1517,10 @@
                     </li>
                     <li>
                         <a
-                            href="career.html"
+                            href="project.html"
                             class="text-gray-700 text-sm hover:text-teal-800 flex items-center"
                         >
-                            <i class="fas fa-briefcase mr-1"></i>Career
+                            <i class="fas fa-briefcase mr-1"></i>Completed Projects
                         </a>
                     </li>
                     <li>
@@ -2056,7 +2056,7 @@ Community Policy: Supporting the communities we operate in.
                         </div>
                         <div class="flex justify-end items-center space-x-4">
                             <i class="fas fa-search-plus text-xl text-gray-800"></i>
-                            <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                            <a href="./upstream.html" class="gradient-btn text-white text-sm font-medium">See More</a>
                         </div>
                     </div>
                 </div>
@@ -2075,7 +2075,7 @@ Community Policy: Supporting the communities we operate in.
                         </div>
                         <div class="flex justify-end items-center space-x-4">
                             <i class="fas fa-search-plus text-xl text-gray-800"></i>
-                            <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                            <a href="./midstream.html" class="gradient-btn text-white text-sm font-medium">See More</a>
                         </div>
                     </div>
                 </div>
@@ -2094,7 +2094,7 @@ Community Policy: Supporting the communities we operate in.
                         </div>
                         <div class="flex justify-end items-center space-x-4">
                             <i class="fas fa-search-plus text-xl text-gray-800"></i>
-                            <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                            <a href="./downstream.html" class="gradient-btn text-white text-sm font-medium">See More</a>
                         </div>
                     </div>
                 </div>
@@ -2113,7 +2113,7 @@ Community Policy: Supporting the communities we operate in.
                         </div>
                         <div class="flex justify-end items-center space-x-4">
                             <i class="fas fa-search-plus text-xl text-gray-800"></i>
-                            <a href="#" class="gradient-btn text-white text-sm font-medium">See More</a>
+                            <a href="./infastructural.html" class="gradient-btn text-white text-sm font-medium">See More</a>
                         </div>
                     </div>
                 </div>
@@ -2154,10 +2154,10 @@ Contact Us
 <img
 src="./images/logo.webp"
 alt="MiPet Services Logo"
-class="ml-0 object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline"
+class="ml-0 object-contain h-6 max-w-[50px] sm:h-6 sm:max-w-[120px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline"
 />
 </a>
-<p class="text-gray-200">
+<p class="text-gray-200 mt-5">
 Mipet Services Limited is a trusted provider of oil, gas, and infrastructure solutions, delivering excellence since 2002.
 </p>
 </div>
@@ -2384,7 +2384,7 @@ name: "Careers", url: "career.html"
 name: "Values and Milestones", url: "values.html"
 },
 {
-name: "Career", url: "career.html"
+name: "Completed Projects", url: "project.html"
 },
 {
 name: "Media Hub", url: "media.html"
@@ -2431,6 +2431,52 @@ searchSuggestions.classList.add("active");
 document.addEventListener("click", (e) => {
 if (!searchBar.contains(e.target) && e.target !== searchToggle) {
 searchSuggestions.classList.remove("active");
+}
+});
+
+
+// Policy Item Full-Page Zoom Effect
+const policyItems = document.querySelectorAll('.policy-item');
+let fullScreenOverlay = null;
+
+policyItems.forEach(item => {
+item.addEventListener('click', (e) => {
+e.stopPropagation(); // Prevent click from bubbling to document
+const imgSrc = item.querySelector('img').src;
+const imgAlt = item.querySelector('img').alt;
+
+// If overlay already exists, remove it
+if (fullScreenOverlay) {
+fullScreenOverlay.remove();
+fullScreenOverlay = null;
+return;
+}
+
+// Create full-screen overlay
+fullScreenOverlay = document.createElement('div');
+fullScreenOverlay.classList.add('full-screen-overlay');
+fullScreenOverlay.innerHTML = `
+<div class="full-screen-image-container">
+<img src="${imgSrc}" alt="${imgAlt}" class="full-screen-image" />
+<button class="close-zoom-btn"><i class="fas fa-times"></i></button>
+</div>
+`;
+document.body.appendChild(fullScreenOverlay);
+
+// Add click event to close button
+fullScreenOverlay.querySelector('.close-zoom-btn').addEventListener('click', (e) => {
+e.stopPropagation();
+fullScreenOverlay.remove();
+fullScreenOverlay = null;
+});
+});
+});
+
+// Close overlay when clicking outside the image
+document.addEventListener('click', (e) => {
+if (fullScreenOverlay && !e.target.closest('.full-screen-image-container')) {
+fullScreenOverlay.remove();
+fullScreenOverlay = null;
 }
 });
 
