@@ -96,7 +96,7 @@ align-items: center;
 justify-content: flex-start;
 padding-top: 80px;
 padding-bottom: 60px;
-background-image: url("./Services_Images/upstream_bg.jpg");
+background-image: url("./Services_Images/downstream_bg.jpg");
 background-size: cover;
 background-position: center;
 }
@@ -926,8 +926,8 @@ font-style: italic;
 </a>
 </li>
 <li>
-<a href="career.html" class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
-<i class="fas fa-briefcase mr-1"></i>Career
+<a href="project.html" class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
+<i class="fas fa-briefcase mr-1"></i>Completed Projects
 </a>
 </li>
 <li>
@@ -1067,8 +1067,8 @@ id="search-input"
 </a>
 </li>
 <li>
-<a href="career.html" class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
-<i class="fas fa-briefcase mr-1"></i>Career
+<a href="project.html" class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
+<i class="fas fa-briefcase mr-1"></i>Completed Projects
 </a>
 </li>
 <li>
@@ -1206,7 +1206,7 @@ Infrastructural Services
             </div>
             <ul class="list-disc pl-6 mb-4">
                 <li>
-                    <a href="#drilling-operations" class="hover:text-red-600 focus:text-red-600 transition-colors">
+                    <a href="./engineering.html" class="hover:text-red-600 focus:text-red-600 transition-colors">
                         <h3
                             class="font-extrabold hero-text break-words whitespace-normal group"
                             style="max-width: 42vw; font-size: 2.0rem;"
@@ -1216,7 +1216,7 @@ Infrastructural Services
                     </a>
                 </li>
                 <li>
-                    <a href="#production-operation" class="hover:text-red-600 focus:text-red-600 transition-colors">
+                    <a href="./technical.html" class="hover:text-red-600 focus:text-red-600 transition-colors">
                         <h3
                             class="font-extrabold hero-text break-words whitespace-normal group"
                             style="max-width: 42vw; font-size: 2.0rem;"
@@ -1316,13 +1316,13 @@ Infrastructural Services
       </div>
     
       <div class="image-and-cta-container">
-        <img src="./images/growth_image.webp" alt="Oil and Gas Infrastructure" class="growth-img" /> 
+        <img src="./Services_Images/downstream_bg.jpg" alt="Oil and Gas Infrastructure" class="growth-img" /> 
         <div class="get-in-touch-content">
           <p class="mb-6 text-gray-700 text-base md:text-lg max-w-md">
             Our team of experts is ready to assist with your oil &amp; gas or infrastructure project enquiries. Reach out today for trusted solutions.
           </p>
           <a
-            href="#contact"
+            href="./contact.html"
             class="gradient-btn inline-flex items-center justify-center"
             title="Get in Touch"
           >
@@ -1375,7 +1375,7 @@ Infrastructural Services
             </div>
             <div class="h-[40%] overflow-hidden">
               <img
-                src="./Services_Images/drilling_bg.jpg"
+                src="./Services_Images/downstream_1.jpg"
                 alt="Upstream Operations"
                 class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
               />
@@ -1555,7 +1555,7 @@ Infrastructural Services
           solutions.
         </p>
         <a
-          href="#contact"
+          href="./contact.html"
           class="inline-flex items-center justify-center px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-200"
           title="Talk to an Expert"
         >
@@ -1568,7 +1568,6 @@ Infrastructural Services
 <div class="content container mx-auto relative z-10">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
 <div>
-
 <a href="index.html">
 <img
 src="./images/logo.webp"
@@ -1607,10 +1606,38 @@ Mipet Services Limited is a trusted provider of oil, gas, and infrastructure sol
 <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
 <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
 </div>
-<form class="flex">
-<input type="email" placeholder="Enter your email" class="flex-grow p-2 rounded-l-md border-none" />
-<button type="submit" class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700">Subscribe</button>
-</form>
+ <div>
+              <form class="flex" id="subscribeForm">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="flex-grow p-2 rounded-l-md border-none text-black"
+                  required
+                  id="emailInput" />
+                <button
+                  type="submit"
+                  class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700">
+                  Subscribe
+                </button>
+              </form>
+              <script>
+                document
+                  .getElementById("subscribeForm")
+                  .addEventListener("submit", function (e) {
+                    e.preventDefault(); // Stop default form action
+
+                    const emailInput = document.getElementById("emailInput");
+
+                    if (emailInput.checkValidity()) {
+                      // If valid, go to contact.html
+                      window.location.href = "./contact.html";
+                    } else {
+                      // Show browser validation if invalid
+                      emailInput.reportValidity();
+                    }
+                  });
+              </script>
+            </div>
 </div>
 </div>
 </div>
@@ -1803,7 +1830,7 @@ name: "Careers", url: "career.html"
 name: "Values and Milestones", url: "values.html"
 },
 {
-name: "Career", url: "career.html"
+name: "Completed Projects", url: "project.html"
 },
 {
 name: "Media Hub", url: "media.html"

@@ -1052,7 +1052,7 @@
             justify-content: center;
             padding-top: 80px;
             padding-bottom: 60px;
-            background-image: url("./images/bg_1.jpeg");
+            background-image: url("./images/bg_3.jpeg");
             background-size: cover;
             background-position: center;
         }
@@ -1735,7 +1735,7 @@ approach empowers clients to achieve operational efficiency,
 reliability, and long-term growth.
 </p>
 </div>
-<img src="./images/growth_image.webp" alt="Oil and Gas Infrastructure" />
+<img src="./Services_Images/about_growth.jpg" alt="Oil and Gas Infrastructure" />
 </section>
 
 <!-- Services Section -->
@@ -1920,8 +1920,8 @@ We envision a future where our company stands as a trusted partner, advancing th
 
 <!-- Core Values & Policies -->
 <div class="policies-section">
-<h4>Policies</h4>
-<p>
+<h3 class="text-4xl font-bold text-gray-800" style="text-align: center;">Policies</h3>
+<p style="text-align: center;">
 Our policies ensure compliance, safety, and ethical practices across all operations.
 </p>
 <div class="policies-grid">
@@ -1935,12 +1935,12 @@ HSE Policy: Prioritizing health, safety, and environmental standards.
 </p>
 </div>
 <div class="policy-item fly-in">
-<img src="./images/health_policy.jpg" alt="Environmental_Policy" />
+<img src="./images/environmental_policy.jpg" alt="Environmental_Policy" />
 <div class="policy-overlay">
 <i class="fas fa-search-plus"></i>
 </div>
 <p>
-Quality Policy: Ensuring consistent quality in all services.
+Environmental_Policy: Sustainability in action, not just intention.
 </p>
 </div>
 <div class="policy-item fly-in">
@@ -1949,16 +1949,16 @@ Quality Policy: Ensuring consistent quality in all services.
 <i class="fas fa-search-plus"></i>
 </div>
 <p>
-Ethics Policy: Upholding ethical standards in business practices.
+NCD_Policy: Upholding ethical standards in business practices.
 </p>
 </div>
 <div class="policy-item fly-in">
-<img src="./images/community_policy.jpg" alt="Community Policy" />
+<img src="./images/quality_policy.jpg" alt="quality Policy" />
 <div class="policy-overlay">
 <i class="fas fa-search-plus"></i>
 </div>
 <p>
-Community Policy: Supporting the communities we operate in.
+Quality Policy: Commited to Excellece through continous improvement and customer satisfaction.
 </p>
 </div>
 </div>
@@ -2133,7 +2133,7 @@ Community Policy: Supporting the communities we operate in.
 <p class="mb-6 text-gray-700 text-base md:text-lg max-w-md">
 Our team of experts is ready to assist with your oil & gas or infrastructure project enquiries. Reach out today for trusted solutions.
 </p>
-<a href="#contact"
+<a href="./contact.html"
 class="inline-flex items-center justify-center px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-200"
 title="Talk to an Expert"
 >
@@ -2173,26 +2173,60 @@ Mipet Services Limited is a trusted provider of oil, gas, and infrastructure sol
 <div>
 <h4 class="text-lg font-semibold mb-4">Services</h4>
 <ul class="space-y-2">
-<li><a href="upstream.html" class="text-gray-200 hover:text-white">Upstream Services</a></li>
-<li><a href="midstream.html" class="text-gray-200 hover:text-white">Midstream Services</a></li>
-<li><a href="downstream.html" class="text-gray-200 hover:text-white">Downstream Services</a></li>
-<li><a href="infrastructure.html" class="text-gray-200 hover:text-white">Infrastructural Services</a></li>
+<li><a href="./upstream.html" class="text-gray-200 hover:text-white">Upstream Services</a></li>
+<li><a href="./midstream.html" class="text-gray-200 hover:text-white">Midstream Services</a></li>
+<li><a href="./downstream.html" class="text-gray-200 hover:text-white">Downstream Services</a></li>
+<li><a href="./infastructural.html" class="text-gray-200 hover:text-white">Infrastructural Services</a></li>
 </ul>
 </div>
 <div>
-<div class="newsletter-form mt-4">
-<h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
-<div class="social-icons flex space-x-4 mb-4">
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
-</div>
-<form class="flex">
-<input type="email" placeholder="Enter your email" class="flex-grow p-2 rounded-l-md border-none" />
-<button type="submit" class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700">Subscribe</button>
-</form>
-</div>
+   <div class="newsletter-form mt-4">
+              <h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
+              <div class="social-icons flex space-x-4 mb-4">
+                <a href="#" class="text-white hover:text-gray-300"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="text-white hover:text-gray-300"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="text-white hover:text-gray-300"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="text-white hover:text-gray-300"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+              <form class="flex" id="subscribeForm">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="flex-grow p-2 rounded-l-md border-none text-black"
+                  required
+                  id="emailInput" />
+                <button
+                  type="submit"
+                  class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700">
+                  Subscribe
+                </button>
+              </form>
+              <script>
+                document
+                  .getElementById("subscribeForm")
+                  .addEventListener("submit", function (e) {
+                    e.preventDefault(); // Stop default form action
+
+                    const emailInput = document.getElementById("emailInput");
+
+                    if (emailInput.checkValidity()) {
+                      // If valid, go to contact.html
+                      window.location.href = "./contact.html";
+                    } else {
+                      // Show browser validation if invalid
+                      emailInput.reportValidity();
+                    }
+                  });
+              </script>
+            </div>
 </div>
 </div>
 
