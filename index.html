@@ -269,62 +269,7 @@
             opacity: 0.85;
         }
 
-        /* Contact Section */
-        #contact {
-            background-image: url('./images/contact_b-g.jpg');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-        #contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(243, 244, 246, 0.8);
-            z-index: 1;
-        }
-        #contact > * {
-            position: relative;
-            z-index: 2;
-        }
-        #contact h3 {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.875rem;
-            font-weight: 700;
-        }
-        #contact input,
-        #contact select,
-        #contact textarea {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-        }
-        .contact-heading {
-            font-family: 'Roboto', sans-serif;
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: #1f2937;
-        }
-        #map {
-            height: 300px;
-            width: 100%;
-            border-radius: 0.5rem;
-            margin-top: 1rem;
-        }
-        @media (max-width: 767px) {
-            .contact-heading {
-                font-size: 1.5rem;
-            }
-            #map {
-                height: 250px;
-            }
-        }
-
+        
         /* Gradient Button */
         .gradient-btn {
             font-family: 'Roboto', sans-serif;
@@ -896,10 +841,10 @@ font-style: italic;
                     </li>
                     <li>
                         <a
-                            href="career.html"
+                            href="project.html"
                             class="text-gray-700 text-xs hover:text-teal-800 flex items-center"
                         >
-                            <i class="fas fa-briefcase mr-1"></i>Career
+                            <i class="fas fa-briefcase mr-1"></i>Completed Projects
                         </a>
                     </li>
                     <li>
@@ -1123,10 +1068,10 @@ id="search-input"
                     </li>
                     <li>
                         <a
-                            href="career.html"
+                            href="prohect.html"
                             class="text-gray-700 text-sm hover:text-teal-800 flex items-center"
                         >
-                            <i class="fas fa-briefcase mr-1"></i>Career
+                            <i class="fas fa-briefcase mr-1"></i>Completed Projects
                         </a>
                     </li>
                     <li>
@@ -1343,7 +1288,7 @@ id="search-input"
                 </div>
             </div>
             <div class="mt-6 hero-button">
-                <a href="#services" class="gradient-btn">Explore More</a>
+                <a href="./about.html" class="gradient-btn">Explore More</a>
             </div>
         </div>
     </section>
@@ -1556,108 +1501,157 @@ id="search-input"
         </div>
     </section>
 
-    <section id="contact" class="py-16 container mx-auto px-6">
-        <div class="flex flex-col items-center gap-8 max-w-6xl mx-auto">
-            <div class="w-full max-w-lg">
-                <h3 class="contact-heading mb-4 text-center">Got any enquiries? Talk to an expert</h3>
-                <form id="contact-form" class="space-y-4">
-                    <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded-lg" aria-label="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded-lg" aria-label="Your Email" required />
-                    <input type="tel" name="phone" placeholder="Your Phone Number" class="w-full p-3 border rounded-lg" aria-label="Your Phone Number" required />
-                    <select id="main-service" name="main-service" class="w-full p-3 border rounded-lg" aria-label="Select Main Service" required>
-                        <option value="" disabled selected>Select Main Service</option>
-                        <option value="Upstream Services">Upstream Services</option>
-                        <option value="Midstream Services">Midstream Services</option>
-                        <option value="Downstream Services">Downstream Services</option>
-                        <option value="Infrastructural Services">Infrastructural Services</option>
-                        <option value="Public Sector">Public Sector</option>
-                    </select>
-                    <select id="sub-service" name="sub-service" class="w-full p-3 border rounded-lg" aria-label="Select Sub-Service" required disabled>
-                        <option value="" disabled selected>Select Sub-Service</option>
-                    </select>
-                    <textarea name="message" placeholder="Your Message" class="w-full p-3 border rounded-lg" aria-label="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="w-full gradient-btn">Send</button>
-                </form>
-            </div>
-            <div class="w-full max-w-lg">
-                <div id="map"></div>
-            </div>
-        </div>
+ <section
+      class="w-full bg-white py-16 px-4 flex flex-col md:flex-row justify-center items-center gap-8">
+      <div class="flex-1 flex justify-center items-center">
+        <img
+          src="./images/contact_bg.jpg"
+          alt="Contact an Expert"
+          class="max-w-xs md:max-w-md w-full rounded-lg shadow-lg object-cover" />
+      </div>
+      <div
+        class="flex-1 flex flex-col justify-center items-start md:ml-8 mt-8 md:mt-0">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          Have any enquiries?<br />Talk to an Expert
+        </h2>
+        <p class="mb-6 text-gray-700 text-base md:text-lg max-w-md">
+          Our team of experts is ready to assist with your oil & gas or
+          infrastructure project enquiries. Reach out today for trusted
+          solutions.
+        </p>
+        <a
+          href="./contact.html"
+          class="inline-flex items-center justify-center px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-200"
+          title="Talk to an Expert">
+          Contact Us
+        </a>
+      </div>
     </section>
+
+    
 <!---Footer-->
 
-<footer class="py-12 px-4 bg-blue-900 text-white relative">
-<div id="particles-js" class="absolute inset-0"></div>
-<div class="content container mx-auto relative z-10">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-<div>
+   <footer class="py-12 px-4 bg-blue-900 text-white relative">
+  <div id="particles-js" class="absolute inset-0"></div>
 
-<a href="index.html">
-<img
-src="./images/logo.webp"
-alt="MiPet Services Logo"
-class="ml-0 object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline"
-/>
-</a>
-<p class="text-gray-200">
-Mipet Services Limited is a trusted provider of oil, gas, and infrastructure solutions, delivering excellence since 2002.
-</p>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-<ul class="space-y-2">
-<li><a href="index.html" class="text-gray-200 hover:text-white">Home</a></li>
-<li><a href="about.html" class="text-gray-200 hover:text-white">About Us</a></li>
-<li><a href="services.html" class="text-gray-200 hover:text-white">Services</a></li>
-<li><a href="contact.html" class="text-gray-200 hover:text-white">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Services</h4>
-<ul class="space-y-2">
-<li><a href="upstream.html" class="text-gray-200 hover:text-white">Upstream Services</a></li>
-<li><a href="midstream.html" class="text-gray-200 hover:text-white">Midstream Services</a></li>
-<li><a href="downstream.html" class="text-gray-200 hover:text-white">Downstream Services</a></li>
-<li><a href="infrastructure.html" class="text-gray-200 hover:text-white">Infrastructural Services</a></li>
-</ul>
-</div>
-<div>
-<div class="newsletter-form mt-4">
-<h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
-<div class="social-icons flex space-x-4 mb-4">
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
-</div>
-<form class="flex">
-<input type="email" placeholder="Enter your email" class="flex-grow p-2 rounded-l-md border-none" />
-<button type="submit" class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700">Subscribe</button>
-</form>
-</div>
-</div>
-</div>
+  <div class="content container mx-auto relative z-10">
+    <!-- MAIN GRID WITH DIVIDER -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start border-b border-gray-700 pb-10 mb-8">
+      
+      <!-- LOGO AND DESCRIPTION (moved slightly inward and centered better) -->
+      <div class="flex flex-col items-start md:items-start">
+        <a href="index.html" class="mb-4">
+          <img
+            src="./images/logo.webp"
+            alt="MiPet Services Logo"
+            class="object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] ml-2 md:ml-4"
+          />
+        </a>
+        <p class="text-gray-200 leading-relaxed ml-2 md:ml-4">
+          Mipet Services Limited is a trusted provider of oil, gas, and infrastructure solutions, delivering excellence since 2002.
+        </p>
+      </div>
 
-<div>
-    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-<ul class="space-y-2 text-gray-200">
-<li><i class="fas fa-phone-alt mr-2"></i>+234-903-0002-081</li>
-<li><i class="fas fa-phone-alt mr-2"></i>+234-906-9273-301</li>
-<li><i class="fas fa-envelope mr-2"></i><a href="mailto:info@mipetgroupltd.com" class="hover:text-white">info@mipetgroupltd.com</a></li>
-<li><i class="fas fa-envelope mr-2"></i><a href="mailto:mipetserviceslimited@hotmail.com" class="hover:text-white">mipetserviceslimited@hotmail.com</a></li>
-<li><i class="fas fa-globe mr-2"></i><a href="https://www.mipetgroup.com" class="hover:text-white">www.mipetgroup.com</a></li>
-<li><i class="fas fa-map-marker-alt mr-2"></i><b>Eastern Office:</b>Plot 6, New Oginigba Layout Drive, Trans Amadi Industrial Area, Port Harcourt, Rivers State, Nigeria</li>
-<li><i class="fas fa-map-marker-alt mr-2"></i><b>Western Office:</b>No. 2 Katsina Close, Shell Estate Ejeba,
-Warri, Delta State,
-Nigeria </li>
-</ul>
-</div>
-<div class="mt-8 text-center">
-<p class="text-gray-200">
-&copy; 2025 Mipet Services Limited. All rights reserved.
-</p>
-</div>
-</div>
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-gray-200 hover:text-white">Home</a></li>
+          <li><a href="about.html" class="text-gray-200 hover:text-white">About Us</a></li>
+          <li><a href="services.html" class="text-gray-200 hover:text-white">Services</a></li>
+          <li><a href="contact.html" class="text-gray-200 hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="upstream.html" class="text-gray-200 hover:text-white">Upstream Services</a></li>
+          <li><a href="midstream.html" class="text-gray-200 hover:text-white">Midstream Services</a></li>
+          <li><a href="downstream.html" class="text-gray-200 hover:text-white">Downstream Services</a></li>
+          <li><a href="infrastructure.html" class="text-gray-200 hover:text-white">Infrastructural Services</a></li>
+        </ul>
+      </div>
+
+      <!-- SOCIAL + SUBSCRIBE -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
+        <div class="social-icons flex space-x-4 mb-4">
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <form class="flex" id="subscribeForm">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-grow p-2 rounded-l-md border-none text-black"
+            required
+            id="emailInput"
+          />
+          <button
+            type="submit"
+            class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700"
+          >
+            Subscribe
+          </button>
+        </form>
+
+        <script>
+          document
+            .getElementById("subscribeForm")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+              const emailInput = document.getElementById("emailInput");
+              if (emailInput.checkValidity()) {
+                window.location.href = "./contact.html";
+              } else {
+                emailInput.reportValidity();
+              }
+            });
+        </script>
+      </div>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+      <ul class="space-y-2 text-gray-200">
+        <li><i class="fas fa-phone-alt mr-2"></i>+234-903-0002-081</li>
+        <li><i class="fas fa-phone-alt mr-2"></i>+234-906-9273-301</li>
+        <li>
+          <i class="fas fa-envelope mr-2"></i>
+          <a href="mailto:info@mipetgroupltd.com" class="hover:text-white">info@mipetgroupltd.com</a>
+        </li>
+        <li>
+          <i class="fas fa-envelope mr-2"></i>
+          <a href="mailto:mipetserviceslimited@hotmail.com" class="hover:text-white">mipetserviceslimited@hotmail.com</a>
+        </li>
+        <li>
+          <i class="fas fa-globe mr-2"></i>
+          <a href="https://www.mipetgroup.com" class="hover:text-white">www.mipetgroup.com</a>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <b>Eastern Office:</b> Plot 6, New Oginigba Layout Drive, Trans Amadi Industrial Area,  Port Harcourt, Rivers State, Nigeria
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <b>Western Office:</b> No. 2 Katsina Close, Shell Estate Ejeba, Warri, Delta State, Nigeria
+        </li>
+      </ul>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="mt-10 text-center border-t border-gray-700 pt-6">
+      <p class="text-gray-200">
+        &copy; 2025 Mipet Services Limited. All rights reserved.
+      </p>
+    </div>
+  </div>
 </footer>
 
 <script>
@@ -1707,80 +1701,6 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 counters.forEach(counter => observer.observe(counter));
-   
-// Dynamic Dropdown for Contact Form
-const mainServiceSelect = document.getElementById('main-service');
-const subServiceSelect = document.getElementById('sub-service');
-
-const subServices = {
-    'Upstream Services': [
-        'Drilling Operations',
-        'Production Operation & Maintenance Services',
-        'Well Intervention Services',
-        'Pumping Services'
-    ],
-    'Midstream Services': [
-        'Gas Services & Virtual Pipeline Services',
-        'Procurement, Rentals & Supply Services'
-    ],
-    'Downstream Services': [
-        'Engineering Services',
-        'Technical Services'
-    ],
-    'Infrastructural Services': [
-        'Community Support Services',
-        'CSR Project Delivery',
-        'Public Sector Support'
-    ],
-    'Public Sector': [
-        'Public Sector Energy Projects'
-    ]
-};
-
-mainServiceSelect.addEventListener('change', function () {
-    const selectedService = this.value;
-    subServiceSelect.innerHTML = '<option value="" disabled selected>Select Sub-Service</option>';
-    
-    if (selectedService && subServices[selectedService]) {
-        subServices[selectedService].forEach(subService => {
-            const option = document.createElement('option');
-            option.value = subService;
-            option.textContent = subService;
-            subServiceSelect.appendChild(option);
-        });
-        subServiceSelect.disabled = false;
-    } else {
-        subServiceSelect.disabled = true;
-    }
-});
-
-// Contact Form Submission
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-    
-    if (!data.name || !data.email || !data.phone || !data['main-service'] || !data['sub-service'] || !data.message) {
-        alert('Please fill out all fields.');
-        return;
-    }
-
-    console.log('Form submitted:', data);
-    alert('Thank you for your enquiry! We will get back to you soon.');
-    contactForm.reset();
-    subServiceSelect.innerHTML = '<option value="" disabled selected>Select Sub-Service</option>';
-    subServiceSelect.disabled = true;
-});
-    
-// Leaflet Map Initialization
-const map = L.map('map').setView([4.8156, 7.0498], 13);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-L.marker([4.8156, 7.0498]).addTo(map)
-    .bindPopup('MiPet Services<br>Plot 6 Oginigba Layout, Drive Trans-Amadi, Port Harcourt')
-    .openPopup();
 
 // Intersection Observer for Fly-in Animations
 const flyInElements = document.querySelectorAll('.fly-in');
@@ -1971,7 +1891,7 @@ name: "Careers", url: "career.html"
 name: "Values and Milestones", url: "values.html"
 },
 {
-name: "Career", url: "career.html"
+name: "Completed Projects", url: "Project.html"
 },
 {
 name: "Media Hub", url: "media.html"

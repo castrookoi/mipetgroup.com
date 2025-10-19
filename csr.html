@@ -1608,106 +1608,126 @@ Infrastructural Services
 </section>
 
 <footer class="py-12 px-4 bg-blue-900 text-white relative">
-<div id="particles-js" class="absolute inset-0"></div>
-<div class="content container mx-auto relative z-10">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-<div>
+  <div id="particles-js" class="absolute inset-0"></div>
 
-<a href="index.html">
-<img
-src="./images/logo.webp"
-alt="MiPet Services Logo"
-class="ml-0 object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline"
-/>
-</a>
-<p class="text-gray-200">
-Mipet Services Limited is a trusted provider of oil, gas, and infrastructure solutions, delivering excellence since 2002.
-</p>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-<ul class="space-y-2">
-<li><a href="index.html" class="text-gray-200 hover:text-white">Home</a></li>
-<li><a href="about.html" class="text-gray-200 hover:text-white">About Us</a></li>
-<li><a href="services.html" class="text-gray-200 hover:text-white">Services</a></li>
-<li><a href="contact.html" class="text-gray-200 hover:text-white">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Services</h4>
-<ul class="space-y-2">
-<li><a href="upstream.html" class="text-gray-200 hover:text-white">Upstream Services</a></li>
-<li><a href="midstream.html" class="text-gray-200 hover:text-white">Midstream Services</a></li>
-<li><a href="downstream.html" class="text-gray-200 hover:text-white">Downstream Services</a></li>
-<li><a href="infrastructure.html" class="text-gray-200 hover:text-white">Infrastructural Services</a></li>
-</ul>
-</div>
-<div>
-<div class="newsletter-form mt-4">
-<h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
-<div class="social-icons flex space-x-4 mb-4">
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
-</div>
- </div>
-          <div>
-              <form class="flex" id="subscribeForm">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  class="flex-grow p-2 rounded-l-md border-none text-black"
-                  required
-                  id="emailInput" />
-                <button
-                  type="submit"
-                  class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700">
-                  Subscribe
-                </button>
-              </form>
-              <script>
-                document
-                  .getElementById("subscribeForm")
-                  .addEventListener("submit", function (e) {
-                    e.preventDefault(); // Stop default form action
+  <div class="content container mx-auto relative z-10">
+    <!-- MAIN GRID WITH DIVIDER -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start border-b border-gray-700 pb-10 mb-8">
+      
+      <!-- LOGO AND DESCRIPTION (moved slightly inward and centered better) -->
+      <div class="flex flex-col items-start md:items-start">
+        <a href="index.html" class="mb-4">
+          <img
+            src="./images/logo.webp"
+            alt="MiPet Services Logo"
+            class="object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] ml-2 md:ml-4"
+          />
+        </a>
+        <p class="text-gray-200 leading-relaxed ml-2 md:ml-4">
+          Mipet Services Limited is a trusted provider of oil, gas, and infrastructure solutions, delivering excellence since 2002.
+        </p>
+      </div>
 
-                    const emailInput = document.getElementById("emailInput");
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-gray-200 hover:text-white">Home</a></li>
+          <li><a href="about.html" class="text-gray-200 hover:text-white">About Us</a></li>
+          <li><a href="services.html" class="text-gray-200 hover:text-white">Services</a></li>
+          <li><a href="contact.html" class="text-gray-200 hover:text-white">Contact</a></li>
+        </ul>
+      </div>
 
-                    if (emailInput.checkValidity()) {
-                      // If valid, go to contact.html
-                      window.location.href = "./contact.html";
-                    } else {
-                      // Show browser validation if invalid
-                      emailInput.reportValidity();
-                    }
-                  });
-              </script>
-            </div>
-</div>
-</div>
-</div>
+      <!-- SERVICES -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="upstream.html" class="text-gray-200 hover:text-white">Upstream Services</a></li>
+          <li><a href="midstream.html" class="text-gray-200 hover:text-white">Midstream Services</a></li>
+          <li><a href="downstream.html" class="text-gray-200 hover:text-white">Downstream Services</a></li>
+          <li><a href="infrastructure.html" class="text-gray-200 hover:text-white">Infrastructural Services</a></li>
+        </ul>
+      </div>
 
-<div>
-    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-<ul class="space-y-2 text-gray-200">
-<li><i class="fas fa-phone-alt mr-2"></i>+234-903-0002-081</li>
-<li><i class="fas fa-phone-alt mr-2"></i>+234-906-9273-301</li>
-<li><i class="fas fa-envelope mr-2"></i><a href="mailto:info@mipetgroupltd.com" class="hover:text-white">info@mipetgroupltd.com</a></li>
-<li><i class="fas fa-envelope mr-2"></i><a href="mailto:mipetserviceslimited@hotmail.com" class="hover:text-white">mipetserviceslimited@hotmail.com</a></li>
-<li><i class="fas fa-globe mr-2"></i><a href="https://www.mipetgroup.com" class="hover:text-white">www.mipetgroup.com</a></li>
-<li><i class="fas fa-map-marker-alt mr-2"></i><b>Eastern Office:</b>Plot 6, New Oginigba Layout Drive, Trans Amadi Industrial Area, Port Harcourt, Rivers State, Nigeria</li>
-<li><i class="fas fa-map-marker-alt mr-2"></i><b>Western Office:</b>No. 2 Katsina Close, Shell Estate Ejeba,
-Warri, Delta State,
-Nigeria </li>
-</ul>
-</div>
-<div class="mt-8 text-center">
-<p class="text-gray-200">
-&copy; 2025 Mipet Services Limited. All rights reserved.
-</p>
-</div>
-</div>
+      <!-- SOCIAL + SUBSCRIBE -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
+        <div class="social-icons flex space-x-4 mb-4">
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <form class="flex" id="subscribeForm">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-grow p-2 rounded-l-md border-none text-black"
+            required
+            id="emailInput"
+          />
+          <button
+            type="submit"
+            class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700"
+          >
+            Subscribe
+          </button>
+        </form>
+
+        <script>
+          document
+            .getElementById("subscribeForm")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+              const emailInput = document.getElementById("emailInput");
+              if (emailInput.checkValidity()) {
+                window.location.href = "./contact.html";
+              } else {
+                emailInput.reportValidity();
+              }
+            });
+        </script>
+      </div>
+    </div>
+
+    <!-- CONTACT INFO -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+      <ul class="space-y-2 text-gray-200">
+        <li><i class="fas fa-phone-alt mr-2"></i>+234-903-0002-081</li>
+        <li><i class="fas fa-phone-alt mr-2"></i>+234-906-9273-301</li>
+        <li>
+          <i class="fas fa-envelope mr-2"></i>
+          <a href="mailto:info@mipetgroupltd.com" class="hover:text-white">info@mipetgroupltd.com</a>
+        </li>
+        <li>
+          <i class="fas fa-envelope mr-2"></i>
+          <a href="mailto:mipetserviceslimited@hotmail.com" class="hover:text-white">mipetserviceslimited@hotmail.com</a>
+        </li>
+        <li>
+          <i class="fas fa-globe mr-2"></i>
+          <a href="https://www.mipetgroup.com" class="hover:text-white">www.mipetgroup.com</a>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <b>Eastern Office:</b> Plot 6, New Oginigba Layout Drive, Trans Amadi Industrial Area,  Port Harcourt, Rivers State, Nigeria
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <b>Western Office:</b> No. 2 Katsina Close, Shell Estate Ejeba, Warri, Delta State, Nigeria
+        </li>
+      </ul>
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="mt-10 text-center border-t border-gray-700 pt-6">
+      <p class="text-gray-200">
+        &copy; 2025 Mipet Services Limited. All rights reserved.
+      </p>
+    </div>
+  </div>
 </footer>
 
 <script>
