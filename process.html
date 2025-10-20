@@ -916,261 +916,424 @@ font-style: italic;
 </style>
 </head>
 <body>
-<header class="w-full font-sans bg-white">
-<div class="first-nav bg-gray-100 border-b border-gray-200 w-full hidden md:block">
-<nav class="py-2 px-4">
-<ul class="flex justify-end space-x-6">
-<li>
-<a href="values.html" class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
-<i class="fas fa-leaf mr-1"></i>Values and Milestones
-</a>
-</li>
-<li>
-<a href="career.html" class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
-<i class="fas fa-briefcase mr-1"></i>Career
-</a>
-</li>
-<li>
-<a href="media.html" class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
-<i class="fas fa-newspaper mr-1"></i>Media Hub
-</a>
-</li>
-</ul>
-</nav>
-</div>
-<div class="second-nav flex items-center justify-between w-full px-4 py-2">
-<div class="md:hidden">
-<button id="menu-toggle" class="text-gray-700 text-2xl">
-<i class="fas fa-bars"></i>
-</button>
-</div>
-<div class="flex-grow md:flex-grow-0 md:pt-1 text-center md:text-left">
-<a href="index.html">
-<img
-src="./images/logo.webp"
-alt="MiPet Services Logo"
-class="ml-0 object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline"
-/>
-</a>
-</div>
-<div class="hidden md:block flex-grow"></div>
-<nav class="py-2 hidden md:flex items-center">
-<ul class="flex space-x-4">
-<li>
-<a href="index.html" class="text-gray-700 text-base hover:text-teal-800">Home</a>
-</li>
-<li>
-<a href="about.html" class="text-gray-700 text-base hover:text-teal-800">About Us</a>
-</li>
-<li class="relative dropdown">
-<a class="text-gray-700 text-base hover:text-teal-800 flex items-center cursor-pointer" onclick="toggleSubDropdown(event, this)">
-Our Services <i class="fas fa-chevron-down ml-1"></i>
-</a>
-<ul class="dropdown-menu hidden absolute bg-white shadow-md mt-2 py-2 w-64">
-<li class="relative sub-dropdown">
-<a class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between" onclick="toggleSubDropdown(event, this)">
-Upstream Services
-<i class="fas fa-plus sub-toggle-icon"></i>
-</a>
-<ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
-<li>
-<a href="drilling.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Drilling Operations</a>
-</li>
-<li>
-<a href="operation.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Production Operation & Maintenance Services</a>
-</li>
-<li>
-<a href="well.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Well Intervention Services</a>
-</li>
-<li>
-<a href="pumping.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Pumping Services</a>
-</li>
-</ul>
-</li>
-<li class="relative sub-dropdown">
-<a class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between" onclick="toggleSubDropdown(event, this)">
-Midstream Services
-<i class="fas fa-plus sub-toggle-icon"></i>
-</a>
-<ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
-<li>
-<a href="gas.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Gas Services & Virtual Pipeline Services</a>
-</li>
-<li>
-<a href="pipeline.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Pipeline Services</a>
-</li>
-<li>
-<a href="process.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Process Services Division</a>
-</li>
-<li>
-<a href="procurement.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Procurement, Rentals & Supply Services</a>
-</li>
-</ul>
-</li>
-<li class="relative sub-dropdown">
-<a class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between" onclick="toggleSubDropdown(event, this)">
-Downstream Services
-<i class="fas fa-plus sub-toggle-icon"></i>
-</a>
-<ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
-<li>
-<a href="engineering.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Engineering Services</a>
-</li>
-<li>
-<a href="technical.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Technical Services</a>
-</li>
-</ul>
-</li>
-<li class="relative sub-dropdown">
-<a class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between" onclick="toggleSubDropdown(event, this)">
-Infrastructural Services
-<i class="fas fa-plus sub-toggle-icon"></i>
-</a>
-<ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
-<li>
-<a href="community.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">Community Support Services</a>
-</li>
-<li>
-<a href="csr.html" class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white">CSR Project Delivery</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href="contact.html" class="text-gray-700 text-base hover:text-teal-800">Contact Us</a>
-</li>
-<li>
-<a href="career.html" class="text-gray-700 text-base hover:text-teal-800">Careers</a>
-</li>
-</ul>
-</nav>
-<button id="search-toggle" class="bg-blue-900 flex items-center justify-center h-10 w-10 ml-2 self-center">
-<i class="fas fa-search text-white text-lg"></i>
-</button>
-</div>
-<div id="search-bar" class="md:w-auto md:right-0">
-<input
-type="text"
-placeholder="Search..."
-class="w-full p-2 border border-gray-300 rounded"
-id="search-input"
-/>
-<ul id="search-suggestions" class="hidden"></ul>
-</div>
-<div id="mobile-menu" class="md:hidden bg-white shadow-md">
-<div class="bg-gray-100 py-2 px-4">
-<ul class="flex flex-col space-y-2">
-<li>
-<a href="values.html" class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
-<i class="fas fa-leaf mr-1"></i>Values and Milestones
-</a>
-</li>
-<li>
-<a href="career.html" class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
-<i class="fas fa-briefcase mr-1"></i>Career
-</a>
-</li>
-<li>
-<a href="media.html" class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
-<i class="fas fa-newspaper mr-1"></i>Media Hub
-</a>
-</li>
-</ul>
-</div>
-<hr class="border-gray-200" />
-<ul class="flex flex-col space-y-2 px-4 py-2">
-<li>
-<a href="index.html" class="text-gray-700 text-base hover:text-teal-800">Home</a>
-</li>
-<li>
-<a href="about.html" class="text-gray-700 text-base hover:text-teal-800">About Us</a>
-</li>
-<li class="mobile-dropdown">
-<a class="text-gray-700 text-base hover:text-teal-800 flex items-center justify-between" onclick="toggleSubmenu(this)">
-Our Services <i class="fas fa-chevron-down ml-1"></i>
-</a>
-<ul class="mobile-submenu pl-4 space-y-2">
-<li class="mobile-sub-dropdown">
-<a class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between" onclick="toggleMobileSubDropdown(this)">
-Upstream Services
-<i class="fas fa-plus mobile-sub-toggle-icon"></i>
-</a>
-<ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
-<li>
-<a href="drilling.html" class="block text-gray-700 text-sm hover:text-teal-800">Drilling Operations</a>
-</li>
-<li>
-<a href="operation.html" class="block text-gray-700 text-sm hover:text-teal-800">Production Operation & Maintenance Services</a>
-</li>
-<li>
-<a href="well.html" class="block text-gray-700 text-sm hover:text-teal-800">Well Intervention Services</a>
-</li>
-<li>
-<a href="pumping.html" class="block text-gray-700 text-sm hover:text-teal-800">Pumping Services</a>
-</li>
-</ul>
-</li>
-<li class="mobile-sub-dropdown">
-<a class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between" onclick="toggleMobileSubDropdown(this)">
-Midstream Services
-<i class="fas fa-plus mobile-sub-toggle-icon"></i>
-</a>
-<ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
-<li>
-<a href="gas.html" class="block text-gray-700 text-sm hover:text-teal-800">Gas Services & Virtual Pipeline Services</a>
-</li>
-<li>
-<a href="pipeline.html" class="block text-gray-700 text-sm hover:text-teal-800">Pipeline Services</a>
-</li>
-<li>
-<a href="process.html" class="block text-gray-700 text-sm hover:text-teal-800">Process Services Division</a>
-</li>
-<li>
-<a href="procurement.html" class="block text-gray-700 text-sm hover:text-teal-800">Procurement, Rentals & Supply Services</a>
-</li>
-</ul>
-</li>
-<li class="mobile-sub-dropdown">
-<a class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between" onclick="toggleMobileSubDropdown(this)">
-Downstream Services
-<i class="fas fa-plus mobile-sub-toggle-icon"></i>
-</a>
-<ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
-<li>
-<a href="engineering.html" class="block text-gray-700 text-sm hover:text-teal-800">Engineering Services</a>
-</li>
-<li>
-<a href="technical.html" class="block text-gray-700 text-sm hover:text-teal-800">Technical Services</a>
-</li>
-</ul>
-</li>
-<li class="mobile-sub-dropdown">
-<a class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between" onclick="toggleMobileSubDropdown(this)">
-Infrastructural Services
-<i class="fas fa-plus mobile-sub-toggle-icon"></i>
-</a>
-<ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
-<li>
-<a href="community.html" class="block text-gray-700 text-sm hover:text-teal-800">Community Support Services</a>
-</li>
-<li>
-<a href="csr.html" class="block text-gray-700 text-sm hover:text-teal-800">CSR Project Delivery</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href="contact.html" class="text-gray-700 text-base hover:text-teal-800">Contact Us</a>
-</li>
-<li>
-<a href="career.html" class="text-gray-700 text-base hover:text-teal-800">Careers</a>
-</li>
-</ul>
-</div>
-</header>
-<div id="overlay"></div>
+ <header class="w-full font-sans bg-white">
+      <div
+        class="first-nav bg-gray-100 border-b border-gray-200 w-full hidden md:block">
+        <nav class="py-2 px-4">
+          <ul class="flex justify-end space-x-6">
+            <li>
+              <a
+                href="values.html"
+                class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
+                <i class="fas fa-leaf mr-1"></i>Values and Milestones
+              </a>
+            </li>
+            <li>
+              <a
+                href="projects.html"
+                class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
+                <i class="fas fa-briefcase mr-1"></i>Completed Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="media.html"
+                class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
+                <i class="fas fa-newspaper mr-1"></i>Media Hub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        class="second-nav flex items-center justify-between w-full px-4 py-2">
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-700 text-2xl">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+        <div class="flex-grow md:flex-grow-0 md:pt-1 text-center md:text-left">
+          <a href="index.html">
+            <img
+              src="./images/logo.webp"
+              alt="MiPet Services Logo"
+              class="ml-0 object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline" />
+          </a>
+        </div>
+        <div class="hidden md:block flex-grow"></div>
+        <nav class="py-2 hidden md:flex items-center">
+          <ul class="flex space-x-4">
+            <li>
+              <a
+                href="index.html"
+                class="text-gray-700 text-base hover:text-teal-800"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="text-gray-700 text-base hover:text-teal-800"
+                >About Us</a
+              >
+            </li>
+            <li class="relative dropdown">
+              <a
+                class="text-gray-700 text-base hover:text-teal-800 flex items-center cursor-pointer"
+                onclick="toggleSubDropdown(event, this)">
+                Our Services <i class="fas fa-chevron-down ml-1"></i>
+              </a>
+              <ul
+                class="dropdown-menu hidden absolute bg-white shadow-md mt-2 py-2 w-64">
+                <li class="relative sub-dropdown">
+                  <a
+                    class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between"
+                    onclick="toggleSubDropdown(event, this)">
+                    Upstream Services
+                    <i class="fas fa-plus sub-toggle-icon"></i>
+                  </a>
+                  <ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
+                    <li>
+                      <a
+                        href="drilling.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Drilling Operations</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="operation.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Production Operation & Maintenance Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="well.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Well Intervention Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="pumping.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Pumping Services</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="relative sub-dropdown">
+                  <a
+                    class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between"
+                    onclick="toggleSubDropdown(event, this)">
+                    Midstream Services
+                    <i class="fas fa-plus sub-toggle-icon"></i>
+                  </a>
+                  <ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
+                    <li>
+                      <a
+                        href="gas.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Gas Services & Virtual Pipeline Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="pipeline.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Pipeline Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="process.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Process Services Division</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="procurement.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Procurement, Rentals & Supply Services</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="relative sub-dropdown">
+                  <a
+                    class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between"
+                    onclick="toggleSubDropdown(event, this)">
+                    Downstream Services
+                    <i class="fas fa-plus sub-toggle-icon"></i>
+                  </a>
+                  <ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
+                    <li>
+                      <a
+                        href="engineering.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Engineering Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="technical.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Technical Services</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="relative sub-dropdown">
+                  <a
+                    class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white flex items-center justify-between"
+                    onclick="toggleSubDropdown(event, this)">
+                    Infrastructural Services
+                    <i class="fas fa-plus sub-toggle-icon"></i>
+                  </a>
+                  <ul class="sub-dropdown-menu hidden pl-4 bg-gray-50">
+                    <li>
+                      <a
+                        href="community.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >Community Support Services</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="csr.html"
+                        class="block px-4 py-2 text-gray-700 text-sm hover:bg-teal-800 hover:text-white"
+                        >CSR Project Delivery</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="text-gray-700 text-base hover:text-teal-800"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="career.html"
+                class="text-gray-700 text-base hover:text-teal-800"
+                >Careers</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <button
+          id="search-toggle"
+          class="bg-blue-900 flex items-center justify-center h-10 w-10 ml-2 self-center">
+          <i class="fas fa-search text-white text-lg"></i>
+        </button>
+      </div>
+      <div id="search-bar" class="md:w-auto md:right-0">
+        <input
+          type="text"
+          placeholder="Search..."
+          class="w-full p-2 border border-gray-300 rounded"
+          id="search-input" />
+        <ul id="search-suggestions" class="hidden"></ul>
+      </div>
+      <div id="mobile-menu" class="md:hidden bg-white shadow-md">
+        <div class="bg-gray-100 py-2 px-4">
+          <ul class="flex flex-col space-y-2">
+            <li>
+              <a
+                href="values.html"
+                class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
+                <i class="fas fa-leaf mr-1"></i>Values and Milestones
+              </a>
+            </li>
+            <li>
+              <a
+                href="projects.html"
+                class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
+                <i class="fas fa-briefcase mr-1"></i>Completed Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="media.html"
+                class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
+                <i class="fas fa-newspaper mr-1"></i>Media Hub
+              </a>
+            </li>
+          </ul>
+        </div>
+        <hr class="border-gray-200" />
+        <ul class="flex flex-col space-y-2 px-4 py-2">
+          <li>
+            <a
+              href="index.html"
+              class="text-gray-700 text-base hover:text-teal-800"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="about.html"
+              class="text-gray-700 text-base hover:text-teal-800"
+              >About Us</a
+            >
+          </li>
+          <li class="mobile-dropdown">
+            <a
+              class="text-gray-700 text-base hover:text-teal-800 flex items-center justify-between"
+              onclick="toggleSubmenu(this)">
+              Our Services <i class="fas fa-chevron-down ml-1"></i>
+            </a>
+            <ul class="mobile-submenu pl-4 space-y-2">
+              <li class="mobile-sub-dropdown">
+                <a
+                  class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between"
+                  onclick="toggleMobileSubDropdown(this)">
+                  Upstream Services
+                  <i class="fas fa-plus mobile-sub-toggle-icon"></i>
+                </a>
+                <ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
+                  <li>
+                    <a
+                      href="drilling.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Drilling Operations</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="operation.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Production Operation & Maintenance Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="well.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Well Intervention Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="pumping.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Pumping Services</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="mobile-sub-dropdown">
+                <a
+                  class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between"
+                  onclick="toggleMobileSubDropdown(this)">
+                  Midstream Services
+                  <i class="fas fa-plus mobile-sub-toggle-icon"></i>
+                </a>
+                <ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
+                  <li>
+                    <a
+                      href="gas.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Gas Services & Virtual Pipeline Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="pipeline.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Pipeline Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="process.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Process Services Division</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="procurement.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Procurement, Rentals & Supply Services</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="mobile-sub-dropdown">
+                <a
+                  class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between"
+                  onclick="toggleMobileSubDropdown(this)">
+                  Downstream Services
+                  <i class="fas fa-plus mobile-sub-toggle-icon"></i>
+                </a>
+                <ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
+                  <li>
+                    <a
+                      href="engineering.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Engineering Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="technical.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Technical Services</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="mobile-sub-dropdown">
+                <a
+                  class="block text-gray-700 text-sm hover:text-teal-800 flex items-center justify-between"
+                  onclick="toggleMobileSubDropdown(this)">
+                  Infrastructural Services
+                  <i class="fas fa-plus mobile-sub-toggle-icon"></i>
+                </a>
+                <ul class="mobile-sub-submenu pl-4 space-y-2 hidden">
+                  <li>
+                    <a
+                      href="community.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >Community Support Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="csr.html"
+                      class="block text-gray-700 text-sm hover:text-teal-800"
+                      >CSR Project Delivery</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="text-gray-700 text-base hover:text-teal-800"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="career.html"
+              class="text-gray-700 text-base hover:text-teal-800"
+              >Careers</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div id="overlay"></div>
 
  
     <!--Hero Section Starts Here-->
@@ -1200,7 +1363,7 @@ Infrastructural Services
             <li>
               <a href="#drilling-operations" class="hover:text-red-600 focus:text-red-600 transition-colors">
                 <h3 class="font-extrabold hero-text break-words whitespace-normal group" style="max-width: 42vw; font-size: 2.0rem;">
-                  <span class="inline-block group-hover:text-red-600 group-focus:text-red-600 transition-colors">Process Serviceees Division</span>
+                  <span class="inline-block group-hover:text-red-600 group-focus:text-red-600 transition-colors">Process Services Division</span>
                 </h3>
               </a>
             </li>
@@ -1209,7 +1372,7 @@ Infrastructural Services
             Combining global expertise with local insight to deliver trusted Oil & Gas and infrastructure solutions that uphold the highest standards of quality and performance, guided by our commitment to excellence, integrity, and sustainability.
           </p>
           <div class="mt-6 hero-button">
-            <a href="#about" class="gradient-btn">
+            <a href="./contact.html" class="gradient-btn">
               <i class="fas fa-address-book mr-2"></i> Talk to an Expert
             </a>
           </div>
@@ -1326,7 +1489,7 @@ Infrastructural Services
         your facilities run safely, efficiently, and sustainably.  
         Reach out today for reliable, world-class process engineering support.
       </p>
-      <a href="#contact" class="gradient-btn inline-flex items-center justify-center" title="Get in Touch">
+      <a href="./contact.html" class="gradient-btn inline-flex items-center justify-center">
         <i class="fas fa-envelope mr-2"></i> Get in Touch
       </a>
     </div>
@@ -1535,593 +1698,729 @@ Infrastructural Services
   </div>
 </section>
 
-<section>
-  <div class="flex justify-center w-full mt-12 mb-12">
-    <h3 class="text-4xl font-bold text-gray-800 text-center break-words whitespace-normal w-full max-w-xs sm:max-w-md md:max-w-lg">
-      Statutory Certifications
-    </h3>
-  </div>
-  <div class="certifications-grid grid grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
-    <div class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
-      <div class="h-[40%] overflow-hidden">
-        <img src="./images/Ukcert.jpg" alt="ISO 9001:2015" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+    <section>
+      <div class="flex justify-center w-full mt-12 mb-12">
+        <h3
+          class="text-4xl font-bold text-gray-800 text-center break-words whitespace-normal w-full max-w-xs sm:max-w-md md:max-w-lg">
+          Statutory Certifications
+        </h3>
       </div>
-      <div class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
-        <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
-        <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
-        <div>
-          <h5 class="text-2xl font-semibold mb-2 text-gray-800">ISO 9001:2015</h5>
-          <p class="text-sm opacity-75 leading-relaxed text-gray-800">ISO CERTIFICATE OF REGISTRATION</p>
+      <div
+        class="certifications-grid grid grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+        <div
+          class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
+          <div class="h-[40%] overflow-hidden">
+            <img
+              src="./images/Ukcert.jpg"
+              alt="ISO 9001:2015"
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+          </div>
+          <div
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
+            <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+            <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+            <div>
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+                ISO 9001:2015
+              </h5>
+              <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                ISO CERTIFICATE OF REGISTRATION
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
+          <div class="h-[40%] overflow-hidden">
+            <img
+              src="./images/ndpra.jpg"
+              alt="ISO 14001:2015"
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+          </div>
+          <div
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
+            <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+            <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+            <div>
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+                NPMPDRA PERMITS<br />/CERTIFICATIONS: 2025
+              </h5>
+              <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                Facilites/Equipment Installation <br />
+                Discipline Engineering Services <br />
+                Engineering Desing Services <br />Procurement and Supply
+                Services
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
+          <div class="h-[40%] overflow-hidden">
+            <img
+              src="./images/nurpc.JPG"
+              alt="ISO 45001:2018"
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+          </div>
+          <div
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
+            <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+            <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+            <div>
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+                NUPRC PERMITS<br />/CERTIFICATION
+              </h5>
+              <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                Major Construction Services, <br />
+                Drilling/Production Services, <br />
+                Special Transport Services, <br />
+                Heavy Duty Equipment Supply, Installation and Maintenance
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
+          <div class="h-[40%] overflow-hidden">
+            <img
+              src="./images/nogic.jpg"
+              alt="ISO 45001:2018"
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+          </div>
+          <div
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
+            <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
+            <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
+            <div>
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+                NCDMB/NOGIC <br />JQS CERTIFICATION
+              </h5>
+              <p class="text-sm opacity-75 leading-relaxed text-gray-800">
+                Major Construction Services, <br />
+                Drilling/Production Services, <br />
+                Heavy Duty Equipment Supply, Installation and Maintenance
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
-      <div class="h-[40%] overflow-hidden">
-        <img src="./images/ndpra.jpg" alt="ISO 14001:2015" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+    </section>
+
+    <section
+      class="w-full bg-white py-16 px-4 flex flex-col md:flex-row justify-center items-center gap-8">
+      <div class="flex-1 flex justify-center items-center">
+        <img
+          src="./images/contact_bg.jpg"
+          alt="Contact an Expert"
+          class="max-w-xs md:max-w-md w-full rounded-lg shadow-lg object-cover" />
       </div>
-      <div class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
-        <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
-        <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
-        <div>
-          <h5 class="text-2xl font-semibold mb-2 text-gray-800">NPMPDRA PERMITS<br />/CERTIFICATIONS: 2025</h5>
-          <p class="text-sm opacity-75 leading-relaxed text-gray-800">
-            Facilites/Equipment Installation <br> Discipline Engineering Services <br> Engineering Desing Services <br>Procurement and Supply Services
-          </p>
+      <div
+        class="flex-1 flex flex-col justify-center items-start md:ml-8 mt-8 md:mt-0">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+          Have any enquiries?<br />Talk to an Expert
+        </h2>
+        <p class="mb-6 text-gray-700 text-base md:text-lg max-w-md">
+          Our team of experts is ready to assist with your oil & gas or
+          infrastructure project enquiries. Reach out today for trusted
+          solutions.
+        </p>
+        <a
+          href="./contact.html"
+          class="inline-flex items-center justify-center px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-200"
+          title="Talk to an Expert">
+          Contact Us
+        </a>
+      </div>
+    </section>
+
+    <footer class="py-12 px-4 bg-blue-900 text-white relative">
+  <div id="particles-js" class="absolute inset-0"></div>
+
+  <div class="content container mx-auto relative z-10">
+    <!-- MAIN GRID WITH DIVIDER -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 items-start border-b border-gray-700 pb-10 mb-8">
+      
+      <!-- LOGO AND DESCRIPTION (moved slightly inward and centered better) -->
+      <div class="flex flex-col items-start md:items-start">
+        <a href="index.html" class="mb-4">
+          <img
+            src="./images/logo.webp"
+            alt="MiPet Services Logo"
+            class="object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] ml-2 md:ml-4"
+          />
+        </a>
+        <p class="text-gray-200 leading-relaxed ml-2 md:ml-4">
+          Mipet Services Limited is a trusted provider of oil, gas, and infrastructure solutions, delivering excellence since 2002.
+        </p>
+      </div>
+
+      <!-- QUICK LINKS -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html" class="text-gray-200 hover:text-white">Home</a></li>
+          <li><a href="about.html" class="text-gray-200 hover:text-white">About Us</a></li>
+          <li><a href="services.html" class="text-gray-200 hover:text-white">Services</a></li>
+          <li><a href="contact.html" class="text-gray-200 hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- SERVICES -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Services</h4>
+        <ul class="space-y-2">
+          <li><a href="upstream.html" class="text-gray-200 hover:text-white">Upstream Services</a></li>
+          <li><a href="midstream.html" class="text-gray-200 hover:text-white">Midstream Services</a></li>
+          <li><a href="downstream.html" class="text-gray-200 hover:text-white">Downstream Services</a></li>
+          <li><a href="infrastructure.html" class="text-gray-200 hover:text-white">Infrastructural Services</a></li>
+        </ul>
+      </div>
+
+      <!-- SOCIAL + SUBSCRIBE -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
+        <div class="social-icons flex space-x-4 mb-4">
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
         </div>
+
+        <form class="flex" id="subscribeForm">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="flex-grow p-2 rounded-l-md border-none text-black"
+            required
+            id="emailInput"
+          />
+          <button
+            type="submit"
+            class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700"
+          >
+            Subscribe
+          </button>
+        </form>
+
+        <script>
+          document
+            .getElementById("subscribeForm")
+            .addEventListener("submit", function (e) {
+              e.preventDefault();
+              const emailInput = document.getElementById("emailInput");
+              if (emailInput.checkValidity()) {
+                window.location.href = "./contact.html";
+              } else {
+                emailInput.reportValidity();
+              }
+            });
+        </script>
       </div>
     </div>
-    <div class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
-      <div class="h-[40%] overflow-hidden">
-        <img src="./images/nurpc.JPG" alt="ISO 45001:2018" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
-      </div>
-      <div class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
-        <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
-        <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
-        <div>
-          <h5 class="text-2xl font-semibold mb-2 text-gray-800">NUPRC PERMITS<br />/CERTIFICATION</h5>
-          <p class="text-sm opacity-75 leading-relaxed text-gray-800">
-            Major Construction Services, <br> Drilling/Production Services, <br> Special Transport Services, <br> Heavy Duty Equipment Supply, Installation and Maintenance
-          </p>
-        </div>
-      </div>
+
+    <!-- CONTACT INFO -->
+    <div>
+      <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+      <ul class="space-y-2 text-gray-200">
+        <li><i class="fas fa-phone-alt mr-2"></i>+234-903-0002-081</li>
+        <li><i class="fas fa-phone-alt mr-2"></i>+234-906-9273-301</li>
+        <li>
+          <i class="fas fa-envelope mr-2"></i>
+          <a href="mailto:info@mipetgroupltd.com" class="hover:text-white">info@mipetgroupltd.com</a>
+        </li>
+        <li>
+          <i class="fas fa-envelope mr-2"></i>
+          <a href="mailto:mipetserviceslimited@hotmail.com" class="hover:text-white">mipetserviceslimited@hotmail.com</a>
+        </li>
+        <li>
+          <i class="fas fa-globe mr-2"></i>
+          <a href="https://www.mipetgroup.com" class="hover:text-white">www.mipetgroup.com</a>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <b>Eastern Office:</b> Plot 6, New Oginigba Layout Drive, Trans Amadi Industrial Area,  Port Harcourt, Rivers State, Nigeria
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt mr-2"></i>
+          <b>Western Office:</b> No. 2 Katsina Close, Shell Estate Ejeba, Warri, Delta State, Nigeria
+        </li>
+      </ul>
     </div>
-    <div class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
-      <div class="h-[40%] overflow-hidden">
-        <img src="./images/nogic.jpg" alt="ISO 45001:2018" class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
-      </div>
-      <div class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
-        <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
-        <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
-        <div>
-          <h5 class="text-2xl font-semibold mb-2 text-gray-800">NCDMB/NOGIC <br />JQS CERTIFICATION</h5>
-          <p class="text-sm opacity-75 leading-relaxed text-gray-800">
-            Major Construction Services, <br> Drilling/Production Services, <br> Heavy Duty Equipment Supply, Installation and Maintenance
-          </p>
-        </div>
-      </div>
+
+    <!-- COPYRIGHT -->
+    <div class="mt-10 text-center border-t border-gray-700 pt-6">
+      <p class="text-gray-200">
+        &copy; 2025 Mipet Services Limited. All rights reserved.
+      </p>
     </div>
   </div>
-</section>
-
-<section class="w-full bg-white py-16 px-4 flex flex-col md:flex-row justify-center items-center gap-8">
-  <div class="flex-1 flex justify-center items-center">
-    <img src="./images/contact_bg.jpg" alt="Contact an Expert" class="max-w-xs md:max-w-md w-full rounded-lg shadow-lg object-cover" />
-  </div>
-  <div class="flex-1 flex flex-col justify-center items-start md:ml-8 mt-8 md:mt-0">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-      Have any enquiries?<br />Talk to an Expert
-    </h2>
-    <p class="mb-6 text-gray-700 text-base md:text-lg max-w-md">
-      Our team of experts is ready to assist with your oil & gas or infrastructure project enquiries. Reach out today for trusted solutions.
-    </p>
-    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition duration-200" title="Talk to an Expert">
-      Contact Us
-    </a>
-  </div>
-</section>
-
-<!---Footer-->
-<footer class="py-12 px-4 bg-blue-900 text-white relative">
-<div id="particles-js" class="absolute inset-0"></div>
-<div class="content container mx-auto relative z-10">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-<div>
-
-<a href="index.html">
-<img
-src="./images/logo.webp"
-alt="MiPet Services Logo"
-class="ml-0 object-contain h-4 max-w-[50px] sm:h-6 sm:max-w-[100px] md:h-8 md:max-w-[120px] lg:h-10 lg:max-w-[150px] inline"
-/>
-</a>
-<p class="text-gray-200">
-Mipet Services Limited is a trusted provider of oil, gas, and infrastructure solutions, delivering excellence since 2002.
-</p>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-<ul class="space-y-2">
-<li><a href="index.html" class="text-gray-200 hover:text-white">Home</a></li>
-<li><a href="about.html" class="text-gray-200 hover:text-white">About Us</a></li>
-<li><a href="services.html" class="text-gray-200 hover:text-white">Services</a></li>
-<li><a href="contact.html" class="text-gray-200 hover:text-white">Contact</a></li>
-</ul>
-</div>
-<div>
-<h4 class="text-lg font-semibold mb-4">Services</h4>
-<ul class="space-y-2">
-<li><a href="upstream.html" class="text-gray-200 hover:text-white">Upstream Services</a></li>
-<li><a href="midstream.html" class="text-gray-200 hover:text-white">Midstream Services</a></li>
-<li><a href="downstream.html" class="text-gray-200 hover:text-white">Downstream Services</a></li>
-<li><a href="infrastructure.html" class="text-gray-200 hover:text-white">Infrastructural Services</a></li>
-</ul>
-</div>
-<div>
-<div class="newsletter-form mt-4">
-<h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
-<div class="social-icons flex space-x-4 mb-4">
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-facebook-f"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-twitter"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-linkedin-in"></i></a>
-<a href="#" class="text-white hover:text-gray-300"><i class="fab fa-instagram"></i></a>
-</div>
-<form class="flex">
-<input type="email" placeholder="Enter your email" class="flex-grow p-2 rounded-l-md border-none" />
-<button type="submit" class="bg-red-600 text-white p-2 rounded-r-md hover:bg-red-700">Subscribe</button>
-</form>
-</div>
-</div>
-</div>
-
-<div>
-    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
-<ul class="space-y-2 text-gray-200">
-<li><i class="fas fa-phone-alt mr-2"></i>+234-903-0002-081</li>
-<li><i class="fas fa-phone-alt mr-2"></i>+234-906-9273-301</li>
-<li><i class="fas fa-envelope mr-2"></i><a href="mailto:info@mipetgroupltd.com" class="hover:text-white">info@mipetgroupltd.com</a></li>
-<li><i class="fas fa-envelope mr-2"></i><a href="mailto:mipetserviceslimited@hotmail.com" class="hover:text-white">mipetserviceslimited@hotmail.com</a></li>
-<li><i class="fas fa-globe mr-2"></i><a href="https://www.mipetgroup.com" class="hover:text-white">www.mipetgroup.com</a></li>
-<li><i class="fas fa-map-marker-alt mr-2"></i><b>Eastern Office:</b>Plot 6, New Oginigba Layout Drive, Trans Amadi Industrial Area, Port Harcourt, Rivers State, Nigeria</li>
-<li><i class="fas fa-map-marker-alt mr-2"></i><b>Western Office:</b>No. 2 Katsina Close, Shell Estate Ejeba,
-Warri, Delta State,
-Nigeria </li>
-</ul>
-</div>
-<div class="mt-8 text-center">
-<p class="text-gray-200">
-&copy; 2025 Mipet Services Limited. All rights reserved.
-</p>
-</div>
-</div>
 </footer>
 
-<script>
-// Mobile Menu Toggle
-const menuToggle = document.getElementById("menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
-const overlay = document.getElementById("overlay");
-menuToggle.addEventListener("click", () => {
-mobileMenu.classList.toggle("open");
-overlay.classList.toggle("open");
-menuToggle.innerHTML = mobileMenu.classList.contains("open")
-? '<i class="fas fa-times"></i>': '<i class="fas fa-bars"></i>';
-});
-overlay.addEventListener("click", () => {
-mobileMenu.classList.remove("open");
-overlay.classList.remove("open");
-menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-});
+    <script>
+      // Mobile Menu Toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const overlay = document.getElementById("overlay");
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        overlay.classList.toggle("open");
+        menuToggle.innerHTML = mobileMenu.classList.contains("open")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-bars"></i>';
+      });
+      overlay.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        overlay.classList.remove("open");
+        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
 
-// Search Bar Toggle
-const searchToggle = document.getElementById("search-toggle");
-const searchBar = document.getElementById("search-bar");
-searchToggle.addEventListener("click", () => {
-searchBar.classList.toggle("open");
-searchToggle.innerHTML = searchBar.classList.contains("open")
-? '<i class="fas fa-times"></i>': '<i class="fas fa-search"></i>';
-});
+      // Search Bar Toggle
+      const searchToggle = document.getElementById("search-toggle");
+      const searchBar = document.getElementById("search-bar");
+      searchToggle.addEventListener("click", () => {
+        searchBar.classList.toggle("open");
+        searchToggle.innerHTML = searchBar.classList.contains("open")
+          ? '<i class="fas fa-times"></i>'
+          : '<i class="fas fa-search"></i>';
+      });
 
-// Submenu Toggle for Mobile
-function toggleSubmenu(element) {
-const submenu = element.nextElementSibling;
-const parentLi = element.parentElement;
-const isActive = parentLi.classList.contains("active");
+      // Submenu Toggle for Mobile
+      function toggleSubmenu(element) {
+        const submenu = element.nextElementSibling;
+        const parentLi = element.parentElement;
+        const isActive = parentLi.classList.contains("active");
 
-// Close all other mobile dropdowns
-document.querySelectorAll(".mobile-dropdown.active").forEach((dropdown) => {
-if (dropdown !== parentLi) {
-dropdown.classList.remove("active");
-dropdown.querySelector(".mobile-submenu").classList.add("hidden");
-}
-});
+        // Close all other mobile dropdowns
+        document
+          .querySelectorAll(".mobile-dropdown.active")
+          .forEach((dropdown) => {
+            if (dropdown !== parentLi) {
+              dropdown.classList.remove("active");
+              dropdown.querySelector(".mobile-submenu").classList.add("hidden");
+            }
+          });
 
-parentLi.classList.toggle("active",
-!isActive);
-submenu.classList.toggle("hidden",
-isActive);
-}
+        parentLi.classList.toggle("active", !isActive);
+        submenu.classList.toggle("hidden", isActive);
+      }
 
-function toggleMobileSubDropdown(element) {
-const subDropdown = element.nextElementSibling;
-const parentLi = element.parentElement;
-const isActive = parentLi.classList.contains("active");
+      function toggleMobileSubDropdown(element) {
+        const subDropdown = element.nextElementSibling;
+        const parentLi = element.parentElement;
+        const isActive = parentLi.classList.contains("active");
 
-// Close all other mobile sub-dropdowns
-document.querySelectorAll(".mobile-sub-dropdown.active").forEach((sub) => {
-if (sub !== parentLi) {
-sub.classList.remove("active");
-sub.querySelector(".mobile-sub-submenu").classList.add("hidden");
-}
-});
+        // Close all other mobile sub-dropdowns
+        document
+          .querySelectorAll(".mobile-sub-dropdown.active")
+          .forEach((sub) => {
+            if (sub !== parentLi) {
+              sub.classList.remove("active");
+              sub.querySelector(".mobile-sub-submenu").classList.add("hidden");
+            }
+          });
 
-parentLi.classList.toggle("active",
-!isActive);
-subDropdown.classList.toggle("hidden",
-isActive);
-}
+        parentLi.classList.toggle("active", !isActive);
+        subDropdown.classList.toggle("hidden", isActive);
+      }
 
-// Submenu Toggle for Desktop
-function toggleSubDropdown(event, element) {
-event.preventDefault();
-const subDropdown = element.nextElementSibling;
-const parentLi = element.parentElement;
-const isActive = parentLi.classList.contains("active");
+      // Submenu Toggle for Desktop
+      function toggleSubDropdown(event, element) {
+        event.preventDefault();
+        const subDropdown = element.nextElementSibling;
+        const parentLi = element.parentElement;
+        const isActive = parentLi.classList.contains("active");
 
-// Close all other desktop sub-dropdowns
-document.querySelectorAll(".sub-dropdown.active").forEach((sub) => {
-if (sub !== parentLi) {
-sub.classList.remove("active");
-sub.querySelector(".sub-dropdown-menu").classList.add("hidden");
-}
-});
+        // Close all other desktop sub-dropdowns
+        document.querySelectorAll(".sub-dropdown.active").forEach((sub) => {
+          if (sub !== parentLi) {
+            sub.classList.remove("active");
+            sub.querySelector(".sub-dropdown-menu").classList.add("hidden");
+          }
+        });
 
-parentLi.classList.toggle("active",
-!isActive);
-subDropdown.classList.toggle("hidden",
-isActive);
-}
+        parentLi.classList.toggle("active", !isActive);
+        subDropdown.classList.toggle("hidden", isActive);
+      }
 
-// Header Scroll Effect
-window.addEventListener("scroll", function () {
-const header = document.querySelector("header");
-if (window.scrollY > 0) {
-header.classList.add("scrolled");
-} else {
-header.classList.remove("scrolled");
-}
-});
+      // Header Scroll Effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 0) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
 
-// Search Bar Functionality
-const searchInput = document.getElementById("search-input");
-const searchSuggestions = document.getElementById("search-suggestions");
-const searchData = [{
-name: "Home", url: "index.html"
-},
-{
-name: "About Us", url: "about.html"
-},
-{
-name: "Our Services", url: "#", nonClickable: true
-},
-{
-name: "Upstream Services", url: "#", nonClickable: true
-},
-{
-name: "Drilling Operations", url: "drilling.html"
-},
-{
-name: "Production Operation & Maintenance Services", url: "operation.html"
-},
-{
-name: "Well Intervention Services", url: "well.html"
-},
-{
-name: "Pumping Services", url: "pumping.html"
-},
-{
-name: "Midstream Services", url: "#", nonClickable: true
-},
-{
-name: "Gas Services & Virtual Pipeline Services", url: "gas.html"
-},
-{
-name: "Pipeline Services", url: "pipeline.html"
-},
-{
-name: "Process Services Division", url: "process.html"
-},
-{
-name: "Procurement, Rentals & Supply Services", url: "procurement.html"
-},
-{
-name: "Downstream Services", url: "#", nonClickable: true
-},
-{
-name: "Engineering Services", url: "engineering.html"
-},
-{
-name: "Technical Services", url: "technical.html"
-},
-{
-name: "Infrastructural Services", url: "#", nonClickable: true
-},
-{
-name: "Community Support Services", url: "community.html"
-},
-{
-name: "CSR Project Delivery", url: "csr.html"
-},
-{
-name: "Contact Us", url: "contact.html"
-},
-{
-name: "Careers", url: "career.html"
-},
-{
-name: "Values and Milestones", url: "values.html"
-},
-{
-name: "Career", url: "career.html"
-},
-{
-name: "Media Hub", url: "media.html"
-},
-{
-name: "Pump Services Division", url: "pumping.html"
-}];
+      // Search Bar Functionality
+      const searchInput = document.getElementById("search-input");
+      const searchSuggestions = document.getElementById("search-suggestions");
+      const searchData = [
+        {
+          name: "Home",
+          url: "index.html",
+        },
+        {
+          name: "About Us",
+          url: "about.html",
+        },
+        {
+          name: "Our Services",
+          url: "#",
+          nonClickable: true,
+        },
+        {
+          name: "Upstream Services",
+          url: "#",
+          nonClickable: true,
+        },
+        {
+          name: "Drilling Operations",
+          url: "drilling.html",
+        },
+        {
+          name: "Production Operation & Maintenance Services",
+          url: "operation.html",
+        },
+        {
+          name: "Well Intervention Services",
+          url: "well.html",
+        },
+        {
+          name: "Pumping Services",
+          url: "pumping.html",
+        },
+        {
+          name: "Midstream Services",
+          url: "#",
+          nonClickable: true,
+        },
+        {
+          name: "Gas Services & Virtual Pipeline Services",
+          url: "gas.html",
+        },
+        {
+          name: "Pipeline Services",
+          url: "pipeline.html",
+        },
+        {
+          name: "Process Services Division",
+          url: "process.html",
+        },
+        {
+          name: "Procurement, Rentals & Supply Services",
+          url: "procurement.html",
+        },
+        {
+          name: "Downstream Services",
+          url: "#",
+          nonClickable: true,
+        },
+        {
+          name: "Engineering Services",
+          url: "engineering.html",
+        },
+        {
+          name: "Technical Services",
+          url: "technical.html",
+        },
+        {
+          name: "Infrastructural Services",
+          url: "#",
+          nonClickable: true,
+        },
+        {
+          name: "Community Support Services",
+          url: "community.html",
+        },
+        {
+          name: "CSR Project Delivery",
+          url: "csr.html",
+        },
+        {
+          name: "Contact Us",
+          url: "contact.html",
+        },
+        {
+          name: "Careers",
+          url: "career.html",
+        },
+        {
+          name: "Values and Milestones",
+          url: "values.html",
+        },
+        {
+          name: "Completed Projects",
+          url: "projects.html",
+        },
+        {
+          name: "Media Hub",
+          url: "media.html",
+        },
+        {
+          name: "Pump Services Division",
+          url: "pumping.html",
+        },
+      ];
 
-searchInput.addEventListener("input", () => {
-const query = searchInput.value.trim().toLowerCase();
-searchSuggestions.innerHTML = "";
-searchSuggestions.classList.remove("active");
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value.trim().toLowerCase();
+        searchSuggestions.innerHTML = "";
+        searchSuggestions.classList.remove("active");
 
-if (query.length >= 2) {
-const matches = searchData.filter((item) =>
-item.name.toLowerCase().includes(query)
-);
+        if (query.length >= 2) {
+          const matches = searchData.filter((item) =>
+            item.name.toLowerCase().includes(query)
+          );
 
-if (matches.length > 0) {
-matches.slice(0, 10).forEach((item) => {
-const li = document.createElement("li");
-li.textContent = item.name;
-if (item.nonClickable) {
-li.classList.add("non-clickable");
-} else {
-li.addEventListener("click", () => {
-window.location.href = item.url;
-});
-}
-searchSuggestions.appendChild(li);
-});
-searchSuggestions.classList.add("active");
-} else {
-const li = document.createElement("li");
-li.textContent = "No results found";
-li.classList.add("no-results");
-searchSuggestions.appendChild(li);
-searchSuggestions.classList.add("active");
-}
-}
-});
+          if (matches.length > 0) {
+            matches.slice(0, 10).forEach((item) => {
+              const li = document.createElement("li");
+              li.textContent = item.name;
+              if (item.nonClickable) {
+                li.classList.add("non-clickable");
+              } else {
+                li.addEventListener("click", () => {
+                  window.location.href = item.url;
+                });
+              }
+              searchSuggestions.appendChild(li);
+            });
+            searchSuggestions.classList.add("active");
+          } else {
+            const li = document.createElement("li");
+            li.textContent = "No results found";
+            li.classList.add("no-results");
+            searchSuggestions.appendChild(li);
+            searchSuggestions.classList.add("active");
+          }
+        }
+      });
 
-// Hide suggestions when clicking outside
-document.addEventListener("click", (e) => {
-if (!searchBar.contains(e.target) && e.target !== searchToggle) {
-searchSuggestions.classList.remove("active");
-}
-});
+      // Hide suggestions when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!searchBar.contains(e.target) && e.target !== searchToggle) {
+          searchSuggestions.classList.remove("active");
+        }
+      });
 
-// Particles.js Configuration
-particlesJS("particles-js", {
-particles: {
-number: {
-value: 80,
-density: {
-enable: true,
-value_area: 800
-}
-},
-color: {
-value: "#ffffff"
-},
-shape: {
-type: "circle",
-stroke: {
-width: 0,
-color: "#000000"
-}
-},
-opacity: {
-value: 0.5,
-random: false,
-anim: {
-enable: false
-}
-},
-size: {
-value: 3,
-random: true,
-anim: {
-enable: false
-}
-},
-line_linked: {
-enable: true,
-distance: 150,
-color: "#ffffff",
-opacity: 0.4,
-width: 1
-},
-move: {
-enable: true,
-speed: 6,
-direction: "none",
-random: false,
-straight: false,
-out_mode: "out",
-bounce: false
-},
-},
-interactivity: {
-detect_on: "canvas",
-events: {
-onhover: {
-enable: true,
-mode: "repulse"
-},
-onclick: {
-enable: true,
-mode: "push"
-},
-resize: true
-},
-modes: {
-grab: {
-distance: 400,
-line_linked: {
-opacity: 1
-}
-},
-bubble: {
-distance: 400,
-size: 40,
-duration: 2,
-opacity: 8,
-speed: 3
-},
-repulse: {
-distance: 200,
-duration: 0.4
-},
-push: {
-particles_nb: 4
-},
-remove: {
-particles_nb: 2
-}
-},
-},
-retina_detect: true,
-});
+      // Particles.js Configuration
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 80,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+            },
+          },
+          size: {
+            value: 3,
+            random: true,
+            anim: {
+              enable: false,
+            },
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+            resize: true,
+          },
+          modes: {
+            grab: {
+              distance: 400,
+              line_linked: {
+                opacity: 1,
+              },
+            },
+            bubble: {
+              distance: 400,
+              size: 40,
+              duration: 2,
+              opacity: 8,
+              speed: 3,
+            },
+            repulse: {
+              distance: 200,
+              duration: 0.4,
+            },
+            push: {
+              particles_nb: 4,
+            },
+            remove: {
+              particles_nb: 2,
+            },
+          },
+        },
+        retina_detect: true,
+      });
 
-// Carousel Script
-let currentSlide = 0;
-const carousel = document.getElementById('carousel');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const totalSlides = 2; // Two sets of 4 cards
+      // Carousel Script
+      let currentSlide = 0;
+      const carousel = document.getElementById("carousel");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const totalSlides = 2; // Two sets of 4 cards
 
-function updateCarousel() {
-carousel.style.transform = `translateX(-${currentSlide * 50}%)`; // Move by half the width for 4 cards
-}
+      function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentSlide * 50}%)`; // Move by half the width for 4 cards
+      }
 
-// Auto-slide every 5 seconds
-function autoSlide() {
-if (currentSlide < totalSlides - 1) {
-currentSlide++;
-} else {
-currentSlide = 0;
-}
-updateCarousel();
-}
+      // Auto-slide every 5 seconds
+      function autoSlide() {
+        if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+        } else {
+          currentSlide = 0;
+        }
+        updateCarousel();
+      }
 
-// Start auto-slide
-let autoSlideInterval = setInterval(autoSlide, 5000);
+      // Start auto-slide
+      let autoSlideInterval = setInterval(autoSlide, 5000);
 
-// Pause auto-slide on arrow click
-prevBtn.addEventListener('click', () => {
-clearInterval(autoSlideInterval);
-if (currentSlide > 0) {
-currentSlide--;
-updateCarousel();
-}
-autoSlideInterval = setInterval(autoSlide, 5000); // Restart auto-slide
-});
+      // Pause auto-slide on arrow click
+      prevBtn.addEventListener("click", () => {
+        clearInterval(autoSlideInterval);
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateCarousel();
+        }
+        autoSlideInterval = setInterval(autoSlide, 5000); // Restart auto-slide
+      });
 
-nextBtn.addEventListener('click', () => {
-clearInterval(autoSlideInterval);
-if (currentSlide < totalSlides - 1) {
-currentSlide++;
-updateCarousel();
-}
-autoSlideInterval = setInterval(autoSlide, 5000); // Restart auto-slide
-});
+      nextBtn.addEventListener("click", () => {
+        clearInterval(autoSlideInterval);
+        if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+          updateCarousel();
+        }
+        autoSlideInterval = setInterval(autoSlide, 5000); // Restart auto-slide
+      });
 
-// Zoom Image Function
-let zoomedImage = null;
+      // Zoom Image Function
+      let zoomedImage = null;
 
-function zoomImage(card) {
-// If there's an existing zoomed image, remove it
-if (zoomedImage) {
-zoomedImage.remove();
-zoomedImage = null;
-return;
-}
+      function zoomImage(card) {
+        // If there's an existing zoomed image, remove it
+        if (zoomedImage) {
+          zoomedImage.remove();
+          zoomedImage = null;
+          return;
+        }
 
-// Get the image and its source
-const img = card.querySelector('img');
-const imgSrc = img.src;
-const imgAlt = img.alt;
+        // Get the image and its source
+        const img = card.querySelector("img");
+        const imgSrc = img.src;
+        const imgAlt = img.alt;
 
-// Create a new div for the zoomed image
-zoomedImage = document.createElement('div');
-zoomedImage.classList.add('zoomed-image');
-zoomedImage.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}" />`;
+        // Create a new div for the zoomed image
+        zoomedImage = document.createElement("div");
+        zoomedImage.classList.add("zoomed-image");
+        zoomedImage.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}" />`;
 
-// Append to body for full-screen effect
-document.body.appendChild(zoomedImage);
+        // Append to body for full-screen effect
+        document.body.appendChild(zoomedImage);
 
-// Add click event to close zoomed image
-zoomedImage.addEventListener('click', () => {
-zoomedImage.remove();
-zoomedImage = null;
-});
-}
+        // Add click event to close zoomed image
+        zoomedImage.addEventListener("click", () => {
+          zoomedImage.remove();
+          zoomedImage = null;
+        });
+      }
 
-// Close zoomed image when clicking outside (for desktop)
-document.addEventListener('click', (e) => {
-if (zoomedImage && !zoomedImage.contains(e.target) && !e.target.closest('.card') && !e.target.closest('#prevBtn') && !e.target.closest('#nextBtn')) {
-zoomedImage.remove();
-zoomedImage = null;
-}
-});
+      // Close zoomed image when clicking outside (for desktop)
+      document.addEventListener("click", (e) => {
+        if (
+          zoomedImage &&
+          !zoomedImage.contains(e.target) &&
+          !e.target.closest(".card") &&
+          !e.target.closest("#prevBtn") &&
+          !e.target.closest("#nextBtn")
+        ) {
+          zoomedImage.remove();
+          zoomedImage = null;
+        }
+      });
 
-// Swipe Functionality for Mobile
-const mobileGrid = document.querySelector('.mobile-grid');
-let touchStartX = 0;
-let touchEndX = 0;
+      // Swipe Functionality for Mobile
+      const mobileGrid = document.querySelector(".mobile-grid");
+      let touchStartX = 0;
+      let touchEndX = 0;
 
-mobileGrid.addEventListener('touchstart', (e) => {
-touchStartX = e.changedTouches[0].screenX;
-});
+      mobileGrid.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
 
-mobileGrid.addEventListener('touchend', (e) => {
-touchEndX = e.changedTouches[0].screenX;
-handleSwipe();
-});
+      mobileGrid.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      });
 
-function handleSwipe() {
-const swipeDistance = touchEndX - touchStartX;
-const minSwipeDistance = 50; // Minimum distance for a swipe
-if (swipeDistance > minSwipeDistance) {
-// Swipe right
-if (currentSlide > 0) {
-currentSlide--;
-updateCarousel();
-}
-} else if (swipeDistance < -minSwipeDistance) {
-// Swipe left
-if (currentSlide < totalSlides - 1) {
-currentSlide++;
-updateCarousel();
-}
-}
-}
-</script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-AOS.init();
-</script>
-</body>
+      function handleSwipe() {
+        const swipeDistance = touchEndX - touchStartX;
+        const minSwipeDistance = 50; // Minimum distance for a swipe
+        if (swipeDistance > minSwipeDistance) {
+          // Swipe right
+          if (currentSlide > 0) {
+            currentSlide--;
+            updateCarousel();
+          }
+        } else if (swipeDistance < -minSwipeDistance) {
+          // Swipe left
+          if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateCarousel();
+          }
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
 </html>
 <!-- End Half 2 -->
