@@ -772,6 +772,14 @@
       #search-bar.open {
         display: block;
       }
+
+      
+        #search-toggle i {
+            display: inline-block !important;
+            font-size: 1.125rem !important;
+            color: white !important;
+        }
+
       .toggle-indicator {
         display: inline-block;
         margin-left: 0.25rem;
@@ -1566,11 +1574,11 @@
       <div
         class="hero-bg-inner"
         id="heroBgInner1"
-        style="background-image: url('./images/bg_1.jpeg')"></div>
+        style="background-image: url('./Services_images/contact1.jpg')"></div>
       <div
         class="hero-bg-inner"
         id="heroBgInner2"
-        style="background-image: url('./images/bg_2.jpeg')"></div>
+        style="background-image: url('./Services_images/contact2.jpg')"></div>
       <div class="w-full max-w-5xl ml-4 px-6 md:px-12 lg:px-20 hero-content">
         <h1
           class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight hero-text">
@@ -1791,8 +1799,9 @@
         </div>
       </div>
     </section>
+<!---Footer-->
 
-<footer class="py-12 px-4 bg-blue-900 text-white relative">
+   <footer class="py-12 px-4 bg-blue-900 text-white relative">
   <div id="particles-js" class="absolute inset-0"></div>
 
   <div class="content container mx-auto relative z-10">
@@ -1914,7 +1923,8 @@
     </div>
   </div>
 </footer>
-  <script>
+
+<script>
     
 // Hero Background Image Slider
 const heroImages = [
@@ -1961,80 +1971,6 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 counters.forEach(counter => observer.observe(counter));
-   
-// Dynamic Dropdown for Contact Form
-const mainServiceSelect = document.getElementById('main-service');
-const subServiceSelect = document.getElementById('sub-service');
-
-const subServices = {
-    'Upstream Services': [
-        'Drilling Operations',
-        'Production Operation & Maintenance Services',
-        'Well Intervention Services',
-        'Pumping Services'
-    ],
-    'Midstream Services': [
-        'Gas Services & Virtual Pipeline Services',
-        'Procurement, Rentals & Supply Services'
-    ],
-    'Downstream Services': [
-        'Engineering Services',
-        'Technical Services'
-    ],
-    'Infrastructural Services': [
-        'Community Support Services',
-        'CSR Project Delivery',
-        'Public Sector Support'
-    ],
-    'Public Sector': [
-        'Public Sector Energy Projects'
-    ]
-};
-
-mainServiceSelect.addEventListener('change', function () {
-    const selectedService = this.value;
-    subServiceSelect.innerHTML = '<option value="" disabled selected>Select Sub-Service</option>';
-    
-    if (selectedService && subServices[selectedService]) {
-        subServices[selectedService].forEach(subService => {
-            const option = document.createElement('option');
-            option.value = subService;
-            option.textContent = subService;
-            subServiceSelect.appendChild(option);
-        });
-        subServiceSelect.disabled = false;
-    } else {
-        subServiceSelect.disabled = true;
-    }
-});
-
-// Contact Form Submission
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-    
-    if (!data.name || !data.email || !data.phone || !data['main-service'] || !data['sub-service'] || !data.message) {
-        alert('Please fill out all fields.');
-        return;
-    }
-
-    console.log('Form submitted:', data);
-    alert('Thank you for your enquiry! We will get back to you soon.');
-    contactForm.reset();
-    subServiceSelect.innerHTML = '<option value="" disabled selected>Select Sub-Service</option>';
-    subServiceSelect.disabled = true;
-});
-    
-// Leaflet Map Initialization
-const map = L.map('map').setView([4.8156, 7.0498], 13);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-L.marker([4.8156, 7.0498]).addTo(map)
-    .bindPopup('MiPet Services<br>Plot 6 Oginigba Layout, Drive Trans-Amadi, Port Harcourt')
-    .openPopup();
 
 // Intersection Observer for Fly-in Animations
 const flyInElements = document.querySelectorAll('.fly-in');
@@ -2225,7 +2161,7 @@ name: "Careers", url: "career.html"
 name: "Values and Milestones", url: "values.html"
 },
 {
-name: "Career", url: "career.html"
+name: "Completed Projects", url: "Project.html"
 },
 {
 name: "Media Hub", url: "media.html"
@@ -2488,3 +2424,4 @@ AOS.init();
 </script>
 </body>
 </html>
+<!-- End Half 2 -->
