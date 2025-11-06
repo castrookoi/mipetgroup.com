@@ -54,6 +54,7 @@ href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;500;700&family
 rel="stylesheet"
 />
 <link rel="stylesheet" href="tailwind.min.css" />
+<link rel="stylesheet" href="./styles.css" />
 <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
 <link
 rel="stylesheet"
@@ -937,9 +938,9 @@ font-style: italic;
             </li>
             <li>
               <a
-                href="projects.html"
+                href="profile.pdf"
                 class="text-gray-700 text-xs hover:text-teal-800 flex items-center">
-                <i class="fas fa-briefcase mr-1"></i>Completed Projects
+                <i class="fas fa-briefcase mr-1"></i>Company Brochure
               </a>
             </li>
             <li>
@@ -1160,9 +1161,9 @@ font-style: italic;
             </li>
             <li>
               <a
-                href="projects.html"
+                href="profile.pdf"
                 class="text-gray-700 text-sm hover:text-teal-800 flex items-center">
-                <i class="fas fa-briefcase mr-1"></i>Completed Projects
+                <i class="fas fa-briefcase mr-1"></i>Company Brochure
               </a>
             </li>
             <li>
@@ -1435,13 +1436,13 @@ font-style: italic;
 
   <section class="growth-section">
     <div class="text-container-growth">
-      <h4 class="mt-6 mb-2 text-xl font-bold text-gray-800 flex items-center">
+      <h4 class="mt-6 mb-2 text-xl font-bold text-gray-800 flex items-center headings">
         MSL Upstream Services and Operations
       </h4>
       <p>
         At MSL, we go beyond energy exploration- we deliver end-to-end upstream solutions that keep wells productive and operations running smoothly. From precision Drilling Operations to reliable Production and Maintenance Services, through to specialized well intervention and pumping solutions, we combine expertise, technology, and safety to maximize performance at every stage of the energy cycle. <br> With MSL, you get more than a service provider - you get a trusted partner committed to efficiency, reliability, and results.
       </p>
-      <h4 class="mt-6 mb-2 text-xl font-bold text-gray-800 flex items-center">
+      <h4 class="mt-6 mb-2 text-xl font-bold text-gray-800 flex items-center headings">
         <i class="fas fa-cogs text-red-600 mr-2"></i> Our MSL Core Upstream Services
       </h4>
       <ul class="space-y-3 pl-2">
@@ -1493,7 +1494,7 @@ font-style: italic;
             <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
             <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
             <div>
-              <h4 class="text-2xl font-semibold mb-2 text-gray-800">Drilling Operations</h4>
+              <h4 class="text-2xl font-semibold mb-2 text-gray-800 headings">Drilling Operations</h4>
               <p class="text-sm opacity-75 leading-relaxed text-gray-800">
                 Delivering precision-driven drilling solutions with safety and efficiency at the core, ensuring every well is executed to the highest standards.
               </p>
@@ -1512,7 +1513,7 @@ font-style: italic;
             <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
             <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
             <div>
-              <h4 class="text-2xl font-semibold mb-2 text-gray-800">Production Operation & Maintenance Services</h4>
+              <h4 class="text-2xl font-semibold mb-2 text-gray-800 headings">Production Operation & Maintenance Services</h4>
               <p class="text-sm opacity-75 leading-relaxed text-gray-800">
                 Providing comprehensive production and maintenance support to maximize asset performance, reliability, and operational longevity across every stage of the well lifecycle.
               </p>
@@ -1531,7 +1532,7 @@ font-style: italic;
             <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
             <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
             <div>
-              <h4 class="text-2xl font-semibold mb-2 text-gray-800">Well Intervention Services</h4>
+              <h4 class="text-2xl font-semibold mb-2 text-gray-800 headings">Well Intervention Services</h4>
               <p class="text-sm opacity-75 leading-relaxed text-gray-800">
                 Specialized well interventions designed to restore performance, optimize output, and maintain well integrity under the most demanding conditions.
               </p>
@@ -1550,7 +1551,7 @@ font-style: italic;
             <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
             <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
             <div>
-              <h4 class="text-2xl font-semibold mb-2 text-gray-800">Pumping Services</h4>
+              <h4 class="text-2xl font-semibold mb-2 text-gray-800 headings">Pumping Services</h4>
               <p class="text-sm opacity-75 leading-relaxed text-gray-800">
                 Offering reliable and efficient pumping solutions tailored to manage fluids, control pressures, and support smooth operations across all upstream activities.
               </p>
@@ -1569,29 +1570,35 @@ font-style: italic;
   </section>
 
 
-    <section>
+    <!-- Statutory Certification -->
+      <section class="special">
       <div class="flex justify-center w-full mt-12 mb-12">
         <h3
-          class="text-4xl font-bold text-gray-800 text-center break-words whitespace-normal w-full max-w-xs sm:max-w-md md:max-w-lg">
+          class="text-4xl font-bold text-gray-800 text-center break-words whitespace-normal w-full max-w-xs sm:max-w-md md:max-w-lg headings"
+        >
           Statutory Certifications
         </h3>
       </div>
       <div
-        class="certifications-grid grid grid-cols-4 gap-6 max-w-6xl mx-auto px-4">
+        class="certifications-grid grid grid-cols-4 gap-6 max-w-6xl mx-auto px-4"
+      >
         <div
-          class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
+          class="relative h-96 overflow-hidden shadow-lg group flex flex-col"
+        >
           <div class="h-[40%] overflow-hidden">
             <img
               src="./images/Ukcert.jpg"
               alt="ISO 9001:2015"
-              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+            />
           </div>
           <div
-            class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+          >
             <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
             <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
             <div>
-              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800 headings">
                 ISO 9001:2015
               </h5>
               <p class="text-sm opacity-75 leading-relaxed text-gray-800">
@@ -1601,75 +1608,77 @@ font-style: italic;
           </div>
         </div>
         <div
-          class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
+          class="relative h-96 overflow-hidden shadow-lg group  flex flex-col"
+        >
           <div class="h-[40%] overflow-hidden">
             <img
               src="./images/ndpra.jpg"
               alt="ISO 14001:2015"
-              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+            />
           </div>
           <div
-            class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+          >
             <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
             <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
             <div>
-              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800 headings">
                 NPMPDRA PERMITS<br />/CERTIFICATIONS: 2025
               </h5>
               <p class="text-sm opacity-75 leading-relaxed text-gray-800">
-                Facilites/Equipment Installation <br />
-                Discipline Engineering Services <br />
-                Engineering Desing Services <br />Procurement and Supply
-                Services
+                Facilites/Equipment Installation, <br> Discipline Engineering Services, <br> Engineering Desing Services, <br> Procurement and Supply Services
               </p>
             </div>
           </div>
         </div>
         <div
-          class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
+          class="relative h-96 overflow-hidden shadow-lg group flex flex-col"
+        >
           <div class="h-[40%] overflow-hidden">
             <img
               src="./images/nurpc.JPG"
               alt="ISO 45001:2018"
-              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+            />
           </div>
           <div
-            class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+          >
             <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
             <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
             <div>
-              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800 headings">
                 NUPRC PERMITS<br />/CERTIFICATION
               </h5>
               <p class="text-sm opacity-75 leading-relaxed text-gray-800">
-                Major Construction Services, <br />
-                Drilling/Production Services, <br />
-                Special Transport Services, <br />
-                Heavy Duty Equipment Supply, Installation and Maintenance
+                Major Construction Services, <br> Drilling/Production Services, <br> Special Transport Services, <br> Heavy Duty Equipment Supply, Installation and Maintenance
               </p>
             </div>
           </div>
         </div>
         <div
-          class="relative h-96 overflow-hidden shadow-lg group flex flex-col">
+          class="relative h-96 overflow-hidden shadow-lg group flex flex-col"
+        >
           <div class="h-[40%] overflow-hidden">
             <img
               src="./images/nogic.jpg"
               alt="ISO 45001:2018"
-              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300" />
+              class="w-full h-full object-cover object-center transform group-hover:scale-95 transition-transform duration-300"
+            />
           </div>
           <div
-            class="h-[60%] bg-white flex flex-col justify-between p-6 relative">
+            class="h-[60%] bg-white flex flex-col justify-between p-6 relative"
+          >
             <span class="absolute top-0 left-0 w-5 h-1.5 bg-red-600"></span>
             <span class="absolute top-0 left-0 w-1.5 h-5 bg-red-600"></span>
             <div>
-              <h5 class="text-2xl font-semibold mb-2 text-gray-800">
+              <h5 class="text-2xl font-semibold mb-2 text-gray-800 headings">
                 NCDMB/NOGIC <br />JQS CERTIFICATION
               </h5>
               <p class="text-sm opacity-75 leading-relaxed text-gray-800">
-                Major Construction Services, <br />
-                Drilling/Production Services, <br />
-                Heavy Duty Equipment Supply, Installation and Maintenance
+               Major Construction Services, <br> Drilling/Production Services, 
+               <br> Heavy Duty Equipment Supply, Installation and Maintenance
               </p>
             </div>
           </div>
@@ -1677,12 +1686,13 @@ font-style: italic;
       </div>
     </section>
 
+
    <section class="w-full bg-white py-16 px-4 flex flex-col md:flex-row justify-center items-center gap-8">
   <div class="flex-1 flex justify-center items-center">
     <img src="./images/contact_bg.jpg" alt="Contact an Expert" class="max-w-xs md:max-w-md w-full rounded-lg shadow-lg object-cover" />
   </div>
   <div class="flex-1 flex flex-col justify-center items-start md:ml-8 mt-8 md:mt-0">
-    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4 class">
       Have any enquiries?<br />Talk to an Expert
     </h2>
     <p class="mb-6 text-gray-700 text-base md:text-lg max-w-md">
@@ -2011,8 +2021,8 @@ font-style: italic;
           url: "values.html",
         },
         {
-          name: "Completed Projects",
-          url: "projects.html",
+          name: "Company Brochure",
+          url: "profile.pdf",
         },
         {
           name: "Media Hub",
