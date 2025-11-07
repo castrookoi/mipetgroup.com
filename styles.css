@@ -10,3 +10,6 @@ section.special p{
     font-size: 14px !important
 }
 
+header {
+    box-shadow: 0 4px 8px  #1e497c;
+}
