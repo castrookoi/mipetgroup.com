@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> Mipet Services Limited | Production Operations and Maintenance Services </title>
+ <title> Mipet Services Limited | Production Operations and Maintenance Services </title>
     <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta
 name="description"
-content="Mipet Services delivers reliable oil, gas, and infrastructure solutions across upstream, midstream, and downstream sectors. Explore our expertise."
+content="Mipet Services delivers reliable oil & gas and infrastructure solutions across upstream, midstream, and downstream sectors. Explore our expertise."
 />
   <!-- 🌈 Browser top bar color -->
   <meta name="theme-color" content="#1e3a8a">
@@ -23,7 +23,7 @@ content="oil and gas services, infrastructure solutions, drilling operations, en
 <meta name="robots" content="index, follow" />
 <meta
 property="og:title"
-content="Mipet Services - Oil, Gas, and Infrastructure Solutions"
+content="Mipet Services - Oil & Gas and Infrastructure Solutions"
 />
 <meta
 property="og:description"
@@ -39,7 +39,7 @@ content="https://www.mipetgroup.com/images/og-image.jpg"
 <meta name="twitter:card" content="summary_large_image" />
 <meta
 name="twitter:title"
-content="Mipet Services - Oil, Gas, and Infrastructure Solutions"
+content="Mipet Services - Oil & Gas and Infrastructure Solutions"
 />
 <meta
 name="twitter:description"
@@ -56,12 +56,12 @@ rel="stylesheet"
 />
 <link rel="stylesheet" href="tailwind.min.css" />
 <link rel="stylesheet" href="./fontawesome/css/all.min.css" />
+<link rel="stylesheet" href="./styles.css" />
 <link
 rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css"
 />
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="./styles.css" />
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
 <style>
@@ -105,7 +105,7 @@ align-items: center;
 justify-content: flex-start;
 padding-top: 80px;
 padding-bottom: 60px;
-background-image: url("./Services_Images/production_bg1.jpg");
+background-image: url("./Services_Images/upstream_bg.jpg");
 background-size: cover;
 background-position: center;
 }
@@ -427,76 +427,62 @@ text-align: center;
 white-space: nowrap;
 }
 }
-header {
-position: sticky;
-top: 0;
-z-index: 50;
-transition: all 0.3s ease;
-}
-.scrolled .first-nav {
-display: none;
-}
-.scrolled {
-background-color: white;
-}
-.first-nav {
-transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease;
-}
-.scrolled .first-nav {
-display: none;
-opacity: 0;
-visibility: hidden;
-height: 0;
-}
-.second-nav {
-transition: padding 0.3s ease;
-}
-.scrolled .second-nav {
-padding-top: 1rem;
-padding-bottom: 1rem;
-}
-.dropdown:hover .dropdown-menu {
-display: block;
-opacity: 1;
-visibility: visible;
-}
-.dropdown {
-position: relative;
-}
-.dropdown-menu {
-top: calc(100% + 4px);
-left: 0;
-transition: opacity 0.2s ease, visibility 0.2s ease;
-position: absolute;
-background: white;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-border-radius: 0.5rem;
-padding: 0.5rem 0;
-min-width: 300px;
-z-index: 50;
-}
-.dropdown::after {
-content: "";
-position: absolute;
-top: 100%;
-left: 0;
-width: 100%;
-height: 8px;
-background: transparent;
-}
-.dropdown-menu.hidden {
-display: none;
-}
-.dropdown-menu a {
-display: block;
-padding: 0.5rem 1rem;
-color: #1f2937;
-transition: background-color 0.2s ease, color 0.2s ease;
-}
-.dropdown-menu a:hover {
-background-color: #f3f4f6;
-color: #2563eb;
-}
+/* Other Styles */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        .scrolled .first-nav {
+            display: none;
+        }
+        .scrolled {
+            background-color: white;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            top: calc(100% + 4px);
+            left: 0;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            position: absolute;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            min-width: 300px;
+            z-index: 50;
+        }
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: transparent;
+        }
+        .dropdown-menu.hidden {
+            display: none;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #1f2937;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .dropdown-menu a:hover {
+            background-color: #f3f4f6;
+            color: #2563eb;
+        }
+        
 .sub-dropdown {
 position: relative;
 }

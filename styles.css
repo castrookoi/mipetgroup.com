@@ -13,3 +13,14 @@ section.special p{
 header {
     box-shadow: 0 4px 8px  #1e497c;
 }
+
+.growth-section ul{
+    padding: 0;
+    margin: 0;
+}
+
+.growth-section ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}

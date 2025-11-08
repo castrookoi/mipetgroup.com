@@ -427,76 +427,62 @@ text-align: center;
 white-space: nowrap;
 }
 }
-header {
-position: sticky;
-top: 0;
-z-index: 50;
-transition: all 0.3s ease;
-}
-.scrolled .first-nav {
-display: none;
-}
-.scrolled {
-background-color: white;
-}
-.first-nav {
-transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease;
-}
-.scrolled .first-nav {
-display: none;
-opacity: 0;
-visibility: hidden;
-height: 0;
-}
-.second-nav {
-transition: padding 0.3s ease;
-}
-.scrolled .second-nav {
-padding-top: 1rem;
-padding-bottom: 1rem;
-}
-.dropdown:hover .dropdown-menu {
-display: block;
-opacity: 1;
-visibility: visible;
-}
-.dropdown {
-position: relative;
-}
-.dropdown-menu {
-top: calc(100% + 4px);
-left: 0;
-transition: opacity 0.2s ease, visibility 0.2s ease;
-position: absolute;
-background: white;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-border-radius: 0.5rem;
-padding: 0.5rem 0;
-min-width: 300px;
-z-index: 50;
-}
-.dropdown::after {
-content: "";
-position: absolute;
-top: 100%;
-left: 0;
-width: 100%;
-height: 8px;
-background: transparent;
-}
-.dropdown-menu.hidden {
-display: none;
-}
-.dropdown-menu a {
-display: block;
-padding: 0.5rem 1rem;
-color: #1f2937;
-transition: background-color 0.2s ease, color 0.2s ease;
-}
-.dropdown-menu a:hover {
-background-color: #f3f4f6;
-color: #2563eb;
-}
+/* Other Styles */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        .scrolled .first-nav {
+            display: none;
+        }
+        .scrolled {
+            background-color: white;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            top: calc(100% + 4px);
+            left: 0;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            position: absolute;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+            padding: 0.5rem 0;
+            min-width: 300px;
+            z-index: 50;
+        }
+        .dropdown::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: transparent;
+        }
+        .dropdown-menu.hidden {
+            display: none;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #1f2937;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .dropdown-menu a:hover {
+            background-color: #f3f4f6;
+            color: #2563eb;
+        }
+        
 .sub-dropdown {
 position: relative;
 }
@@ -1182,9 +1168,9 @@ Infrastructural Services
 <div id="overlay"></div>
 <!---hERO sECTION--->
 
-    <div id="overlay"></div>
-    <section class="hero-bg text-white py-16" role="main">
+       <section class="hero-bg text-white py-16" role="main">
       <div class="hero-content flex flex-row w-full max-w-7xl items-start mx-auto">
+        <div class="hero-col hero-col-1 flex-shrink-0 flex items-center">
           <img
             src="./images/Left_Accent.png"
             alt="Accent Icon"
@@ -1195,7 +1181,7 @@ Infrastructural Services
         <div class="hero-col hero-col-2 flex-shrink-0">
           <div class="flex items-center space-x-2 mb-4">
             <h3 class="font-extrabold hero-text break-words whitespace-normal" style="max-width: 42vw; font-size: 2.5rem;">
-              UPSTREAM SERVICES
+UPSTREAM SERVICES
             </h3>
             <img
               src="./images/Horizon_Accent.png"
@@ -1208,7 +1194,8 @@ Infrastructural Services
             <li>
               <a href="#drilling-operations" class="hover:text-red-600 focus:text-red-600 transition-colors">
                 <h3 class="font-extrabold hero-text break-words whitespace-normal group" style="max-width: 42vw; font-size: 2.0rem;">
-                  <span class="inline-block group-hover:text-red-600 group-focus:text-red-600 transition-colors">Well Intervention Services</span>
+                  <span class="inline-block group-hover:text-red-600 group-focus:text-red-600 transition-colors">
+Well Intervention Services</span>
                 </h3>
               </a>
             </li>
@@ -1217,7 +1204,7 @@ Infrastructural Services
             Combining global expertise with local insight to deliver trusted Oil & Gas and infrastructure solutions that uphold the highest standards of quality and performance, guided by our commitment to excellence, integrity, and sustainability.
           </p>
           <div class="mt-6 hero-button">
-            <a href="#about" class="gradient-btn">
+            <a href="./contact.html" class="gradient-btn">
               <i class="fas fa-address-book mr-2"></i> Talk to an Expert
             </a>
           </div>
@@ -1266,10 +1253,10 @@ Infrastructural Services
   <div class="text-container-growth bg-gray-900 p-8 md:p-12 order-1">
     <div class="operation-services">
       <h4 class="mt-6 mb-6 text-3xl md:text-4xl font-extrabold headings">
-        Well Head &amp; Intervention Services
+        Wellhead &amp; Intervention Services
       </h4>
       <p class="mb-6 text-[18px] text-black max-w-3xl">
-        MIPET Wellhead solutions cover the entire life cycle of wellhead systems, 
+        Mipet Wellhead solutions cover the entire life cycle of wellhead systems, 
         from installation to repair, inspection, and monitoring. We provide systems 
         for both oil and gas wells, meeting API specifications with conventional 
         stack-up, full bore, and slim-hole wellhead designs. Our expert team ensures 
@@ -1305,7 +1292,7 @@ Infrastructural Services
         <li><i class="fas fa-tools text-blue-600 mr-2"></i> Refurbishment, Calibration &amp; Testing</li>
         <li><i class="fas fa-oil-can text-blue-600 mr-2"></i> Xmas Tree Valve Greasing &amp; Pressure Testing</li>
         <li><i class="fas fa-tachometer-alt text-blue-600 mr-2"></i> Annular Integrity Monitoring &amp; Pressure Testing</li>
-        <li><i class="fas fa-lock text-blue-600 mr-2"></i> SCSSSV Inflow Test &amp; Function Testing</li>
+        <li><i class="fas fa-lock text-blue-600 mr-2"></i>Surface-Controlled Subsurface Safety Valve (SCSSSV) Inflow Test &amp; Function Testing</li>
         <li><i class="fas fa-wrench text-blue-600 mr-2"></i> Gate Valve &amp; Actuator Repairs</li>
         <li><i class="fas fa-wave-square text-blue-600 mr-2"></i> Echo Meter Liquid Level Detection</li>
       </ul>
@@ -1314,7 +1301,7 @@ Infrastructural Services
     <!-- CTA -->
     <div class="get-in-touch-content">
       <p class="mb-6 text-black text-[18px] max-w-md">
-        From hook-up to intervention, MIPET delivers tailored wellhead solutions 
+        From hook-up to intervention, Mipet delivers tailored wellhead solutions 
         that guarantee safe, efficient, and reliable well operations. Contact us 
         to learn how we can support your oilfield needs.
       </p>
