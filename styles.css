@@ -24,3 +24,13 @@ header {
     align-items: flex-start;
     gap: 8px;
 }
+
+.object-accent {
+    margin-left: 50px !important;
+}
+
+@media (max-width: 767px) {
+ .object-accent {
+    margin-left: 0 !important;
+}   
+}
