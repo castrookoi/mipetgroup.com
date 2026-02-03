@@ -1281,6 +1281,47 @@
       transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
       overflow: hidden;
     }
+        /* Modal Styles */
+        #inquiryModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        .modal-header {
+            background: linear-gradient(to right, #c1160e, #012640);
+            color: white;
+            padding: 10px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -1730,8 +1771,8 @@ class="mt-4 text-sm sm:text-base md:text-lg lg:text-lg text-gray-200 max-w-3xl m
 Premium Additives & Fluids for Maximum Well Control, Stability & Efficiency, We supply What Works - Reliable, Proven, and Ready for Nigeria's Oilfield.
 </p>
 <div class="mt-6 hero-button">
-<a href="./contact.html" class="gradient-btn"
-><i class="fas fa-book"></i>Request for Quote</a
+<button onclick="openInquiryModal()" class="gradient-btn"
+><i class="fas fa-book"></i>Request for Quote</button
 >
 </div>
 </div>
@@ -2036,8 +2077,7 @@ Premium Additives & Fluids for Maximum Well Control, Stability & Efficiency, We 
                 </thead>
                 <tbody>
                   <tr><td class="border border-gray-200 px-4 py-3">Cellulosic fibers</td><td class="border border-gray-200 px-4 py-3">11.34 kg bag</td><td class="border border-gray-200 px-4 py-3 text-blue-600 font-medium">Available in Stock</td></tr>
-                  <tr><td class="border border-gray-200 px-4 py-3">“Liquid Casing”</td><td class="border border-gray-200 px-4 py-3">11.34 kg bag</td><td class="border border-gray-200 px-4 py-3 text-blue-600 font-medium">Available in Stock</td></tr>
-                  <tr><td class="border border-gray-200 px-4 py-3">Calcium Carbonate F</td><td class="border border-gray-200 px-4 py-3">25 kg bag</td><td class="border border-gray-200 px-4 py-3 text-blue-600 font-medium">Available in Stock</td></tr>
+                  <tr><td class="border border-gray-200 px-4 py-3">“Liquid Casing”</td><td class="border border-gray-200 px-4<tr><td class="border border-gray-200 px-4 py-3">Calcium Carbonate F</td><td class="border border-gray-200 px-4 py-3">25 kg bag</td><td class="border border-gray-200 px-4 py-3 text-blue-600 font-medium">Available in Stock</td></tr>
                   <tr><td class="border border-gray-200 px-4 py-3">Calcium Carbonate M</td><td class="border border-gray-200 px-4 py-3">25 kg bag</td><td class="border border-gray-200 px-4 py-3 text-blue-600 font-medium">Available in Stock</td></tr>
                   <tr><td class="border border-gray-200 px-4 py-3">Calcium Carbonate C</td><td class="border border-gray-200 px-4 py-3">25 kg bag</td><td class="border border-gray-200 px-4 py-3 text-blue-600 font-medium">Available in Stock</td></tr>
                   <tr><td class="border border-gray-200 px-4 py-3">Graphite</td><td class="border border-gray-200 px-4 py-3">25 kg bag</td><td class="border border-gray-200 px-4 py-3 text-blue-600 font-medium">Available in Stock</td></tr>
@@ -2550,6 +2590,49 @@ Premium Additives & Fluids for Maximum Well Control, Stability & Efficiency, We 
   </div>
 </footer>
 
+<!-- Inquiry Modal -->
+<div id="inquiryModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close" onclick="closeInquiryModal()">&times;</span>
+            <h2>Request for Quote</h2>
+        </div>
+        <form id="inquiryForm" class="mt-6">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone</label>
+                <input type="tel" id="phone" name="phone" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="productType" class="block text-gray-700 font-semibold mb-2">Product Type</label>
+                <select id="productType" name="productType" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required onchange="updateSubProducts()">
+                    <option value="">Select Product Type</option>
+                    <!-- Options will be populated from data -->
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="subProduct" class="block text-gray-700 font-semibold mb-2">Sub-Product</label>
+                <select id="subProduct" name="subProduct" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <option value="">Select Sub-Product</option>
+                    <!-- Dynamically populated based on type -->
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your inquiry message here..." required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-900 text-white py-2 rounded-lg font-semibold hover:bg-blue-800">Submit Inquiry</button>
+        </form>
+    </div>
+</div>
+
 <script>
 // Mobile Menu Toggle
 const menuToggle = document.getElementById("menu-toggle");
@@ -2768,6 +2851,276 @@ searchSuggestions.classList.remove("active");
 });
 
 
+function toggleAccordion(header) {
+      const content = header.nextElementSibling;
+      const isCurrentlyOpen = !content.classList.contains('hidden');
+      const icon = header.querySelector('svg');
+
+      // Close all sections
+      document.querySelectorAll('.accordion-content').forEach(el => {
+        el.classList.add('hidden', 'max-h-0', 'opacity-0');
+        el.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+      });
+
+      // If not already open, open this one
+      if (!isCurrentlyOpen) {
+        content.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          content.classList.remove('max-h-0', 'opacity-0');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        });
+        icon.classList.add('rotate-180');
+      }
+    }
+
+// Product Data
+const productData = {
+  "Biocides": [
+    "Biocide",
+    "Biocide for brine",
+    "Glutaraldehyd bacteriacide",
+    "THPS Biocide"
+  ],
+  "Commercial Chemicals": [
+    "77-80 % CaCl2 Powder",
+    "82-85 % CaCl2 Powder",
+    "95-88 % CaCl2-Powder",
+    "95-99% CaBr2",
+    "95-99% NaBr pvd",
+    "Acetic Acid",
+    "Ammonium Bifloride",
+    "Ammonium hydrogen floride",
+    "Boric Acid",
+    "Ca(OH)2",
+    "CaBr2 brine",
+    "CaCl2 brine",
+    "CaSO4 . 2H2O",
+    "Citric Acid",
+    "Fe3O4",
+    "Formic Acid",
+    "HCl (10%)",
+    "HCl (15%)",
+    "HCl (3 %)",
+    "HCl (32 %)",
+    "HCl (36 %)",
+    "HCl (5 %)",
+    "HCl (7,5 %)",
+    "K2CO3",
+    "KCL",
+    "KCL",
+    "KCL Brine",
+    "KHCO3",
+    "KNO3",
+    "KOH",
+    "Manganese Oxide",
+    "MgO",
+    "Micromax",
+    "Micromax",
+    "Na2CO3",
+    "Na2SO3",
+    "NaBr brine",
+    "NaCl, pvd",
+    "NaCl, pvd",
+    "NaCl-Brine",
+    "NaHCO3",
+    "NaNO3",
+    "NAOH, cans",
+    "NH4Ca(NO3)",
+    "NH4HSO3",
+    "Pentanionic acid, 3H+",
+    "Potassium Formate",
+    "Potassium Formate-Brine",
+    "Sodium Formate Brine",
+    "ZnBr Brine",
+    "ZnBr",
+    "Sulphamine Acid",
+    "Zinc Carbonate",
+    "ZnO"
+  ],
+  "Corrosion Inhibitor and Scavengers": [
+    "Alkyl phosphate ester",
+    "Ammonium, sulphite, amine",
+    "Corrosion Inhibitor",
+    "Corrosion Inhibitor for brine",
+    "Environmental safe corr.inhibitor",
+    "H2S-Scavanger",
+    "Drill pipe corrosion inhibitor (spray on)",
+    "High temp. Corr. Inhibitor",
+    "Ironite Sponge",
+    "Oxygen Scavanger",
+    "Sodium bisulphite solution",
+    "Zinc Oxide"
+  ],
+  "Deflocculants, Thinners and Filtration Control Additives": [
+    "Ferro lignosulfonate-Chrome free",
+    "Co-polymer deflocculant liquid",
+    "Co-polymer deflocculant powder",
+    "High temperature thinner",
+    "Iron calcium lignosulphonate",
+    "Modified lignite",
+    "Modified tannin-Chrome Free",
+    "Polyanionic resin",
+    "Synthetic polymer"
+  ],
+  "Defoamers": [
+    "Defoam for WBM/Brine- Env.",
+    "Defoamer for brine",
+    "Defoamer for Thixsal-Plus system",
+    "Defoamer for WBM",
+    "Silicone Defoamer"
+  ],
+  "Filtration Control and Viscosity Building Additives": [
+    "Acrylamide copolymer,temperature stable",
+    "Filtration Agent, resin",
+    "Gilsonite",
+    "High polymeriz.degree PAC-polymer",
+    "HV CMC",
+    "LV CMC",
+    "Hydroxyl ethyl cellulose",
+    "Organophilc Clay",
+    "Organophilc Clay-High quality (HTHP)",
+    "PAC-polymer",
+    "PAC-polymer regular",
+    "PAC-polymer low viscosity",
+    "PAC-polymer extra low viscosity",
+    "PAC-polymer-UL"
+  ],
+  "Lost Circulation Materials": [
+    "Cellulosic fibers",
+    "“Liquid Casing”",
+    "Calcium Carbonate F",
+    "Calcium Carbonate M",
+    "Calcium Carbonate C",
+    "Graphite",
+    "Mica F/M/C",
+    "OM Seal",
+    "Oyster Shells",
+    "Polysaccharide complex",
+    "Potassium aluminium silicat mineral",
+    "Sand Seal F/M/C",
+    "Shredded cedar fibre",
+    "Sized flakes or inert cellophane",
+    "Sized Graphite",
+    "Ultraseal XP",
+    "Ultraseal C",
+    "Venfyber 201",
+    "Walnut shell F/M/C",
+    "Delta “P”"
+  ],
+  "Lubricants": [
+    "Fatty acids/vegetable oils",
+    "Glass beads",
+    "Graphite plates",
+    "Lubrricant for silicate system",
+    "Non toxic lubricant 1",
+    "Non toxic lubricant 2",
+    "Non toxic lubricant 3"
+  ],
+  "Pipe Freeing and Spotting Additives": [
+    "Non ionic surfactant (preventing BHA/bit balling)",
+    "Koplus LL",
+    "Non toxic – Pipe Release Agent"
+  ],
+  "Shale Control Additives": [
+    "Blown Asphalt",
+    "Mixed Metal Hydroxide",
+    "Polyacrylamid-PHPA",
+    "Polyacrylamid-PHPA-Liquid",
+    "Polyacrylamid-PHPA-Short Chained",
+    "Polyglycol for Gyp",
+    "Polyglycol for KCl",
+    "Sodium Silicate",
+    "Sulfanoated asphalt",
+    "Sulfanoated asphalt"
+  ],
+  "Surfactants and Detergents": [
+    "Acidic washing liquid",
+    "Drilling Detergent",
+    "Non-ionic drilling fluid surfactant",
+    "Solvent, oil based drilling fluid",
+    "Surfactant, oil based drilling fluid",
+    "Surfactant, water based drilling fluid"
+  ],
+  "Viscosifiers": [
+    "API Bentonite",
+    "Attapulgite",
+    "Biopolymer xanthan gum",
+    "Biopolymer-xanthan gum dispersable",
+    "Guar Gum",
+    "High grade montmorillonite clay",
+    "Mg-Al hydroxychloride compound",
+    "Modified Starch",
+    "Modified Starch for milling fluids",
+    "Modified Starch for RDF",
+    "Organophilic clay",
+    "Organophilic clay-High quality",
+    "Viscosifier for brine (divalent)",
+    "Viscosifier for brine (monovalent)",
+    "Wyoming Bentonite"
+  ],
+  "Weighting Agents": [
+    "Barium sulphate (barite)- API quality",
+    "Barium sulphate (barite)-Specified/local quality",
+    "Hematite",
+    "Hematite",
+    "Ilmenite",
+    "Sized calcium carbonate",
+    "Sized calcium carbonate",
+    "Sized sodium chloride",
+    "Sized sodium chloride"
+  ]
+};
+
+// Populate Product Type Dropdown
+const productTypeSelect = document.getElementById('productType');
+Object.keys(productData).forEach(type => {
+  const option = document.createElement('option');
+  option.value = type;
+  option.textContent = type;
+  productTypeSelect.appendChild(option);
+});
+
+// Update Sub-Products based on selected type
+function updateSubProducts() {
+  const selectedType = productTypeSelect.value;
+  const subProductSelect = document.getElementById('subProduct');
+  subProductSelect.innerHTML = '<option value="">Select Sub-Product</option>';
+  if (selectedType) {
+    productData[selectedType].forEach(sub => {
+      const option = document.createElement('option');
+      option.value = sub;
+      option.textContent = sub;
+      subProductSelect.appendChild(option);
+    });
+  }
+}
+
+// Inquiry Modal Functions
+function openInquiryModal() {
+    document.getElementById('inquiryModal').style.display = 'block';
+}
+
+function closeInquiryModal() {
+    document.getElementById('inquiryModal').style.display = 'none';
+}
+
+// Handle form submission
+document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Here you can add code to handle form submission, e.g., send to server via AJAX
+    // For now, just alert
+    alert('Inquiry submitted successfully!');
+    closeInquiryModal();
+});
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('inquiryModal');
+    if (event.target == modal) {
+        closeInquiryModal();
+    }
+}
+
 // Policy Item Full-Page Zoom Effect
 const policyItems = document.querySelectorAll('.policy-item');
 let fullScreenOverlay = null;
@@ -2790,7 +3143,7 @@ fullScreenOverlay = document.createElement('div');
 fullScreenOverlay.classList.add('full-screen-overlay');
 fullScreenOverlay.innerHTML = `
 <div class="full-screen-image-container">
-<img src="${imgSrc}" alt="${imgAlt}" class="full-screen-image" />
+<img src="\( {imgSrc}" alt=" \){imgAlt}" class="full-screen-image" />
 <button class="close-zoom-btn"><i class="fas fa-times"></i></button>
 </div>
 `;
@@ -2968,7 +3321,7 @@ const imgAlt = img.alt;
 // Create a new div for the zoomed image
 zoomedImage = document.createElement('div');
 zoomedImage.classList.add('zoomed-image');
-zoomedImage.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}" />`;
+zoomedImage.innerHTML = `<img src="\( {imgSrc}" alt=" \){imgAlt}" />`;
 
 // Append to body for full-screen effect
 document.body.appendChild(zoomedImage);
@@ -3020,32 +3373,10 @@ updateCarousel();
 }
 }
 
-function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      const isCurrentlyOpen = !content.classList.contains('hidden');
-      const icon = header.querySelector('svg');
-
-      // Close all sections
-      document.querySelectorAll('.accordion-content').forEach(el => {
-        el.classList.add('hidden', 'max-h-0', 'opacity-0');
-        el.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
-      });
-
-      // If not already open, open this one
-      if (!isCurrentlyOpen) {
-        content.classList.remove('hidden');
-        requestAnimationFrame(() => {
-          content.classList.remove('max-h-0', 'opacity-0');
-          content.style.maxHeight = content.scrollHeight + 'px';
-        });
-        icon.classList.add('rotate-180');
-      }
-    }
 </script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-AOS.init();e
+AOS.init();
 </script>
 </body>
 </html>
-<!-- End Half 2 -->
