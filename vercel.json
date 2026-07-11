@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/webmail",
+      "destination": "https://server350.web-hosting.com:2096/",
+      "permanent": false
+    }
+  ]
+}
